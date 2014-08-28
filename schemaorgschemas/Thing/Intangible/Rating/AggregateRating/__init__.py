@@ -21,7 +21,7 @@ class reviewCountProp(SchemaProperty):
 
     """
     SchemaField for reviewCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewCountProp()
     schema.org description:The count of total number of reviews.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class itemReviewedProp(SchemaProperty):
 
     """
     SchemaField for itemReviewed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = itemReviewedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = itemReviewedProp()
     schema.org description:The item that is being reviewed/rated.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class ratingCountProp(SchemaProperty):
 
     """
     SchemaField for ratingCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ratingCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ratingCountProp()
     schema.org description:The count of total number of ratings.
 
     prop_schema returns just the property without url#

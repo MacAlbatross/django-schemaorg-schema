@@ -21,7 +21,7 @@ class directorProp(SchemaProperty):
 
     """
     SchemaField for director
-    Usage: Include in SchemaObject SchemaFields as your_django_field = directorProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = directorProp()
     schema.org description:The director of the movie, tv/radio episode or series. Supercedes directors.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class trailerProp(SchemaProperty):
 
     """
     SchemaField for trailer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trailerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trailerProp()
     schema.org description:The trailer of a movie or tv/radio series, season, or episode.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class producerProp(SchemaProperty):
 
     """
     SchemaField for producer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = producerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = producerProp()
     schema.org description:The producer of the movie, tv/radio series, season, or episode, or video.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class productionCompanyProp(SchemaProperty):
 
     """
     SchemaField for productionCompany
-    Usage: Include in SchemaObject SchemaFields as your_django_field = productionCompanyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = productionCompanyProp()
     schema.org description:The production company or studio that made the movie, tv/radio series, season, or episode, or media object.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class durationProp(SchemaProperty):
 
     """
     SchemaField for duration
-    Usage: Include in SchemaObject SchemaFields as your_django_field = durationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = durationProp()
     schema.org description:The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class musicByProp(SchemaProperty):
 
     """
     SchemaField for musicBy
-    Usage: Include in SchemaObject SchemaFields as your_django_field = musicByProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = musicByProp()
     schema.org description:The composer of the movie or TV/radio soundtrack.
 
     prop_schema returns just the property without url#
@@ -123,7 +123,7 @@ class actorProp(SchemaProperty):
 
     """
     SchemaField for actor
-    Usage: Include in SchemaObject SchemaFields as your_django_field = actorProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = actorProp()
     schema.org description:A cast member of the movie, tv/radio series, season, episode, or video. Supercedes actors.
 
     prop_schema returns just the property without url#

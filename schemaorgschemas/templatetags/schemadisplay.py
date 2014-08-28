@@ -1,23 +1,17 @@
 from django import template
-from django.template import Template, Context, Library, Variable, NodeList
-from django.template.base import TemplateSyntaxError, TemplateDoesNotExist, \
-    VariableNode, TextNode
-from django.template.loader import render_to_string, get_template
-from formatters import SchemaPropFormatter, EnumPropFormatter 
+from django.template import Library, NodeList
+from django.template.base import TemplateSyntaxError, TextNode
+from formatters import SchemaPropFormatter, EnumPropFormatter
 
 register = Library()
 
 
-
 @register.simple_tag(takes_context=False)
 def schemaprop(item, field_name=None):
-    schema = None
-    
-    format_as = None
     magix = None
     if not field_name:
         raise TemplateSyntaxError('need to specify field name')
-    if field_name[-8:]=='_display' and field_name[:4]=='get_':
+    if field_name[-8:] == '_display' and field_name[:4] == 'get_':
             cut_name = field_name[4:-8]
             try:
                 store_value = getattr(item, cut_name)
@@ -31,7 +25,7 @@ def schemaprop(item, field_name=None):
     schema = getattr(item.SchemaFields, field_name)
     format_as = schema._format_as
     if (schema._format_as == 'ForeignKey'):
-        if (schema.traceback == True):
+        if (schema.traceback is True):
             f_obj = getattr(item, field_name)
             item_scope = schemascope(f_obj)
             store_value = item_scope
@@ -42,7 +36,7 @@ def schemaprop(item, field_name=None):
     if not magix:
         magix = SchemaPropFormatter(schema=schema)
     magix.format_as = format_as
-    magix.value=store_value
+    magix.value = store_value
     ret = magix.render()
     return ret
 
@@ -64,14 +58,14 @@ def do_schema_render(parser, token):
     token = token.split_contents()
     nodelist = parser.parse(('endschemaobject',))
     parser.delete_first_token()
-    #defaults the HTML class to section unless over-ride specified
+    # defaults the HTML class to section unless over-ride specified
     section = 'section'
     htmlattr = None
     if token.count > 2:
         section = token[2]
     if token.count > 3:
         htmlattr = token[3]
-        #remove quotes
+        # remove quotes
         htmlattr = htmlattr[1:-1]
     rets = SchemaNode(nodelist, token[1], section, htmlattr)
     return rets
@@ -98,13 +92,14 @@ class SchemaNode(template.Node):
             if f == -1:
                 item = TextNode(text_node_string[o_f + 1:])
             else:
-                item = TextNode(text_node_string[o_f + 1: f+1])
+                item = TextNode(text_node_string[o_f + 1: f + 1])
             output.append(item)
             if f == -1:
                 return output
 
     def render(self, context):
-        i = context.dicts.__len__() - 1  #going backwards as it seems the information is stored in the last list entry, but I'm not going to bank on it
+        i = context.dicts.__len__() - 1
+        # going backwards as it seems the information is stored in the last list
         while i >= 0:
             dic = context.dicts[i]
             obj = dic.get(self.object_name, None)
@@ -125,27 +120,26 @@ class SchemaNode(template.Node):
                     for item in splitted:
                         new_nodes.append(item)
             else:
-                
                 new_nodes.append(this_node)
-                #variable_nodes list holds the indexes of all the VariableNodes
+                # variable_nodes list holds the indexes of all the VariableNodes
                 variable_nodes.append(new_nodes.__len__() - 1)
             l = l + 1
         for item in variable_nodes:
             node_in_question = new_nodes[item]
             filter_exp = str(node_in_question.filter_expression)
             filter_exp = filter_exp.replace(self.object_name + '.', '')
-            #ensure ones with added template tags work properly
+            # ensure ones with added template tags work properly
             if '|' in filter_exp:
                 filter_exp = filter_exp[:filter_exp.find('|')]
             try:
                 schema_prop = schemaprop(obj, filter_exp)
             except:
-                #someone's snuck in a non-schema field, so lets just ignore it
+                # someone's snuck in a non-schema field, so lets just ignore it
                 schema_prop = ''
             next_node_counter = 1
             next_node = new_nodes[item + next_node_counter]
             next_node_text = next_node.s
-            while not "<" in next_node_text:
+            while "<" not in next_node_text:
                 next_node_counter = next_node_counter + 1
                 next_node = new_nodes[item + next_node_counter]
                 next_node_text = next_node.s
@@ -155,18 +149,16 @@ class SchemaNode(template.Node):
             prior_node_counter = 1
             prior_node = new_nodes[item - prior_node_counter]
             prior_node_text = prior_node.s
-            while not html_class in prior_node_text:
+            while html_class not in prior_node_text:
                 prior_node_counter = prior_node_counter + 1
                 prior_node = new_nodes[item - prior_node_counter]
                 prior_node_text = prior_node.s
             cutter = prior_node_text.find('>')
-            p_node_len = prior_node_text.__len__()
             prior_node.s = prior_node_text[:cutter] + ' ' + schema_prop + prior_node_text[cutter:]
         scope = schemascope(obj)
         top_text = "<" + self.html_class + ' '
         if self.html_attribute:
             top_text = top_text + self.html_attribute + ' '
-        #itemscope itemtype
         top_text = top_text + ' itemscope itemtype=' + scope + '>'
         bottom_text = "</" + self.html_class + ">"
         topnode = TextNode(top_text)

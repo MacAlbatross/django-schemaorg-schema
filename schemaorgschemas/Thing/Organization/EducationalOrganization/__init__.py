@@ -21,7 +21,7 @@ class alumniProp(SchemaProperty):
 
     """
     SchemaField for alumni
-    Usage: Include in SchemaObject SchemaFields as your_django_field = alumniProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = alumniProp()
     schema.org description:Alumni of educational organization.
 
     prop_schema returns just the property without url#

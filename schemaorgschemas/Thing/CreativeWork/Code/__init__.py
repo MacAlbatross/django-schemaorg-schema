@@ -21,7 +21,7 @@ class codeRepositoryProp(SchemaProperty):
 
     """
     SchemaField for codeRepository
-    Usage: Include in SchemaObject SchemaFields as your_django_field = codeRepositoryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = codeRepositoryProp()
     schema.org description:Link to the repository where the un-compiled, human readable code and related code is located (SVN, github, CodePlex)
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class programmingLanguageProp(SchemaProperty):
 
     """
     SchemaField for programmingLanguage
-    Usage: Include in SchemaObject SchemaFields as your_django_field = programmingLanguageProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = programmingLanguageProp()
     schema.org description:The computer programming language.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class runtimeProp(SchemaProperty):
 
     """
     SchemaField for runtime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = runtimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = runtimeProp()
     schema.org description:Runtime platform or script interpreter dependencies (Example - Java v1, Python2.3, .Net Framework 3.0)
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class sampleTypeProp(SchemaProperty):
 
     """
     SchemaField for sampleType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = sampleTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sampleTypeProp()
     schema.org description:Full (compile ready) solution, code snippet, inline code, scripts, template.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class targetProductProp(SchemaProperty):
 
     """
     SchemaField for targetProduct
-    Usage: Include in SchemaObject SchemaFields as your_django_field = targetProductProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = targetProductProp()
     schema.org description:Target Operating System / Product to which the code applies. If applies to several versions, just the product name can be used.
 
     prop_schema returns just the property without url#

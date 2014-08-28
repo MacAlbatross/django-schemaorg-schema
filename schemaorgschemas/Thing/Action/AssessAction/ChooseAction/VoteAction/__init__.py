@@ -22,7 +22,7 @@ class candidateProp(SchemaProperty):
 
     """
     SchemaField for candidate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = candidateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = candidateProp()
     schema.org description:A sub property of object. The candidate subject of this action.
 
     prop_schema returns just the property without url#

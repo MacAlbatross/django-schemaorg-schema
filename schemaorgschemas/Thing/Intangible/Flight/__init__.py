@@ -20,7 +20,7 @@ class flightDistanceProp(SchemaProperty):
 
     """
     SchemaField for flightDistance
-    Usage: Include in SchemaObject SchemaFields as your_django_field = flightDistanceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = flightDistanceProp()
     schema.org description:The distance of the flight.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class departureTimeProp(SchemaProperty):
 
     """
     SchemaField for departureTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departureTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departureTimeProp()
     schema.org description:The expected departure time.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class arrivalTerminalProp(SchemaProperty):
 
     """
     SchemaField for arrivalTerminal
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalTerminalProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalTerminalProp()
     schema.org description:Identifier of the flight&#39;s arrival terminal.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class mealServiceProp(SchemaProperty):
 
     """
     SchemaField for mealService
-    Usage: Include in SchemaObject SchemaFields as your_django_field = mealServiceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = mealServiceProp()
     schema.org description:Description of the meals that will be provided or available for purchase.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class providerProp(SchemaProperty):
 
     """
     SchemaField for provider
-    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()
     schema.org description:The organization or agency that is providing the service.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class webCheckinTimeProp(SchemaProperty):
 
     """
     SchemaField for webCheckinTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = webCheckinTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = webCheckinTimeProp()
     schema.org description:The time when a passenger can check into the flight online.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class flightNumberProp(SchemaProperty):
 
     """
     SchemaField for flightNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = flightNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = flightNumberProp()
     schema.org description:The unique identifier for a flight.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class departureAirportProp(SchemaProperty):
 
     """
     SchemaField for departureAirport
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departureAirportProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departureAirportProp()
     schema.org description:The airport where the flight originates.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class aircraftProp(SchemaProperty):
 
     """
     SchemaField for aircraft
-    Usage: Include in SchemaObject SchemaFields as your_django_field = aircraftProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = aircraftProp()
     schema.org description:The kind of aircraft (e.g., &quot;Boeing 747&quot;).
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class carrierProp(SchemaProperty):
 
     """
     SchemaField for carrier
-    Usage: Include in SchemaObject SchemaFields as your_django_field = carrierProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = carrierProp()
     schema.org description:The party responsible for the parcel delivery.
 
     prop_schema returns just the property without url#
@@ -190,7 +190,7 @@ class departureGateProp(SchemaProperty):
 
     """
     SchemaField for departureGate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departureGateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departureGateProp()
     schema.org description:Identifier of the flight&#39;s departure gate.
 
     prop_schema returns just the property without url#
@@ -207,7 +207,7 @@ class departureTerminalProp(SchemaProperty):
 
     """
     SchemaField for departureTerminal
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departureTerminalProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departureTerminalProp()
     schema.org description:Identifier of the flight&#39;s departure terminal.
 
     prop_schema returns just the property without url#
@@ -224,7 +224,7 @@ class estimatedFlightDurationProp(SchemaProperty):
 
     """
     SchemaField for estimatedFlightDuration
-    Usage: Include in SchemaObject SchemaFields as your_django_field = estimatedFlightDurationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = estimatedFlightDurationProp()
     schema.org description:The estimated time the flight will take.
 
     prop_schema returns just the property without url#
@@ -241,7 +241,7 @@ class arrivalTimeProp(SchemaProperty):
 
     """
     SchemaField for arrivalTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalTimeProp()
     schema.org description:The expected arrival time.
 
     prop_schema returns just the property without url#
@@ -258,7 +258,7 @@ class arrivalGateProp(SchemaProperty):
 
     """
     SchemaField for arrivalGate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalGateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalGateProp()
     schema.org description:Identifier of the flight&#39;s arrival gate.
 
     prop_schema returns just the property without url#
@@ -275,7 +275,7 @@ class arrivalAirportProp(SchemaProperty):
 
     """
     SchemaField for arrivalAirport
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalAirportProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalAirportProp()
     schema.org description:The airport where the flight terminates.
 
     prop_schema returns just the property without url#

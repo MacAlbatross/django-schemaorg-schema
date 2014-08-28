@@ -20,7 +20,7 @@ class reservationForProp(SchemaProperty):
 
     """
     SchemaField for reservationFor
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationForProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationForProp()
     schema.org description:The thing -- flight, event, restaurant,etc. being reserved.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class totalPriceProp(SchemaProperty):
 
     """
     SchemaField for totalPrice
-    Usage: Include in SchemaObject SchemaFields as your_django_field = totalPriceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = totalPriceProp()
     schema.org description:The total price for the reservation or ticket, including applicable taxes, shipping, etc.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class modifiedTimeProp(SchemaProperty):
 
     """
     SchemaField for modifiedTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = modifiedTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = modifiedTimeProp()
     schema.org description:The date and time the reservation was modified.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class priceCurrencyProp(SchemaProperty):
 
     """
     SchemaField for priceCurrency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceCurrencyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceCurrencyProp()
     schema.org description:The currency (in 3-letter ISO 4217 format) of the offer price or a price component, when attached to PriceSpecification and its subtypes.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class reservationStatusProp(SchemaProperty):
 
     """
     SchemaField for reservationStatus
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationStatusProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationStatusProp()
     schema.org description:The current status of the reservation.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class reservedTicketProp(SchemaProperty):
 
     """
     SchemaField for reservedTicket
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reservedTicketProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reservedTicketProp()
     schema.org description:A ticket associated with the reservation.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class bookingAgentProp(SchemaProperty):
 
     """
     SchemaField for bookingAgent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = bookingAgentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = bookingAgentProp()
     schema.org description:If the reservation was not booked directly through the provider, the third-party booking agent can be recorded through this property.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class programMembershipUsedProp(SchemaProperty):
 
     """
     SchemaField for programMembershipUsed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = programMembershipUsedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = programMembershipUsedProp()
     schema.org description:Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class providerProp(SchemaProperty):
 
     """
     SchemaField for provider
-    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()
     schema.org description:The organization or agency that is providing the service.
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class reservationIdProp(SchemaProperty):
 
     """
     SchemaField for reservationId
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationIdProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationIdProp()
     schema.org description:A unique identifier for the reservation.
 
     prop_schema returns just the property without url#
@@ -190,7 +190,7 @@ class bookingTimeProp(SchemaProperty):
 
     """
     SchemaField for bookingTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = bookingTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = bookingTimeProp()
     schema.org description:The date and time the reservation was booked.
 
     prop_schema returns just the property without url#
@@ -207,7 +207,7 @@ class underNameProp(SchemaProperty):
 
     """
     SchemaField for underName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = underNameProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = underNameProp()
     schema.org description:The person or organization the reservation or ticket is for.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class stageAsNumberProp(SchemaProperty):
 
     """
     SchemaField for stageAsNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = stageAsNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = stageAsNumberProp()
     schema.org description:The stage represented as a number, e.g. 3.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class subStageSuffixProp(SchemaProperty):
 
     """
     SchemaField for subStageSuffix
-    Usage: Include in SchemaObject SchemaFields as your_django_field = subStageSuffixProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = subStageSuffixProp()
     schema.org description:The substage, e.g. &#39;a&#39; for Stage IIIa.
 
     prop_schema returns just the property without url#

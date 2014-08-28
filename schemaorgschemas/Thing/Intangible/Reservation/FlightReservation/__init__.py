@@ -21,7 +21,7 @@ class boardingGroupProp(SchemaProperty):
 
     """
     SchemaField for boardingGroup
-    Usage: Include in SchemaObject SchemaFields as your_django_field = boardingGroupProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = boardingGroupProp()
     schema.org description:The airline-specific indicator of boarding order / preference.
 
     prop_schema returns just the property without url#

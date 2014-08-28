@@ -21,7 +21,7 @@ class activeIngredientProp(SchemaProperty):
 
     """
     SchemaField for activeIngredient
-    Usage: Include in SchemaObject SchemaFields as your_django_field = activeIngredientProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = activeIngredientProp()
     schema.org description:An active ingredient, typically chemical compounds and/or biologic substances.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class availableInProp(SchemaProperty):
 
     """
     SchemaField for availableIn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availableInProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availableInProp()
     schema.org description:The location in which the strength is available.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class strengthUnitProp(SchemaProperty):
 
     """
     SchemaField for strengthUnit
-    Usage: Include in SchemaObject SchemaFields as your_django_field = strengthUnitProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = strengthUnitProp()
     schema.org description:The units of an active ingredient&#39;s strength, e.g. mg.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class strengthValueProp(SchemaProperty):
 
     """
     SchemaField for strengthValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = strengthValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = strengthValueProp()
     schema.org description:The value of an active ingredient&#39;s strength, e.g. 325.
 
     prop_schema returns just the property without url#

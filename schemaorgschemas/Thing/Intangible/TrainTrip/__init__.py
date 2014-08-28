@@ -20,7 +20,7 @@ class departureStationProp(SchemaProperty):
 
     """
     SchemaField for departureStation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departureStationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departureStationProp()
     schema.org description:The station from which the train departs.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class departureTimeProp(SchemaProperty):
 
     """
     SchemaField for departureTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departureTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departureTimeProp()
     schema.org description:The expected departure time.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class departurePlatformProp(SchemaProperty):
 
     """
     SchemaField for departurePlatform
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departurePlatformProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departurePlatformProp()
     schema.org description:The platform from which the train departs.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class arrivalTimeProp(SchemaProperty):
 
     """
     SchemaField for arrivalTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalTimeProp()
     schema.org description:The expected arrival time.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class arrivalPlatformProp(SchemaProperty):
 
     """
     SchemaField for arrivalPlatform
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalPlatformProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalPlatformProp()
     schema.org description:The platform where the train arrives.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class trainNameProp(SchemaProperty):
 
     """
     SchemaField for trainName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trainNameProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trainNameProp()
     schema.org description:The name of the train (e.g. The Orient Express).
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class providerProp(SchemaProperty):
 
     """
     SchemaField for provider
-    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()
     schema.org description:The organization or agency that is providing the service.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class trainNumberProp(SchemaProperty):
 
     """
     SchemaField for trainNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trainNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trainNumberProp()
     schema.org description:The unique identifier for the train.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class arrivalStationProp(SchemaProperty):
 
     """
     SchemaField for arrivalStation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalStationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalStationProp()
     schema.org description:The station where the train trip ends.
 
     prop_schema returns just the property without url#

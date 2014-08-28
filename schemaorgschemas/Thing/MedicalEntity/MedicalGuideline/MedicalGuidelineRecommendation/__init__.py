@@ -22,7 +22,7 @@ class recommendationStrengthProp(SchemaProperty):
 
     """
     SchemaField for recommendationStrength
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recommendationStrengthProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recommendationStrengthProp()
     schema.org description:Strength of the guideline&#39;s recommendation (e.g. &#39;class I&#39;).
 
     prop_schema returns just the property without url#

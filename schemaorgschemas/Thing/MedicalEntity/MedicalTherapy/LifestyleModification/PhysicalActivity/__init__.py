@@ -22,7 +22,7 @@ class associatedAnatomyProp(SchemaProperty):
 
     """
     SchemaField for associatedAnatomy
-    Usage: Include in SchemaObject SchemaFields as your_django_field = associatedAnatomyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = associatedAnatomyProp()
     schema.org description:The anatomy of the underlying organ system or structures associated with this entity.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class categoryProp(SchemaProperty):
 
     """
     SchemaField for category
-    Usage: Include in SchemaObject SchemaFields as your_django_field = categoryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = categoryProp()
     schema.org description:A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class pathophysiologyProp(SchemaProperty):
 
     """
     SchemaField for pathophysiology
-    Usage: Include in SchemaObject SchemaFields as your_django_field = pathophysiologyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = pathophysiologyProp()
     schema.org description:Changes in the normal mechanical, physical, and biochemical functions that are associated with this activity or condition.
 
     prop_schema returns just the property without url#
@@ -73,7 +73,7 @@ class epidemiologyProp(SchemaProperty):
 
     """
     SchemaField for epidemiology
-    Usage: Include in SchemaObject SchemaFields as your_django_field = epidemiologyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = epidemiologyProp()
     schema.org description:The characteristics of associated patients, such as age, gender, race etc.
 
     prop_schema returns just the property without url#

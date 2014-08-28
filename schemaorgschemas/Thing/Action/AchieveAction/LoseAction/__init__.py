@@ -21,7 +21,7 @@ class winnerProp(SchemaProperty):
 
     """
     SchemaField for winner
-    Usage: Include in SchemaObject SchemaFields as your_django_field = winnerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = winnerProp()
     schema.org description:A sub property of participant. The winner of the action.
 
     prop_schema returns just the property without url#

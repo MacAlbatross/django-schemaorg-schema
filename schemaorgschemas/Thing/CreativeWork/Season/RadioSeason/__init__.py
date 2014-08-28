@@ -22,7 +22,7 @@ class partOfSeriesProp(SchemaProperty):
 
     """
     SchemaField for partOfSeries
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeriesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeriesProp()
     schema.org description:The series to which this episode or season belongs. Supercedes partOfTVSeries.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class episodeProp(SchemaProperty):
 
     """
     SchemaField for episode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = episodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = episodeProp()
     schema.org description:An episode of a TV/radio series or season Supercedes episodes.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class trailerProp(SchemaProperty):
 
     """
     SchemaField for trailer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trailerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trailerProp()
     schema.org description:The trailer of a movie or tv/radio series, season, or episode.
 
     prop_schema returns just the property without url#
@@ -73,7 +73,7 @@ class numberOfEpisodesProp(SchemaProperty):
 
     """
     SchemaField for numberOfEpisodes
-    Usage: Include in SchemaObject SchemaFields as your_django_field = numberOfEpisodesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = numberOfEpisodesProp()
     schema.org description:The number of episodes in this season or series.
 
     prop_schema returns just the property without url#

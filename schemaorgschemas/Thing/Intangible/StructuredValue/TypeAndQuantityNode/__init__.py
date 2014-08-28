@@ -20,7 +20,7 @@ class unitCodeProp(SchemaProperty):
 
     """
     SchemaField for unitCode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = unitCodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = unitCodeProp()
     schema.org description:The unit of measurement given using the UN/CEFACT Common Code (3 characters).
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class businessFunctionProp(SchemaProperty):
 
     """
     SchemaField for businessFunction
-    Usage: Include in SchemaObject SchemaFields as your_django_field = businessFunctionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = businessFunctionProp()
     schema.org description:The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class amountOfThisGoodProp(SchemaProperty):
 
     """
     SchemaField for amountOfThisGood
-    Usage: Include in SchemaObject SchemaFields as your_django_field = amountOfThisGoodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = amountOfThisGoodProp()
     schema.org description:The quantity of the goods included in the offer.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class typeOfGoodProp(SchemaProperty):
 
     """
     SchemaField for typeOfGood
-    Usage: Include in SchemaObject SchemaFields as your_django_field = typeOfGoodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = typeOfGoodProp()
     schema.org description:The product that this structured value is referring to.
 
     prop_schema returns just the property without url#

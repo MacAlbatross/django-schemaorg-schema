@@ -22,7 +22,7 @@ class aspectProp(SchemaProperty):
 
     """
     SchemaField for aspect
-    Usage: Include in SchemaObject SchemaFields as your_django_field = aspectProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = aspectProp()
     schema.org description:An aspect of medical practice that is considered on the page, such as &#39;diagnosis&#39;, &#39;treatment&#39;, &#39;causes&#39;, &#39;prognosis&#39;, &#39;etiology&#39;, &#39;epidemiology&#39;, etc.
 
     prop_schema returns just the property without url#

@@ -22,7 +22,7 @@ class proficiencyLevelProp(SchemaProperty):
 
     """
     SchemaField for proficiencyLevel
-    Usage: Include in SchemaObject SchemaFields as your_django_field = proficiencyLevelProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = proficiencyLevelProp()
     schema.org description:Proficiency needed for this content; expected values: &#39;Beginner&#39;, &#39;Expert&#39;.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class dependenciesProp(SchemaProperty):
 
     """
     SchemaField for dependencies
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dependenciesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dependenciesProp()
     schema.org description:Prerequisites needed to fulfill steps in article.
 
     prop_schema returns just the property without url#

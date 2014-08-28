@@ -20,7 +20,7 @@ class valueReferenceProp(SchemaProperty):
 
     """
     SchemaField for valueReference
-    Usage: Include in SchemaObject SchemaFields as your_django_field = valueReferenceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = valueReferenceProp()
     schema.org description:A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class unitCodeProp(SchemaProperty):
 
     """
     SchemaField for unitCode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = unitCodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = unitCodeProp()
     schema.org description:The unit of measurement given using the UN/CEFACT Common Code (3 characters).
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class maxValueProp(SchemaProperty):
 
     """
     SchemaField for maxValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = maxValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = maxValueProp()
     schema.org description:The upper of the product characteristic.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class valueProp(SchemaProperty):
 
     """
     SchemaField for value
-    Usage: Include in SchemaObject SchemaFields as your_django_field = valueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = valueProp()
     schema.org description:The value of the product characteristic.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class minValueProp(SchemaProperty):
 
     """
     SchemaField for minValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = minValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = minValueProp()
     schema.org description:The lower value of the product characteristic.
 
     prop_schema returns just the property without url#

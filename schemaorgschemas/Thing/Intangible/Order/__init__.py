@@ -20,7 +20,7 @@ class customerProp(SchemaProperty):
 
     """
     SchemaField for customer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = customerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = customerProp()
     schema.org description:Party placing the order.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class merchantProp(SchemaProperty):
 
     """
     SchemaField for merchant
-    Usage: Include in SchemaObject SchemaFields as your_django_field = merchantProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = merchantProp()
     schema.org description:The party taking the order (e.g. Amazon.com is a merchant for many sellers).
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class paymentMethodIdProp(SchemaProperty):
 
     """
     SchemaField for paymentMethodId
-    Usage: Include in SchemaObject SchemaFields as your_django_field = paymentMethodIdProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = paymentMethodIdProp()
     schema.org description:An identifier for the method of payment used (e.g. the last 4 digits of the credit card).
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class orderNumberProp(SchemaProperty):
 
     """
     SchemaField for orderNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = orderNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = orderNumberProp()
     schema.org description:The identifier of the transaction.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class paymentMethodProp(SchemaProperty):
 
     """
     SchemaField for paymentMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = paymentMethodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = paymentMethodProp()
     schema.org description:The name of the credit card or other method of payment for the order.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class discountCodeProp(SchemaProperty):
 
     """
     SchemaField for discountCode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = discountCodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = discountCodeProp()
     schema.org description:Code used to redeem a discount.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class paymentDueProp(SchemaProperty):
 
     """
     SchemaField for paymentDue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = paymentDueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = paymentDueProp()
     schema.org description:The date that payment is due.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class orderedItemProp(SchemaProperty):
 
     """
     SchemaField for orderedItem
-    Usage: Include in SchemaObject SchemaFields as your_django_field = orderedItemProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = orderedItemProp()
     schema.org description:The item ordered.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class acceptedOfferProp(SchemaProperty):
 
     """
     SchemaField for acceptedOffer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = acceptedOfferProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = acceptedOfferProp()
     schema.org description:The offer(s) -- e.g., product, quantity and price combinations -- included in the order.
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class paymentUrlProp(SchemaProperty):
 
     """
     SchemaField for paymentUrl
-    Usage: Include in SchemaObject SchemaFields as your_django_field = paymentUrlProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = paymentUrlProp()
     schema.org description:The URL for sending a payment.
 
     prop_schema returns just the property without url#
@@ -190,7 +190,7 @@ class discountProp(SchemaProperty):
 
     """
     SchemaField for discount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = discountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = discountProp()
     schema.org description:Any discount applied (to an Order).
 
     prop_schema returns just the property without url#
@@ -207,7 +207,7 @@ class billingAddressProp(SchemaProperty):
 
     """
     SchemaField for billingAddress
-    Usage: Include in SchemaObject SchemaFields as your_django_field = billingAddressProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = billingAddressProp()
     schema.org description:The billing address for the order.
 
     prop_schema returns just the property without url#
@@ -224,7 +224,7 @@ class discountCurrencyProp(SchemaProperty):
 
     """
     SchemaField for discountCurrency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = discountCurrencyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = discountCurrencyProp()
     schema.org description:The currency (in 3-letter ISO 4217 format) of the discount.
 
     prop_schema returns just the property without url#
@@ -241,7 +241,7 @@ class confirmationNumberProp(SchemaProperty):
 
     """
     SchemaField for confirmationNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = confirmationNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = confirmationNumberProp()
     schema.org description:A number that confirms the given order.
 
     prop_schema returns just the property without url#
@@ -258,7 +258,7 @@ class isGiftProp(SchemaProperty):
 
     """
     SchemaField for isGift
-    Usage: Include in SchemaObject SchemaFields as your_django_field = isGiftProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isGiftProp()
     schema.org description:Was the offer accepted as a gift for someone other than the buyer.
 
     prop_schema returns just the property without url#
@@ -275,7 +275,7 @@ class orderDateProp(SchemaProperty):
 
     """
     SchemaField for orderDate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = orderDateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = orderDateProp()
     schema.org description:Date order was placed.
 
     prop_schema returns just the property without url#
@@ -292,7 +292,7 @@ class orderStatusProp(SchemaProperty):
 
     """
     SchemaField for orderStatus
-    Usage: Include in SchemaObject SchemaFields as your_django_field = orderStatusProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = orderStatusProp()
     schema.org description:The current status of the order.
 
     prop_schema returns just the property without url#

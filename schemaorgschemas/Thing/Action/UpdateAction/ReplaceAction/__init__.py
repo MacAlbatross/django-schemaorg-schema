@@ -22,7 +22,7 @@ class replacerProp(SchemaProperty):
 
     """
     SchemaField for replacer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = replacerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = replacerProp()
     schema.org description:A sub property of object. The object that replaces.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class replaceeProp(SchemaProperty):
 
     """
     SchemaField for replacee
-    Usage: Include in SchemaObject SchemaFields as your_django_field = replaceeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = replaceeProp()
     schema.org description:A sub property of object. The object that is being replaced.
 
     prop_schema returns just the property without url#

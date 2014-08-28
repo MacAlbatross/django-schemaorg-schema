@@ -21,7 +21,7 @@ class recipeProp(SchemaProperty):
 
     """
     SchemaField for recipe
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeProp()
     schema.org description:A sub property of instrument. The recipe/instructions used to perform the action.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class foodEstablishmentProp(SchemaProperty):
 
     """
     SchemaField for foodEstablishment
-    Usage: Include in SchemaObject SchemaFields as your_django_field = foodEstablishmentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = foodEstablishmentProp()
     schema.org description:A sub property of location. The specific food establishment where the action occurred.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class foodEventProp(SchemaProperty):
 
     """
     SchemaField for foodEvent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = foodEventProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = foodEventProp()
     schema.org description:A sub property of location. The specific food event where the action occurred.
 
     prop_schema returns just the property without url#

@@ -22,7 +22,7 @@ class subTestProp(SchemaProperty):
 
     """
     SchemaField for subTest
-    Usage: Include in SchemaObject SchemaFields as your_django_field = subTestProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = subTestProp()
     schema.org description:A component test of the panel.
 
     prop_schema returns just the property without url#

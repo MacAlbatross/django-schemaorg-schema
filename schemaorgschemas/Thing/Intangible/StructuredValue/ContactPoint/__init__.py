@@ -20,7 +20,7 @@ class hoursAvailableProp(SchemaProperty):
 
     """
     SchemaField for hoursAvailable
-    Usage: Include in SchemaObject SchemaFields as your_django_field = hoursAvailableProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = hoursAvailableProp()
     schema.org description:The hours during which this contact point is available.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class areaServedProp(SchemaProperty):
 
     """
     SchemaField for areaServed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = areaServedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = areaServedProp()
     schema.org description:The location served by this contact point (e.g., a phone number intended for Europeans vs. North Americans or only within the United States.)
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class contactTypeProp(SchemaProperty):
 
     """
     SchemaField for contactType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = contactTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = contactTypeProp()
     schema.org description:A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class telephoneProp(SchemaProperty):
 
     """
     SchemaField for telephone
-    Usage: Include in SchemaObject SchemaFields as your_django_field = telephoneProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = telephoneProp()
     schema.org description:The telephone number.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class productSupportedProp(SchemaProperty):
 
     """
     SchemaField for productSupported
-    Usage: Include in SchemaObject SchemaFields as your_django_field = productSupportedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = productSupportedProp()
     schema.org description:The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. &quot;iPhone&quot;) or a general category of products or services (e.g. &quot;smartphones&quot;).
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class contactOptionProp(SchemaProperty):
 
     """
     SchemaField for contactOption
-    Usage: Include in SchemaObject SchemaFields as your_django_field = contactOptionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = contactOptionProp()
     schema.org description:An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers.)
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class emailProp(SchemaProperty):
 
     """
     SchemaField for email
-    Usage: Include in SchemaObject SchemaFields as your_django_field = emailProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = emailProp()
     schema.org description:Email address.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class availableLanguageProp(SchemaProperty):
 
     """
     SchemaField for availableLanguage
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availableLanguageProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availableLanguageProp()
     schema.org description:A language someone may use with the item.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class faxNumberProp(SchemaProperty):
 
     """
     SchemaField for faxNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = faxNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = faxNumberProp()
     schema.org description:The fax number.
 
     prop_schema returns just the property without url#

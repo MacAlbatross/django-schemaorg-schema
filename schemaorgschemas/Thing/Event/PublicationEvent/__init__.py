@@ -21,7 +21,7 @@ class publishedOnProp(SchemaProperty):
 
     """
     SchemaField for publishedOn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = publishedOnProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = publishedOnProp()
     schema.org description:A broadcast service associated with the publication event.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class freeProp(SchemaProperty):
 
     """
     SchemaField for free
-    Usage: Include in SchemaObject SchemaFields as your_django_field = freeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = freeProp()
     schema.org description:A flag to signal that the publication is accessible for free.
 
     prop_schema returns just the property without url#

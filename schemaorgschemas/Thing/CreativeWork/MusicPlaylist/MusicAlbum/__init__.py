@@ -22,7 +22,7 @@ class byArtistProp(SchemaProperty):
 
     """
     SchemaField for byArtist
-    Usage: Include in SchemaObject SchemaFields as your_django_field = byArtistProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = byArtistProp()
     schema.org description:The artist that performed this album or recording.
 
     prop_schema returns just the property without url#

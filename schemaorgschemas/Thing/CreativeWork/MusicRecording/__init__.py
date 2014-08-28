@@ -21,7 +21,7 @@ class durationProp(SchemaProperty):
 
     """
     SchemaField for duration
-    Usage: Include in SchemaObject SchemaFields as your_django_field = durationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = durationProp()
     schema.org description:The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class inPlaylistProp(SchemaProperty):
 
     """
     SchemaField for inPlaylist
-    Usage: Include in SchemaObject SchemaFields as your_django_field = inPlaylistProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = inPlaylistProp()
     schema.org description:The playlist to which this recording belongs.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class byArtistProp(SchemaProperty):
 
     """
     SchemaField for byArtist
-    Usage: Include in SchemaObject SchemaFields as your_django_field = byArtistProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = byArtistProp()
     schema.org description:The artist that performed this album or recording.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class inAlbumProp(SchemaProperty):
 
     """
     SchemaField for inAlbum
-    Usage: Include in SchemaObject SchemaFields as your_django_field = inAlbumProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = inAlbumProp()
     schema.org description:The album to which this recording belongs.
 
     prop_schema returns just the property without url#

@@ -22,7 +22,7 @@ class printEditionProp(SchemaProperty):
 
     """
     SchemaField for printEdition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = printEditionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = printEditionProp()
     schema.org description:The edition of the print product in which the NewsArticle appears.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class datelineProp(SchemaProperty):
 
     """
     SchemaField for dateline
-    Usage: Include in SchemaObject SchemaFields as your_django_field = datelineProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = datelineProp()
     schema.org description:The location where the NewsArticle was produced.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class printColumnProp(SchemaProperty):
 
     """
     SchemaField for printColumn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = printColumnProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = printColumnProp()
     schema.org description:The number of the column in which the NewsArticle appears in the print edition.
 
     prop_schema returns just the property without url#
@@ -73,7 +73,7 @@ class printPageProp(SchemaProperty):
 
     """
     SchemaField for printPage
-    Usage: Include in SchemaObject SchemaFields as your_django_field = printPageProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = printPageProp()
     schema.org description:If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
 
     prop_schema returns just the property without url#
@@ -90,7 +90,7 @@ class printSectionProp(SchemaProperty):
 
     """
     SchemaField for printSection
-    Usage: Include in SchemaObject SchemaFields as your_django_field = printSectionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = printSectionProp()
     schema.org description:If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
 
     prop_schema returns just the property without url#

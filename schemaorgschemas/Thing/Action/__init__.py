@@ -20,7 +20,7 @@ class actionStatusProp(SchemaProperty):
 
     """
     SchemaField for actionStatus
-    Usage: Include in SchemaObject SchemaFields as your_django_field = actionStatusProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = actionStatusProp()
     schema.org description:Indicates the current disposition of the Action.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class instrumentProp(SchemaProperty):
 
     """
     SchemaField for instrument
-    Usage: Include in SchemaObject SchemaFields as your_django_field = instrumentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = instrumentProp()
     schema.org description:The object that helped the agent perform the action. e.g. John wrote a book with *a pen*.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class objectProp(SchemaProperty):
 
     """
     SchemaField for object
-    Usage: Include in SchemaObject SchemaFields as your_django_field = objectProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = objectProp()
     schema.org description:The object upon the action is carried out, whose state is kept intact or changed. Also known as the semantic roles patient, affected or undergoer (which change their state) or theme (which doesn&#39;t). e.g. John read *a book*.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class participantProp(SchemaProperty):
 
     """
     SchemaField for participant
-    Usage: Include in SchemaObject SchemaFields as your_django_field = participantProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = participantProp()
     schema.org description:Other co-agents that participated in the action indirectly. e.g. John wrote a book with *Steve*.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class locationProp(SchemaProperty):
 
     """
     SchemaField for location
-    Usage: Include in SchemaObject SchemaFields as your_django_field = locationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = locationProp()
     schema.org description:The location of the event, organization or action.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class startTimeProp(SchemaProperty):
 
     """
     SchemaField for startTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = startTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = startTimeProp()
     schema.org description:When the Action was performed: start time. This is for actions that span a period of time. e.g. John wrote a book from *January* to December.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class targetProp(SchemaProperty):
 
     """
     SchemaField for target
-    Usage: Include in SchemaObject SchemaFields as your_django_field = targetProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = targetProp()
     schema.org description:Indicates a target EntryPoint for an Action.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class endTimeProp(SchemaProperty):
 
     """
     SchemaField for endTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = endTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = endTimeProp()
     schema.org description:When the Action was performed: end time. This is for actions that span a period of time. e.g. John wrote a book from January to *December*.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class agentProp(SchemaProperty):
 
     """
     SchemaField for agent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = agentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = agentProp()
     schema.org description:The direct performer or driver of the action (animate or inanimate). e.g. *John* wrote a book.
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class resultProp(SchemaProperty):
 
     """
     SchemaField for result
-    Usage: Include in SchemaObject SchemaFields as your_django_field = resultProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = resultProp()
     schema.org description:The result produced in the action. e.g. John wrote *a book*.
 
     prop_schema returns just the property without url#

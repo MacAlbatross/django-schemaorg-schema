@@ -22,7 +22,7 @@ class studyDesignProp(SchemaProperty):
 
     """
     SchemaField for studyDesign
-    Usage: Include in SchemaObject SchemaFields as your_django_field = studyDesignProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = studyDesignProp()
     schema.org description:Specifics about the observational study design (enumerated).
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class dropoffTimeProp(SchemaProperty):
 
     """
     SchemaField for dropoffTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dropoffTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dropoffTimeProp()
     schema.org description:When a rental car can be dropped off.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class dropoffLocationProp(SchemaProperty):
 
     """
     SchemaField for dropoffLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dropoffLocationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dropoffLocationProp()
     schema.org description:Where a rental car can be dropped off.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class pickupTimeProp(SchemaProperty):
 
     """
     SchemaField for pickupTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = pickupTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = pickupTimeProp()
     schema.org description:When a taxi will pickup a passenger or a rental car can be picked up.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class pickupLocationProp(SchemaProperty):
 
     """
     SchemaField for pickupLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = pickupLocationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = pickupLocationProp()
     schema.org description:Where a taxi will pick up a passenger or a rental car can be picked up.
 
     prop_schema returns just the property without url#

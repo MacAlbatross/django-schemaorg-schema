@@ -21,7 +21,7 @@ class estimatesRiskOfProp(SchemaProperty):
 
     """
     SchemaField for estimatesRiskOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = estimatesRiskOfProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = estimatesRiskOfProp()
     schema.org description:The condition, complication, or symptom whose risk is being estimated.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class includedRiskFactorProp(SchemaProperty):
 
     """
     SchemaField for includedRiskFactor
-    Usage: Include in SchemaObject SchemaFields as your_django_field = includedRiskFactorProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = includedRiskFactorProp()
     schema.org description:A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.
 
     prop_schema returns just the property without url#

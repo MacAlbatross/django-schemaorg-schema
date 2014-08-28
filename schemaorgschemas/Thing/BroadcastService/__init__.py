@@ -20,7 +20,7 @@ class broadcasterProp(SchemaProperty):
 
     """
     SchemaField for broadcaster
-    Usage: Include in SchemaObject SchemaFields as your_django_field = broadcasterProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = broadcasterProp()
     schema.org description:The organization owning or operating the broadcast service.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class parentServiceProp(SchemaProperty):
 
     """
     SchemaField for parentService
-    Usage: Include in SchemaObject SchemaFields as your_django_field = parentServiceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = parentServiceProp()
     schema.org description:A broadcast service to which the broadcast service may belong to such as regional variations of a national channel.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class areaProp(SchemaProperty):
 
     """
     SchemaField for area
-    Usage: Include in SchemaObject SchemaFields as your_django_field = areaProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = areaProp()
     schema.org description:The area within which users can expect to reach the broadcast service.
 
     prop_schema returns just the property without url#

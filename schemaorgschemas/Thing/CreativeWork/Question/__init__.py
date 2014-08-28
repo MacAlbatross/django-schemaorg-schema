@@ -21,7 +21,7 @@ class answerCountProp(SchemaProperty):
 
     """
     SchemaField for answerCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = answerCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = answerCountProp()
     schema.org description:The number of answers this question has received.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class downvoteCountProp(SchemaProperty):
 
     """
     SchemaField for downvoteCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = downvoteCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = downvoteCountProp()
     schema.org description:The number of downvotes this question has received from the community.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class upvoteCountProp(SchemaProperty):
 
     """
     SchemaField for upvoteCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = upvoteCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = upvoteCountProp()
     schema.org description:The number of upvotes this question has received from the community.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class suggestedAnswerProp(SchemaProperty):
 
     """
     SchemaField for suggestedAnswer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = suggestedAnswerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = suggestedAnswerProp()
     schema.org description:An answer (possibly one of several, possibly incorrect) to a Question, e.g. on a Question/Answer site, often collected in a QAPage.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class acceptedAnswerProp(SchemaProperty):
 
     """
     SchemaField for acceptedAnswer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = acceptedAnswerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = acceptedAnswerProp()
     schema.org description:The answer that has been accepted as best, typically on a Question/Answer site. Sites vary in their selection mechanisms, e.g. drawing on community opinion and/or the view of the Question author.
 
     prop_schema returns just the property without url#

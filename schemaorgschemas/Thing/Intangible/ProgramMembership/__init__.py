@@ -20,7 +20,7 @@ class hostingOrganizationProp(SchemaProperty):
 
     """
     SchemaField for hostingOrganization
-    Usage: Include in SchemaObject SchemaFields as your_django_field = hostingOrganizationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = hostingOrganizationProp()
     schema.org description:The organization (airline, travelers&#39; club, etc.) the membership is made with.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class memberProp(SchemaProperty):
 
     """
     SchemaField for member
-    Usage: Include in SchemaObject SchemaFields as your_django_field = memberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = memberProp()
     schema.org description:A member of this organization. Supercedes members.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class membershipNumberProp(SchemaProperty):
 
     """
     SchemaField for membershipNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = membershipNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = membershipNumberProp()
     schema.org description:A unique identifier for the membership.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class programNameProp(SchemaProperty):
 
     """
     SchemaField for programName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = programNameProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = programNameProp()
     schema.org description:The program providing the membership.
 
     prop_schema returns just the property without url#

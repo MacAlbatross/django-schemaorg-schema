@@ -20,7 +20,7 @@ class startDateProp(SchemaProperty):
 
     """
     SchemaField for startDate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = startDateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = startDateProp()
     schema.org description:The start date and time of the event or item (in ISO 8601 date format).
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class attendeeProp(SchemaProperty):
 
     """
     SchemaField for attendee
-    Usage: Include in SchemaObject SchemaFields as your_django_field = attendeeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = attendeeProp()
     schema.org description:A person or organization attending the event.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class performerProp(SchemaProperty):
 
     """
     SchemaField for performer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = performerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = performerProp()
     schema.org description:A performer at the event-for example, a presenter, musician, musical group or actor. Supercedes performers.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class endDateProp(SchemaProperty):
 
     """
     SchemaField for endDate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = endDateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = endDateProp()
     schema.org description:The end date and time of the event or item (in ISO 8601 date format).
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class previousStartDateProp(SchemaProperty):
 
     """
     SchemaField for previousStartDate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = previousStartDateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = previousStartDateProp()
     schema.org description:Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class superEventProp(SchemaProperty):
 
     """
     SchemaField for superEvent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = superEventProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = superEventProp()
     schema.org description:An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class subEventProp(SchemaProperty):
 
     """
     SchemaField for subEvent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = subEventProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = subEventProp()
     schema.org description:An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference. Supercedes subEvents.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class offersProp(SchemaProperty):
 
     """
     SchemaField for offers
-    Usage: Include in SchemaObject SchemaFields as your_django_field = offersProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = offersProp()
     schema.org description:An offer to provide this item-for example, an offer to sell a product, rent the DVD of a movie, or give away tickets to an event.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class eventStatusProp(SchemaProperty):
 
     """
     SchemaField for eventStatus
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eventStatusProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eventStatusProp()
     schema.org description:An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class typicalAgeRangeProp(SchemaProperty):
 
     """
     SchemaField for typicalAgeRange
-    Usage: Include in SchemaObject SchemaFields as your_django_field = typicalAgeRangeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = typicalAgeRangeProp()
     schema.org description:The typical expected age range, e.g. &#39;7-9&#39;, &#39;11-&#39;.
 
     prop_schema returns just the property without url#
@@ -190,7 +190,7 @@ class durationProp(SchemaProperty):
 
     """
     SchemaField for duration
-    Usage: Include in SchemaObject SchemaFields as your_django_field = durationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = durationProp()
     schema.org description:The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
 
     prop_schema returns just the property without url#
@@ -207,7 +207,7 @@ class workPerformedProp(SchemaProperty):
 
     """
     SchemaField for workPerformed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = workPerformedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = workPerformedProp()
     schema.org description:A work performed in some event, for example a play performed in a TheaterEvent.
 
     prop_schema returns just the property without url#
@@ -224,7 +224,7 @@ class doorTimeProp(SchemaProperty):
 
     """
     SchemaField for doorTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = doorTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = doorTimeProp()
     schema.org description:The time admission will commence.
 
     prop_schema returns just the property without url#
@@ -241,7 +241,7 @@ class locationProp(SchemaProperty):
 
     """
     SchemaField for location
-    Usage: Include in SchemaObject SchemaFields as your_django_field = locationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = locationProp()
     schema.org description:The location of the event, organization or action.
 
     prop_schema returns just the property without url#

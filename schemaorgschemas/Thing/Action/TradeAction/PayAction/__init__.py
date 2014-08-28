@@ -22,7 +22,7 @@ class recipientProp(SchemaProperty):
 
     """
     SchemaField for recipient
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipientProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipientProp()
     schema.org description:A sub property of participant. The participant who is at the receiving end of the action.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class purposeProp(SchemaProperty):
 
     """
     SchemaField for purpose
-    Usage: Include in SchemaObject SchemaFields as your_django_field = purposeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = purposeProp()
     schema.org description:A goal towards an action is taken. Can be concrete or abstract.
 
     prop_schema returns just the property without url#

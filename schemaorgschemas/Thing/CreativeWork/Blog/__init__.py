@@ -21,7 +21,7 @@ class blogPostProp(SchemaProperty):
 
     """
     SchemaField for blogPost
-    Usage: Include in SchemaObject SchemaFields as your_django_field = blogPostProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = blogPostProp()
     schema.org description:A posting that is part of this blog. Supercedes blogPosts.
 
     prop_schema returns just the property without url#

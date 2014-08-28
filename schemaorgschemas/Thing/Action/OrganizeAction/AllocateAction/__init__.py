@@ -21,7 +21,7 @@ class purposeProp(SchemaProperty):
 
     """
     SchemaField for purpose
-    Usage: Include in SchemaObject SchemaFields as your_django_field = purposeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = purposeProp()
     schema.org description:A goal towards an action is taken. Can be concrete or abstract.
 
     prop_schema returns just the property without url#

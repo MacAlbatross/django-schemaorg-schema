@@ -22,7 +22,7 @@ class scheduledTimeProp(SchemaProperty):
 
     """
     SchemaField for scheduledTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = scheduledTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = scheduledTimeProp()
     schema.org description:The time the object is scheduled to.
 
     prop_schema returns just the property without url#

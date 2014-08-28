@@ -21,7 +21,7 @@ class pickupTimeProp(SchemaProperty):
 
     """
     SchemaField for pickupTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = pickupTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = pickupTimeProp()
     schema.org description:When a taxi will pickup a passenger or a rental car can be picked up.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class partySizeProp(SchemaProperty):
 
     """
     SchemaField for partySize
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partySizeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partySizeProp()
     schema.org description:Number of people the reservation should accommodate.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class pickupLocationProp(SchemaProperty):
 
     """
     SchemaField for pickupLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = pickupLocationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = pickupLocationProp()
     schema.org description:Where a taxi will pick up a passenger or a rental car can be picked up.
 
     prop_schema returns just the property without url#

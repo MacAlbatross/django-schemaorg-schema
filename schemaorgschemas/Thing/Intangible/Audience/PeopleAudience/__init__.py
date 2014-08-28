@@ -21,7 +21,7 @@ class requiredMaxAgeProp(SchemaProperty):
 
     """
     SchemaField for requiredMaxAge
-    Usage: Include in SchemaObject SchemaFields as your_django_field = requiredMaxAgeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = requiredMaxAgeProp()
     schema.org description:Audiences defined by a person&#39;s maximum age.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class suggestedMinAgeProp(SchemaProperty):
 
     """
     SchemaField for suggestedMinAge
-    Usage: Include in SchemaObject SchemaFields as your_django_field = suggestedMinAgeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = suggestedMinAgeProp()
     schema.org description:Minimal age recommended for viewing content.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class suggestedMaxAgeProp(SchemaProperty):
 
     """
     SchemaField for suggestedMaxAge
-    Usage: Include in SchemaObject SchemaFields as your_django_field = suggestedMaxAgeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = suggestedMaxAgeProp()
     schema.org description:Maximal age recommended for viewing content.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class requiredMinAgeProp(SchemaProperty):
 
     """
     SchemaField for requiredMinAge
-    Usage: Include in SchemaObject SchemaFields as your_django_field = requiredMinAgeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = requiredMinAgeProp()
     schema.org description:Audiences defined by a person&#39;s minimum age.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class suggestedGenderProp(SchemaProperty):
 
     """
     SchemaField for suggestedGender
-    Usage: Include in SchemaObject SchemaFields as your_django_field = suggestedGenderProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = suggestedGenderProp()
     schema.org description:The gender of the person or audience.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class requiredGenderProp(SchemaProperty):
 
     """
     SchemaField for requiredGender
-    Usage: Include in SchemaObject SchemaFields as your_django_field = requiredGenderProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = requiredGenderProp()
     schema.org description:Audiences defined by a person&#39;s gender.
 
     prop_schema returns just the property without url#
@@ -123,7 +123,7 @@ class healthConditionProp(SchemaProperty):
 
     """
     SchemaField for healthCondition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = healthConditionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = healthConditionProp()
     schema.org description:Expectations for health conditions of target audience
 
     prop_schema returns just the property without url#

@@ -22,7 +22,7 @@ class browserRequirementsProp(SchemaProperty):
 
     """
     SchemaField for browserRequirements
-    Usage: Include in SchemaObject SchemaFields as your_django_field = browserRequirementsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = browserRequirementsProp()
     schema.org description:Specifies browser requirements in human-readable text. For example,&quot;requires HTML5 support&quot;.
 
     prop_schema returns just the property without url#

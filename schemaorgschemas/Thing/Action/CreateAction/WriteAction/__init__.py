@@ -21,7 +21,7 @@ class languageProp(SchemaProperty):
 
     """
     SchemaField for language
-    Usage: Include in SchemaObject SchemaFields as your_django_field = languageProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = languageProp()
     schema.org description:A sub property of instrument. The languaged used on this action.
 
     prop_schema returns just the property without url#

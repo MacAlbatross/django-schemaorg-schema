@@ -21,7 +21,7 @@ class resultReviewProp(SchemaProperty):
 
     """
     SchemaField for resultReview
-    Usage: Include in SchemaObject SchemaFields as your_django_field = resultReviewProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = resultReviewProp()
     schema.org description:A sub property of result. The review that resulted in the performing of the action.
 
     prop_schema returns just the property without url#

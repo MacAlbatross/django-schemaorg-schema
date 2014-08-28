@@ -21,7 +21,7 @@ class relatedConditionProp(SchemaProperty):
 
     """
     SchemaField for relatedCondition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedConditionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedConditionProp()
     schema.org description:A medical condition associated with this anatomy.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class relatedTherapyProp(SchemaProperty):
 
     """
     SchemaField for relatedTherapy
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedTherapyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedTherapyProp()
     schema.org description:A medical therapy related to this anatomy.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class associatedPathophysiologyProp(SchemaProperty):
 
     """
     SchemaField for associatedPathophysiology
-    Usage: Include in SchemaObject SchemaFields as your_django_field = associatedPathophysiologyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = associatedPathophysiologyProp()
     schema.org description:If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class relatedAnatomyProp(SchemaProperty):
 
     """
     SchemaField for relatedAnatomy
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedAnatomyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedAnatomyProp()
     schema.org description:Anatomical systems or structures that relate to the superficial anatomy.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class significanceProp(SchemaProperty):
 
     """
     SchemaField for significance
-    Usage: Include in SchemaObject SchemaFields as your_django_field = significanceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = significanceProp()
     schema.org description:The significance associated with the superficial anatomy; as an example, how characteristics of the superficial anatomy can suggest underlying medical conditions or courses of treatment.
 
     prop_schema returns just the property without url#

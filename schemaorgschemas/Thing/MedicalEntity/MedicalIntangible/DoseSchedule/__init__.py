@@ -21,7 +21,7 @@ class doseUnitProp(SchemaProperty):
 
     """
     SchemaField for doseUnit
-    Usage: Include in SchemaObject SchemaFields as your_django_field = doseUnitProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = doseUnitProp()
     schema.org description:The unit of the dose, e.g. &#39;mg&#39;.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class targetPopulationProp(SchemaProperty):
 
     """
     SchemaField for targetPopulation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = targetPopulationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = targetPopulationProp()
     schema.org description:Characteristics of the population for which this is intended, or which typically uses it, e.g. &#39;adults&#39;.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class doseValueProp(SchemaProperty):
 
     """
     SchemaField for doseValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = doseValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = doseValueProp()
     schema.org description:The value of the dose, e.g. 500.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class frequencyProp(SchemaProperty):
 
     """
     SchemaField for frequency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = frequencyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = frequencyProp()
     schema.org description:How often the dose is taken, e.g. &#39;daily&#39;.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class startTimeProp(SchemaProperty):
 
     """
     SchemaField for startTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = startTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = startTimeProp()
     schema.org description:When the Action was performed: start time. This is for actions that span a period of time. e.g. John wrote a book from *January* to December.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class partySizeProp(SchemaProperty):
 
     """
     SchemaField for partySize
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partySizeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partySizeProp()
     schema.org description:Number of people the reservation should accommodate.
 
     prop_schema returns just the property without url#

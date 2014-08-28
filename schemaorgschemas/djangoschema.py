@@ -52,7 +52,7 @@ class SchemaProperty(object):
 
 class SchemaEnumProperty(SchemaProperty):
     
-    def __init__(self, adapter = None):
+    def __init__(self, adapter=None):
         """The optional adapter is to be used when the current choices values do not match those used by schema.org
         it should be a dictionary with the schema.org enumeration values as keys, and with the values being those 
         currently used by the database.  If no adapter is provided then the system will expect those provided by the 

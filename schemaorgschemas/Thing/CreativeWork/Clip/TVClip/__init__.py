@@ -22,7 +22,7 @@ class partOfSeriesProp(SchemaProperty):
 
     """
     SchemaField for partOfSeries
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeriesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeriesProp()
     schema.org description:The series to which this episode or season belongs. Supercedes partOfTVSeries.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class partOfSeasonProp(SchemaProperty):
 
     """
     SchemaField for partOfSeason
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeasonProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeasonProp()
     schema.org description:The season to which this episode belongs.
 
     prop_schema returns just the property without url#

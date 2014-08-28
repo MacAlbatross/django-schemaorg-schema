@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.Intangible.Audience import geographicAreaProp, audienceTypeProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 from schemaorgschemas.Thing.Intangible.Audience.PeopleAudience import suggestedMinAgeProp, requiredMinAgeProp, suggestedGenderProp, healthConditionProp, requiredMaxAgeProp, suggestedMaxAgeProp, requiredGenderProp
-
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
 

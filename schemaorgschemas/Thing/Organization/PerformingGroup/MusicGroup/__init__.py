@@ -21,7 +21,7 @@ class albumProp(SchemaProperty):
 
     """
     SchemaField for album
-    Usage: Include in SchemaObject SchemaFields as your_django_field = albumProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = albumProp()
     schema.org description:A music album. Supercedes albums.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class trackProp(SchemaProperty):
 
     """
     SchemaField for track
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trackProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trackProp()
     schema.org description:A music recording (track)-usually a single song. Supercedes tracks.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class musicGroupMemberProp(SchemaProperty):
 
     """
     SchemaField for musicGroupMember
-    Usage: Include in SchemaObject SchemaFields as your_django_field = musicGroupMemberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = musicGroupMemberProp()
     schema.org description:A member of the music group-for example, John, Paul, George, or Ringo.
 
     prop_schema returns just the property without url#

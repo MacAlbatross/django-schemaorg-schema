@@ -22,7 +22,7 @@ class regionDrainedProp(SchemaProperty):
 
     """
     SchemaField for regionDrained
-    Usage: Include in SchemaObject SchemaFields as your_django_field = regionDrainedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = regionDrainedProp()
     schema.org description:The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class drainsToProp(SchemaProperty):
 
     """
     SchemaField for drainsTo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = drainsToProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = drainsToProp()
     schema.org description:The vasculature that the vein drains into.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class tributaryProp(SchemaProperty):
 
     """
     SchemaField for tributary
-    Usage: Include in SchemaObject SchemaFields as your_django_field = tributaryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = tributaryProp()
     schema.org description:The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
 
     prop_schema returns just the property without url#

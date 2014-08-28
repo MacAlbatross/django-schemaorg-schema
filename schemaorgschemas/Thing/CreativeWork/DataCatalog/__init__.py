@@ -21,7 +21,7 @@ class datasetProp(SchemaProperty):
 
     """
     SchemaField for dataset
-    Usage: Include in SchemaObject SchemaFields as your_django_field = datasetProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = datasetProp()
     schema.org description:A dataset contained in a catalog.
 
     prop_schema returns just the property without url#

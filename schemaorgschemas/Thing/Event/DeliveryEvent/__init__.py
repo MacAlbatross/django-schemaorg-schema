@@ -21,7 +21,7 @@ class availableFromProp(SchemaProperty):
 
     """
     SchemaField for availableFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availableFromProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availableFromProp()
     schema.org description:When the item is available for pickup from the store, locker, etc.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class availableThroughProp(SchemaProperty):
 
     """
     SchemaField for availableThrough
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availableThroughProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availableThroughProp()
     schema.org description:After this date, the item will no longer be available for pickup.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class hasDeliveryMethodProp(SchemaProperty):
 
     """
     SchemaField for hasDeliveryMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = hasDeliveryMethodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = hasDeliveryMethodProp()
     schema.org description:Method used for delivery or shipping.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class accessCodeProp(SchemaProperty):
 
     """
     SchemaField for accessCode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = accessCodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = accessCodeProp()
     schema.org description:Password, PIN, or access code needed for delivery (e.g. from a locker).
 
     prop_schema returns just the property without url#

@@ -22,7 +22,7 @@ class drugProp(SchemaProperty):
 
     """
     SchemaField for drug
-    Usage: Include in SchemaObject SchemaFields as your_django_field = drugProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = drugProp()
     schema.org description:A drug in this drug class.
 
     prop_schema returns just the property without url#

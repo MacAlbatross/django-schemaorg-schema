@@ -21,7 +21,7 @@ class articleBodyProp(SchemaProperty):
 
     """
     SchemaField for articleBody
-    Usage: Include in SchemaObject SchemaFields as your_django_field = articleBodyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = articleBodyProp()
     schema.org description:The actual body of the article.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class wordCountProp(SchemaProperty):
 
     """
     SchemaField for wordCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = wordCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = wordCountProp()
     schema.org description:The number of words in the text of the Article.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class articleSectionProp(SchemaProperty):
 
     """
     SchemaField for articleSection
-    Usage: Include in SchemaObject SchemaFields as your_django_field = articleSectionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = articleSectionProp()
     schema.org description:Articles may belong to one or more &#39;sections&#39; in a magazine or newspaper, such as Sports, Lifestyle, etc.
 
     prop_schema returns just the property without url#

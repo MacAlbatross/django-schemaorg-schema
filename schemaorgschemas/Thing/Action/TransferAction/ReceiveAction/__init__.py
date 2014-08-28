@@ -22,7 +22,7 @@ class deliveryMethodProp(SchemaProperty):
 
     """
     SchemaField for deliveryMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryMethodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryMethodProp()
     schema.org description:A sub property of instrument. The method of delivery
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class senderProp(SchemaProperty):
 
     """
     SchemaField for sender
-    Usage: Include in SchemaObject SchemaFields as your_django_field = senderProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = senderProp()
     schema.org description:A sub property of participant. The participant who is at the sending end of the action.
 
     prop_schema returns just the property without url#

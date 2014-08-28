@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.CreativeWork.MediaObject import contentUrlProp, uploadDateProp, playerTypeProp, encodesCreativeWorkProp, productionCompanyProp, expiresProp, interactionCountProp, heightProp, encodingFormatProp, associatedArticleProp, offersProp, publicationProp, durationProp, requiresSubscriptionProp, embedUrlProp, regionsAllowedProp, bitrateProp, widthProp, contentSizeProp
-from schemaorgschemas.Thing.CreativeWork import commentProp, copyrightYearProp, versionProp, creatorProp, textProp, citationProp, interactionCountProp, datePublishedProp, commentCountProp, associatedMediaProp, alternativeHeadlineProp, accountablePersonProp, videoProp, typicalAgeRangeProp, contributorProp, thumbnailUrlProp, accessibilityFeatureProp, interactivityTypeProp, discussionUrlProp, authorProp, headlineProp, reviewProp, encodingProp, contentRatingProp, offersProp, editorProp, providerProp, publishingPrinciplesProp, accessibilityHazardProp, dateModifiedProp, timeRequiredProp, educationalAlignmentProp, learningResourceTypeProp, awardProp, dateCreatedProp, copyrightHolderProp, genreProp, contentLocationProp, educationalUseProp, accessibilityAPIProp, publisherProp, aboutProp, aggregateRatingProp, sourceOrganizationProp, inLanguageProp, isFamilyFriendlyProp, audienceProp, accessibilityControlProp, keywordsProp, mentionsProp, audioProp, isBasedOnUrlProp
+from schemaorgschemas.Thing.CreativeWork import commentProp, copyrightYearProp, versionProp, creatorProp, textProp, citationProp, datePublishedProp, commentCountProp, associatedMediaProp, alternativeHeadlineProp, accountablePersonProp, videoProp, typicalAgeRangeProp, contributorProp, thumbnailUrlProp, accessibilityFeatureProp, interactivityTypeProp, discussionUrlProp, authorProp, headlineProp, reviewProp, encodingProp, contentRatingProp, editorProp, providerProp, publishingPrinciplesProp, accessibilityHazardProp, dateModifiedProp, timeRequiredProp, educationalAlignmentProp, learningResourceTypeProp, awardProp, dateCreatedProp, copyrightHolderProp, genreProp, contentLocationProp, educationalUseProp, accessibilityAPIProp, publisherProp, aboutProp, aggregateRatingProp, sourceOrganizationProp, inLanguageProp, isFamilyFriendlyProp, audienceProp, accessibilityControlProp, keywordsProp, mentionsProp, audioProp, isBasedOnUrlProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -22,7 +22,7 @@ class captionProp(SchemaProperty):
 
     """
     SchemaField for caption
-    Usage: Include in SchemaObject SchemaFields as your_django_field = captionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = captionProp()
     schema.org description:The caption for this object.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class videoQualityProp(SchemaProperty):
 
     """
     SchemaField for videoQuality
-    Usage: Include in SchemaObject SchemaFields as your_django_field = videoQualityProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = videoQualityProp()
     schema.org description:The quality of the video.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class productionCompanyProp(SchemaProperty):
 
     """
     SchemaField for productionCompany
-    Usage: Include in SchemaObject SchemaFields as your_django_field = productionCompanyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = productionCompanyProp()
     schema.org description:The production company or studio that made the movie, tv/radio series, season, or episode, or media object.
 
     prop_schema returns just the property without url#
@@ -73,7 +73,7 @@ class transcriptProp(SchemaProperty):
 
     """
     SchemaField for transcript
-    Usage: Include in SchemaObject SchemaFields as your_django_field = transcriptProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = transcriptProp()
     schema.org description:If this MediaObject is an AudioObject or VideoObject, the transcript of that object.
 
     prop_schema returns just the property without url#
@@ -90,7 +90,7 @@ class thumbnailProp(SchemaProperty):
 
     """
     SchemaField for thumbnail
-    Usage: Include in SchemaObject SchemaFields as your_django_field = thumbnailProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = thumbnailProp()
     schema.org description:Thumbnail image for an image or video.
 
     prop_schema returns just the property without url#
@@ -107,7 +107,7 @@ class videoFrameSizeProp(SchemaProperty):
 
     """
     SchemaField for videoFrameSize
-    Usage: Include in SchemaObject SchemaFields as your_django_field = videoFrameSizeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = videoFrameSizeProp()
     schema.org description:The frame size of the video.
 
     prop_schema returns just the property without url#

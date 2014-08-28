@@ -21,7 +21,7 @@ class eventProp(SchemaProperty):
 
     """
     SchemaField for event
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eventProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eventProp()
     schema.org description:Upcoming or past event associated with this place or organization. Supercedes events.
 
     prop_schema returns just the property without url#

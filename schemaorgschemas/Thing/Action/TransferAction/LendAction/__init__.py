@@ -22,7 +22,7 @@ class borrowerProp(SchemaProperty):
 
     """
     SchemaField for borrower
-    Usage: Include in SchemaObject SchemaFields as your_django_field = borrowerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = borrowerProp()
     schema.org description:A sub property of participant. The person that borrows the object being lent.
 
     prop_schema returns just the property without url#

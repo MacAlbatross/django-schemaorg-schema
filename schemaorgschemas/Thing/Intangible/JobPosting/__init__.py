@@ -20,7 +20,7 @@ class educationRequirementsProp(SchemaProperty):
 
     """
     SchemaField for educationRequirements
-    Usage: Include in SchemaObject SchemaFields as your_django_field = educationRequirementsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = educationRequirementsProp()
     schema.org description:Educational background needed for the position.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class experienceRequirementsProp(SchemaProperty):
 
     """
     SchemaField for experienceRequirements
-    Usage: Include in SchemaObject SchemaFields as your_django_field = experienceRequirementsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = experienceRequirementsProp()
     schema.org description:Description of skills and experience needed for the position.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class specialCommitmentsProp(SchemaProperty):
 
     """
     SchemaField for specialCommitments
-    Usage: Include in SchemaObject SchemaFields as your_django_field = specialCommitmentsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = specialCommitmentsProp()
     schema.org description:Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class benefitsProp(SchemaProperty):
 
     """
     SchemaField for benefits
-    Usage: Include in SchemaObject SchemaFields as your_django_field = benefitsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = benefitsProp()
     schema.org description:Description of benefits associated with the job.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class salaryCurrencyProp(SchemaProperty):
 
     """
     SchemaField for salaryCurrency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = salaryCurrencyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = salaryCurrencyProp()
     schema.org description:The currency (coded using ISO 4217, http://en.wikipedia.org/wiki/ISO_4217 used for the main salary information in this job posting.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class titleProp(SchemaProperty):
 
     """
     SchemaField for title
-    Usage: Include in SchemaObject SchemaFields as your_django_field = titleProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = titleProp()
     schema.org description:The title of the job.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class employmentTypeProp(SchemaProperty):
 
     """
     SchemaField for employmentType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = employmentTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = employmentTypeProp()
     schema.org description:Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class qualificationsProp(SchemaProperty):
 
     """
     SchemaField for qualifications
-    Usage: Include in SchemaObject SchemaFields as your_django_field = qualificationsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = qualificationsProp()
     schema.org description:Specific qualifications required for this role.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class industryProp(SchemaProperty):
 
     """
     SchemaField for industry
-    Usage: Include in SchemaObject SchemaFields as your_django_field = industryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = industryProp()
     schema.org description:The industry associated with the job position.
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class incentivesProp(SchemaProperty):
 
     """
     SchemaField for incentives
-    Usage: Include in SchemaObject SchemaFields as your_django_field = incentivesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = incentivesProp()
     schema.org description:Description of bonus and commission compensation aspects of the job.
 
     prop_schema returns just the property without url#
@@ -190,7 +190,7 @@ class datePostedProp(SchemaProperty):
 
     """
     SchemaField for datePosted
-    Usage: Include in SchemaObject SchemaFields as your_django_field = datePostedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = datePostedProp()
     schema.org description:Publication date for the job posting.
 
     prop_schema returns just the property without url#
@@ -207,7 +207,7 @@ class skillsProp(SchemaProperty):
 
     """
     SchemaField for skills
-    Usage: Include in SchemaObject SchemaFields as your_django_field = skillsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = skillsProp()
     schema.org description:Skills required to fulfill this role.
 
     prop_schema returns just the property without url#
@@ -224,7 +224,7 @@ class responsibilitiesProp(SchemaProperty):
 
     """
     SchemaField for responsibilities
-    Usage: Include in SchemaObject SchemaFields as your_django_field = responsibilitiesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = responsibilitiesProp()
     schema.org description:Responsibilities associated with this role.
 
     prop_schema returns just the property without url#
@@ -241,7 +241,7 @@ class workHoursProp(SchemaProperty):
 
     """
     SchemaField for workHours
-    Usage: Include in SchemaObject SchemaFields as your_django_field = workHoursProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = workHoursProp()
     schema.org description:The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).
 
     prop_schema returns just the property without url#
@@ -258,7 +258,7 @@ class jobLocationProp(SchemaProperty):
 
     """
     SchemaField for jobLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = jobLocationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = jobLocationProp()
     schema.org description:A (typically single) geographic location associated with the job position.
 
     prop_schema returns just the property without url#
@@ -275,7 +275,7 @@ class baseSalaryProp(SchemaProperty):
 
     """
     SchemaField for baseSalary
-    Usage: Include in SchemaObject SchemaFields as your_django_field = baseSalaryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = baseSalaryProp()
     schema.org description:The base salary of the job.
 
     prop_schema returns just the property without url#
@@ -292,7 +292,7 @@ class hiringOrganizationProp(SchemaProperty):
 
     """
     SchemaField for hiringOrganization
-    Usage: Include in SchemaObject SchemaFields as your_django_field = hiringOrganizationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = hiringOrganizationProp()
     schema.org description:Organization offering the job position.
 
     prop_schema returns just the property without url#
@@ -309,7 +309,7 @@ class occupationalCategoryProp(SchemaProperty):
 
     """
     SchemaField for occupationalCategory
-    Usage: Include in SchemaObject SchemaFields as your_django_field = occupationalCategoryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = occupationalCategoryProp()
     schema.org description:Category or categories describing the job. Use BLS O*NET-SOC taxonomy: http://www.onetcenter.org/taxonomy.html. Ideally includes textual label and formal code, with the property repeated for each applicable value.
 
     prop_schema returns just the property without url#

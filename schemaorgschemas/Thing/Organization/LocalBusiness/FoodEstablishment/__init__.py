@@ -23,7 +23,7 @@ class menuProp(SchemaProperty):
 
     """
     SchemaField for menu
-    Usage: Include in SchemaObject SchemaFields as your_django_field = menuProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = menuProp()
     schema.org description:Either the actual menu or a URL of the menu.
 
     prop_schema returns just the property without url#
@@ -40,7 +40,7 @@ class servesCuisineProp(SchemaProperty):
 
     """
     SchemaField for servesCuisine
-    Usage: Include in SchemaObject SchemaFields as your_django_field = servesCuisineProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = servesCuisineProp()
     schema.org description:The cuisine of the restaurant.
 
     prop_schema returns just the property without url#
@@ -57,7 +57,7 @@ class acceptsReservationsProp(SchemaProperty):
 
     """
     SchemaField for acceptsReservations
-    Usage: Include in SchemaObject SchemaFields as your_django_field = acceptsReservationsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = acceptsReservationsProp()
     schema.org description:Either Yes/No, or a URL at which reservations can be made.
 
     prop_schema returns just the property without url#

@@ -24,7 +24,7 @@ class activityFrequencyProp(SchemaProperty):
 
     """
     SchemaField for activityFrequency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = activityFrequencyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = activityFrequencyProp()
     schema.org description:How often one should engage in the activity.
 
     prop_schema returns just the property without url#
@@ -41,7 +41,7 @@ class workloadProp(SchemaProperty):
 
     """
     SchemaField for workload
-    Usage: Include in SchemaObject SchemaFields as your_django_field = workloadProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = workloadProp()
     schema.org description:Quantitative measure of the physiologic output of the exercise; also referred to as energy expenditure.
 
     prop_schema returns just the property without url#
@@ -58,7 +58,7 @@ class activityDurationProp(SchemaProperty):
 
     """
     SchemaField for activityDuration
-    Usage: Include in SchemaObject SchemaFields as your_django_field = activityDurationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = activityDurationProp()
     schema.org description:Length of time to engage in the activity.
 
     prop_schema returns just the property without url#
@@ -75,7 +75,7 @@ class exerciseTypeProp(SchemaProperty):
 
     """
     SchemaField for exerciseType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = exerciseTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = exerciseTypeProp()
     schema.org description:Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.
 
     prop_schema returns just the property without url#
@@ -92,7 +92,7 @@ class repetitionsProp(SchemaProperty):
 
     """
     SchemaField for repetitions
-    Usage: Include in SchemaObject SchemaFields as your_django_field = repetitionsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = repetitionsProp()
     schema.org description:Number of times one should repeat the activity.
 
     prop_schema returns just the property without url#
@@ -109,7 +109,7 @@ class restPeriodsProp(SchemaProperty):
 
     """
     SchemaField for restPeriods
-    Usage: Include in SchemaObject SchemaFields as your_django_field = restPeriodsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = restPeriodsProp()
     schema.org description:How often one should break from the activity.
 
     prop_schema returns just the property without url#
@@ -126,7 +126,7 @@ class intensityProp(SchemaProperty):
 
     """
     SchemaField for intensity
-    Usage: Include in SchemaObject SchemaFields as your_django_field = intensityProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = intensityProp()
     schema.org description:Quantitative measure gauging the degree of force involved in the exercise, for example, heartbeats per minute. May include the velocity of the movement.
 
     prop_schema returns just the property without url#
@@ -143,7 +143,7 @@ class additionalVariableProp(SchemaProperty):
 
     """
     SchemaField for additionalVariable
-    Usage: Include in SchemaObject SchemaFields as your_django_field = additionalVariableProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = additionalVariableProp()
     schema.org description:Any additional component of the exercise prescription that may need to be articulated to the patient. This may include the order of exercises, the number of repetitions of movement, quantitative distance, progressions over time, etc.
 
     prop_schema returns just the property without url#

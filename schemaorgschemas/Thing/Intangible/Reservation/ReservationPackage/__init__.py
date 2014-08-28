@@ -21,7 +21,7 @@ class subReservationProp(SchemaProperty):
 
     """
     SchemaField for subReservation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = subReservationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = subReservationProp()
     schema.org description:The individual reservations included in the package. Typically a repeated property.
 
     prop_schema returns just the property without url#

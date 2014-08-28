@@ -23,7 +23,7 @@ class proprietaryNameProp(SchemaProperty):
 
     """
     SchemaField for proprietaryName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = proprietaryNameProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = proprietaryNameProp()
     schema.org description:Proprietary name given to the diet plan, typically by its originator or creator.
 
     prop_schema returns just the property without url#
@@ -40,7 +40,7 @@ class risksProp(SchemaProperty):
 
     """
     SchemaField for risks
-    Usage: Include in SchemaObject SchemaFields as your_django_field = risksProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = risksProp()
     schema.org description:Specific physiologic risks associated to the plan.
 
     prop_schema returns just the property without url#
@@ -57,7 +57,7 @@ class physiologicalBenefitsProp(SchemaProperty):
 
     """
     SchemaField for physiologicalBenefits
-    Usage: Include in SchemaObject SchemaFields as your_django_field = physiologicalBenefitsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = physiologicalBenefitsProp()
     schema.org description:Specific physiologic benefits associated to the plan.
 
     prop_schema returns just the property without url#
@@ -74,7 +74,7 @@ class overviewProp(SchemaProperty):
 
     """
     SchemaField for overview
-    Usage: Include in SchemaObject SchemaFields as your_django_field = overviewProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = overviewProp()
     schema.org description:Descriptive information establishing the overarching theory/philosophy of the plan. May include the rationale for the name, the population where the plan first came to prominence, etc.
 
     prop_schema returns just the property without url#
@@ -91,7 +91,7 @@ class expertConsiderationsProp(SchemaProperty):
 
     """
     SchemaField for expertConsiderations
-    Usage: Include in SchemaObject SchemaFields as your_django_field = expertConsiderationsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = expertConsiderationsProp()
     schema.org description:Medical expert advice related to the plan.
 
     prop_schema returns just the property without url#
@@ -108,7 +108,7 @@ class endorsersProp(SchemaProperty):
 
     """
     SchemaField for endorsers
-    Usage: Include in SchemaObject SchemaFields as your_django_field = endorsersProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = endorsersProp()
     schema.org description:People or organizations that endorse the plan.
 
     prop_schema returns just the property without url#
@@ -125,7 +125,7 @@ class dietFeaturesProp(SchemaProperty):
 
     """
     SchemaField for dietFeatures
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dietFeaturesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dietFeaturesProp()
     schema.org description:Nutritional information specific to the dietary plan. May include dietary recommendations on what foods to avoid, what foods to consume, and specific alterations/deviations from the USDA or other regulatory body&#39;s approved dietary guidelines.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class educationalRoleProp(SchemaProperty):
 
     """
     SchemaField for educationalRole
-    Usage: Include in SchemaObject SchemaFields as your_django_field = educationalRoleProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = educationalRoleProp()
     schema.org description:An educationalRole of an EducationalAudience
 
     prop_schema returns just the property without url#

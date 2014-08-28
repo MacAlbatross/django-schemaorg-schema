@@ -22,7 +22,7 @@ class childMaxAgeProp(SchemaProperty):
 
     """
     SchemaField for childMaxAge
-    Usage: Include in SchemaObject SchemaFields as your_django_field = childMaxAgeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = childMaxAgeProp()
     schema.org description:Maximal age of the child
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class childMinAgeProp(SchemaProperty):
 
     """
     SchemaField for childMinAge
-    Usage: Include in SchemaObject SchemaFields as your_django_field = childMinAgeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = childMinAgeProp()
     schema.org description:Minimal age of the child
 
     prop_schema returns just the property without url#

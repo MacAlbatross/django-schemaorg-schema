@@ -21,7 +21,7 @@ class predecessorOfProp(SchemaProperty):
 
     """
     SchemaField for predecessorOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = predecessorOfProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = predecessorOfProp()
     schema.org description:A pointer from a previous, often discontinued variant of the product to its newer variant.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class successorOfProp(SchemaProperty):
 
     """
     SchemaField for successorOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = successorOfProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = successorOfProp()
     schema.org description:A pointer from a newer variant of a product to its previous, often discontinued predecessor.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class isVariantOfProp(SchemaProperty):
 
     """
     SchemaField for isVariantOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = isVariantOfProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isVariantOfProp()
     schema.org description:A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive.
 
     prop_schema returns just the property without url#

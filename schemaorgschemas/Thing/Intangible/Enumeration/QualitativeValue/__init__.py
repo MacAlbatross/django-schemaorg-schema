@@ -20,7 +20,7 @@ class lesserProp(SchemaProperty):
 
     """
     SchemaField for lesser
-    Usage: Include in SchemaObject SchemaFields as your_django_field = lesserProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = lesserProp()
     schema.org description:This ordering relation for qualitative values indicates that the subject is lesser than the object.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class valueReferenceProp(SchemaProperty):
 
     """
     SchemaField for valueReference
-    Usage: Include in SchemaObject SchemaFields as your_django_field = valueReferenceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = valueReferenceProp()
     schema.org description:A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class greaterOrEqualProp(SchemaProperty):
 
     """
     SchemaField for greaterOrEqual
-    Usage: Include in SchemaObject SchemaFields as your_django_field = greaterOrEqualProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = greaterOrEqualProp()
     schema.org description:This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class lesserOrEqualProp(SchemaProperty):
 
     """
     SchemaField for lesserOrEqual
-    Usage: Include in SchemaObject SchemaFields as your_django_field = lesserOrEqualProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = lesserOrEqualProp()
     schema.org description:This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class nonEqualProp(SchemaProperty):
 
     """
     SchemaField for nonEqual
-    Usage: Include in SchemaObject SchemaFields as your_django_field = nonEqualProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = nonEqualProp()
     schema.org description:This ordering relation for qualitative values indicates that the subject is not equal to the object.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class equalProp(SchemaProperty):
 
     """
     SchemaField for equal
-    Usage: Include in SchemaObject SchemaFields as your_django_field = equalProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = equalProp()
     schema.org description:This ordering relation for qualitative values indicates that the subject is equal to the object.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class greaterProp(SchemaProperty):
 
     """
     SchemaField for greater
-    Usage: Include in SchemaObject SchemaFields as your_django_field = greaterProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = greaterProp()
     schema.org description:This ordering relation for qualitative values indicates that the subject is greater than the object.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class priceProp(SchemaProperty):
 
     """
     SchemaField for price
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceProp()
     schema.org description:The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.
 
     prop_schema returns just the property without url#

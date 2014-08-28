@@ -23,7 +23,7 @@ class availableServiceProp(SchemaProperty):
 
     """
     SchemaField for availableService
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availableServiceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availableServiceProp()
     schema.org description:A medical service available from this provider.
 
     prop_schema returns just the property without url#
@@ -40,7 +40,7 @@ class medicalSpecialtyProp(SchemaProperty):
 
     """
     SchemaField for medicalSpecialty
-    Usage: Include in SchemaObject SchemaFields as your_django_field = medicalSpecialtyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = medicalSpecialtyProp()
     schema.org description:A medical specialty of the provider.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class increasesRiskOfProp(SchemaProperty):
 
     """
     SchemaField for increasesRiskOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = increasesRiskOfProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = increasesRiskOfProp()
     schema.org description:The condition, complication, etc. influenced by this factor.
 
     prop_schema returns just the property without url#

@@ -22,7 +22,7 @@ class buyerProp(SchemaProperty):
 
     """
     SchemaField for buyer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = buyerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = buyerProp()
     schema.org description:A sub property of participant. The participant/person/organization that bought the object.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class warrantyPromiseProp(SchemaProperty):
 
     """
     SchemaField for warrantyPromise
-    Usage: Include in SchemaObject SchemaFields as your_django_field = warrantyPromiseProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = warrantyPromiseProp()
     schema.org description:The warranty promise(s) included in the offer.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class checkoutTimeProp(SchemaProperty):
 
     """
     SchemaField for checkoutTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = checkoutTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = checkoutTimeProp()
     schema.org description:The latest someone may check out of a lodging establishment.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class lodgingUnitTypeProp(SchemaProperty):
 
     """
     SchemaField for lodgingUnitType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = lodgingUnitTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = lodgingUnitTypeProp()
     schema.org description:Textual description of the unit type (including suite vs. room, size of bed, etc.).
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class lodgingUnitDescriptionProp(SchemaProperty):
 
     """
     SchemaField for lodgingUnitDescription
-    Usage: Include in SchemaObject SchemaFields as your_django_field = lodgingUnitDescriptionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = lodgingUnitDescriptionProp()
     schema.org description:A full description of the lodging unit.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class checkinTimeProp(SchemaProperty):
 
     """
     SchemaField for checkinTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = checkinTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = checkinTimeProp()
     schema.org description:The earliest someone may check into a lodging establishment.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class numAdultsProp(SchemaProperty):
 
     """
     SchemaField for numAdults
-    Usage: Include in SchemaObject SchemaFields as your_django_field = numAdultsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = numAdultsProp()
     schema.org description:The number of adults staying in the unit.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class numChildrenProp(SchemaProperty):
 
     """
     SchemaField for numChildren
-    Usage: Include in SchemaObject SchemaFields as your_django_field = numChildrenProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = numChildrenProp()
     schema.org description:The number of children staying in the unit.
 
     prop_schema returns just the property without url#

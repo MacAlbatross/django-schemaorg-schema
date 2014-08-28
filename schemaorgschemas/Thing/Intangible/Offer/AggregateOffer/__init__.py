@@ -21,7 +21,7 @@ class lowPriceProp(SchemaProperty):
 
     """
     SchemaField for lowPrice
-    Usage: Include in SchemaObject SchemaFields as your_django_field = lowPriceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = lowPriceProp()
     schema.org description:The lowest price of all offers available.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class highPriceProp(SchemaProperty):
 
     """
     SchemaField for highPrice
-    Usage: Include in SchemaObject SchemaFields as your_django_field = highPriceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = highPriceProp()
     schema.org description:The highest price of all offers available.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class offerCountProp(SchemaProperty):
 
     """
     SchemaField for offerCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = offerCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = offerCountProp()
     schema.org description:The number of offers for the product.
 
     prop_schema returns just the property without url#

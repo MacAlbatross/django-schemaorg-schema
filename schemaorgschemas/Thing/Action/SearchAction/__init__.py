@@ -21,7 +21,7 @@ class queryProp(SchemaProperty):
 
     """
     SchemaField for query
-    Usage: Include in SchemaObject SchemaFields as your_django_field = queryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = queryProp()
     schema.org description:A sub property of instrument. The query used on this action.
 
     prop_schema returns just the property without url#

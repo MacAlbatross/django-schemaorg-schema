@@ -22,7 +22,7 @@ class sensoryUnitProp(SchemaProperty):
 
     """
     SchemaField for sensoryUnit
-    Usage: Include in SchemaObject SchemaFields as your_django_field = sensoryUnitProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sensoryUnitProp()
     schema.org description:The neurological pathway extension that inputs and sends information to the brain or spinal cord.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class nerveMotorProp(SchemaProperty):
 
     """
     SchemaField for nerveMotor
-    Usage: Include in SchemaObject SchemaFields as your_django_field = nerveMotorProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = nerveMotorProp()
     schema.org description:The neurological pathway extension that involves muscle control.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class branchProp(SchemaProperty):
 
     """
     SchemaField for branch
-    Usage: Include in SchemaObject SchemaFields as your_django_field = branchProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = branchProp()
     schema.org description:The branches that delineate from the nerve bundle.
 
     prop_schema returns just the property without url#
@@ -73,7 +73,7 @@ class sourcedFromProp(SchemaProperty):
 
     """
     SchemaField for sourcedFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = sourcedFromProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sourcedFromProp()
     schema.org description:The neurological pathway that originates the neurons.
 
     prop_schema returns just the property without url#

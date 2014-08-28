@@ -22,7 +22,7 @@ class recipientProp(SchemaProperty):
 
     """
     SchemaField for recipient
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipientProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipientProp()
     schema.org description:A sub property of participant. The participant who is at the receiving end of the action.
 
     prop_schema returns just the property without url#

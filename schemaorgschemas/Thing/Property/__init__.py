@@ -20,7 +20,7 @@ class rangeIncludesProp(SchemaProperty):
 
     """
     SchemaField for rangeIncludes
-    Usage: Include in SchemaObject SchemaFields as your_django_field = rangeIncludesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = rangeIncludesProp()
     schema.org description:Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class domainIncludesProp(SchemaProperty):
 
     """
     SchemaField for domainIncludes
-    Usage: Include in SchemaObject SchemaFields as your_django_field = domainIncludesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = domainIncludesProp()
     schema.org description:Relates a property to a class that is (one of) the type(s) the property is expected to be used on.
 
     prop_schema returns just the property without url#

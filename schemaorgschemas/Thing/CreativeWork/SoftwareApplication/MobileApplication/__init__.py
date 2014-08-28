@@ -22,7 +22,7 @@ class carrierRequirementsProp(SchemaProperty):
 
     """
     SchemaField for carrierRequirements
-    Usage: Include in SchemaObject SchemaFields as your_django_field = carrierRequirementsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = carrierRequirementsProp()
     schema.org description:Specifies specific carrier(s) requirements for the application (e.g. an application may only work on a specific carrier network).
 
     prop_schema returns just the property without url#

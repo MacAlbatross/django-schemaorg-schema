@@ -21,7 +21,7 @@ class discussesProp(SchemaProperty):
 
     """
     SchemaField for discusses
-    Usage: Include in SchemaObject SchemaFields as your_django_field = discussesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = discussesProp()
     schema.org description:Specifies the CreativeWork associated with the UserComment.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class commentTextProp(SchemaProperty):
 
     """
     SchemaField for commentText
-    Usage: Include in SchemaObject SchemaFields as your_django_field = commentTextProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = commentTextProp()
     schema.org description:The text of the UserComment.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class creatorProp(SchemaProperty):
 
     """
     SchemaField for creator
-    Usage: Include in SchemaObject SchemaFields as your_django_field = creatorProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = creatorProp()
     schema.org description:The creator/author of this CreativeWork or UserComments. This is the same as the Author property for CreativeWork.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class replyToUrlProp(SchemaProperty):
 
     """
     SchemaField for replyToUrl
-    Usage: Include in SchemaObject SchemaFields as your_django_field = replyToUrlProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = replyToUrlProp()
     schema.org description:The URL at which a reply may be posted to the specified UserComment.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class commentTimeProp(SchemaProperty):
 
     """
     SchemaField for commentTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = commentTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = commentTimeProp()
     schema.org description:The time at which the UserComment was made.
 
     prop_schema returns just the property without url#

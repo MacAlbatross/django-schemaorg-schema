@@ -21,7 +21,7 @@ class endorseeProp(SchemaProperty):
 
     """
     SchemaField for endorsee
-    Usage: Include in SchemaObject SchemaFields as your_django_field = endorseeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = endorseeProp()
     schema.org description:A sub property of participant. The person/organization being supported.
 
     prop_schema returns just the property without url#

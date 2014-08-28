@@ -21,7 +21,7 @@ class distinguishingSignProp(SchemaProperty):
 
     """
     SchemaField for distinguishingSign
-    Usage: Include in SchemaObject SchemaFields as your_django_field = distinguishingSignProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = distinguishingSignProp()
     schema.org description:One of a set of signs and symptoms that can be used to distinguish this diagnosis from others in the differential diagnosis.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class diagnosisProp(SchemaProperty):
 
     """
     SchemaField for diagnosis
-    Usage: Include in SchemaObject SchemaFields as your_django_field = diagnosisProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = diagnosisProp()
     schema.org description:One or more alternative conditions considered in the differential diagnosis process.
 
     prop_schema returns just the property without url#

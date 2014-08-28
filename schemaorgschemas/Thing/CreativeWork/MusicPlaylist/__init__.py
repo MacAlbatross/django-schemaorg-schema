@@ -21,7 +21,7 @@ class trackProp(SchemaProperty):
 
     """
     SchemaField for track
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trackProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trackProp()
     schema.org description:A music recording (track)-usually a single song. Supercedes tracks.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class numTracksProp(SchemaProperty):
 
     """
     SchemaField for numTracks
-    Usage: Include in SchemaObject SchemaFields as your_django_field = numTracksProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = numTracksProp()
     schema.org description:The number of tracks in this album or playlist.
 
     prop_schema returns just the property without url#

@@ -23,7 +23,7 @@ class availableTestProp(SchemaProperty):
 
     """
     SchemaField for availableTest
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availableTestProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availableTestProp()
     schema.org description:A diagnostic test or procedure offered by this lab.
 
     prop_schema returns just the property without url#

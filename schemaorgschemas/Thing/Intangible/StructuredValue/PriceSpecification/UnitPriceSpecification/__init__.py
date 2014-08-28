@@ -21,7 +21,7 @@ class billingIncrementProp(SchemaProperty):
 
     """
     SchemaField for billingIncrement
-    Usage: Include in SchemaObject SchemaFields as your_django_field = billingIncrementProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = billingIncrementProp()
     schema.org description:This property specifies the minimal quantity and rounding increment that will be the basis for the billing. The unit of measurement is specified by the unitCode property.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class unitCodeProp(SchemaProperty):
 
     """
     SchemaField for unitCode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = unitCodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = unitCodeProp()
     schema.org description:The unit of measurement given using the UN/CEFACT Common Code (3 characters).
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class priceTypeProp(SchemaProperty):
 
     """
     SchemaField for priceType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceTypeProp()
     schema.org description:A short text or acronym indicating multiple price specifications for the same offer, e.g. SRP for the suggested retail price or INVOICE for the invoice price, mostly used in the car industry.
 
     prop_schema returns just the property without url#

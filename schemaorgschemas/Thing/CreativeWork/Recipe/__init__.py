@@ -21,7 +21,7 @@ class totalTimeProp(SchemaProperty):
 
     """
     SchemaField for totalTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = totalTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = totalTimeProp()
     schema.org description:The total time it takes to prepare and cook the recipe, in ISO 8601 duration format.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class nutritionProp(SchemaProperty):
 
     """
     SchemaField for nutrition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = nutritionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = nutritionProp()
     schema.org description:Nutrition information about the recipe.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class cookingMethodProp(SchemaProperty):
 
     """
     SchemaField for cookingMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = cookingMethodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = cookingMethodProp()
     schema.org description:The method of cooking, such as Frying, Steaming, ...
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class recipeInstructionsProp(SchemaProperty):
 
     """
     SchemaField for recipeInstructions
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeInstructionsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeInstructionsProp()
     schema.org description:The steps to make the dish.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class recipeYieldProp(SchemaProperty):
 
     """
     SchemaField for recipeYield
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeYieldProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeYieldProp()
     schema.org description:The quantity produced by the recipe (for example, number of people served, number of servings, etc).
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class ingredientsProp(SchemaProperty):
 
     """
     SchemaField for ingredients
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ingredientsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ingredientsProp()
     schema.org description:An ingredient used in the recipe.
 
     prop_schema returns just the property without url#
@@ -123,7 +123,7 @@ class recipeCategoryProp(SchemaProperty):
 
     """
     SchemaField for recipeCategory
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeCategoryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeCategoryProp()
     schema.org description:The category of the recipe-for example, appetizer, entree, etc.
 
     prop_schema returns just the property without url#
@@ -140,7 +140,7 @@ class recipeCuisineProp(SchemaProperty):
 
     """
     SchemaField for recipeCuisine
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeCuisineProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeCuisineProp()
     schema.org description:The cuisine of the recipe (for example, French or Ethopian).
 
     prop_schema returns just the property without url#
@@ -157,7 +157,7 @@ class prepTimeProp(SchemaProperty):
 
     """
     SchemaField for prepTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = prepTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = prepTimeProp()
     schema.org description:The length of time it takes to prepare the recipe, in ISO 8601 duration format.
 
     prop_schema returns just the property without url#
@@ -174,7 +174,7 @@ class cookTimeProp(SchemaProperty):
 
     """
     SchemaField for cookTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = cookTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = cookTimeProp()
     schema.org description:The time it takes to actually cook the dish, in ISO 8601 duration format.
 
     prop_schema returns just the property without url#

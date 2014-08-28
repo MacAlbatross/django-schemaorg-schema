@@ -21,7 +21,7 @@ class downvoteCountProp(SchemaProperty):
 
     """
     SchemaField for downvoteCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = downvoteCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = downvoteCountProp()
     schema.org description:The number of downvotes this question has received from the community.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class upvoteCountProp(SchemaProperty):
 
     """
     SchemaField for upvoteCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = upvoteCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = upvoteCountProp()
     schema.org description:The number of upvotes this question has received from the community.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class parentItemProp(SchemaProperty):
 
     """
     SchemaField for parentItem
-    Usage: Include in SchemaObject SchemaFields as your_django_field = parentItemProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = parentItemProp()
     schema.org description:The parent of a question, answer or item in general.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class clipNumberProp(SchemaProperty):
 
     """
     SchemaField for clipNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = clipNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = clipNumberProp()
     schema.org description:Position of the clip within an ordered group of clips.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class publicationProp(SchemaProperty):
 
     """
     SchemaField for publication
-    Usage: Include in SchemaObject SchemaFields as your_django_field = publicationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = publicationProp()
     schema.org description:A publication event associated with the episode, clip or media object.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class partOfEpisodeProp(SchemaProperty):
 
     """
     SchemaField for partOfEpisode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfEpisodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfEpisodeProp()
     schema.org description:The episode to which this clip belongs.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class positionProp(SchemaProperty):
 
     """
     SchemaField for position
-    Usage: Include in SchemaObject SchemaFields as your_django_field = positionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = positionProp()
     schema.org description:Free text to define other than pure numerical ranking of an episode or a season in an ordered list of items (further formatting restrictions may apply within particular user groups).
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class partOfSeriesProp(SchemaProperty):
 
     """
     SchemaField for partOfSeries
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeriesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeriesProp()
     schema.org description:The series to which this episode or season belongs. Supercedes partOfTVSeries.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class partOfSeasonProp(SchemaProperty):
 
     """
     SchemaField for partOfSeason
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeasonProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfSeasonProp()
     schema.org description:The season to which this episode belongs.
 
     prop_schema returns just the property without url#

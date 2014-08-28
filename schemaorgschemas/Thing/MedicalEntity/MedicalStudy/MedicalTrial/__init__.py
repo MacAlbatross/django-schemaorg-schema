@@ -22,7 +22,7 @@ class phaseProp(SchemaProperty):
 
     """
     SchemaField for phase
-    Usage: Include in SchemaObject SchemaFields as your_django_field = phaseProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = phaseProp()
     schema.org description:The phase of the trial.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class trialDesignProp(SchemaProperty):
 
     """
     SchemaField for trialDesign
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trialDesignProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trialDesignProp()
     schema.org description:Specifics about the trial design (enumerated).
 
     prop_schema returns just the property without url#

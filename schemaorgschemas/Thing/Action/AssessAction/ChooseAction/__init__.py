@@ -21,7 +21,7 @@ class optionProp(SchemaProperty):
 
     """
     SchemaField for option
-    Usage: Include in SchemaObject SchemaFields as your_django_field = optionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = optionProp()
     schema.org description:A sub property of object. The options subject to this action.
 
     prop_schema returns just the property without url#

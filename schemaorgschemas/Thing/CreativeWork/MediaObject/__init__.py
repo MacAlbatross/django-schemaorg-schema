@@ -21,7 +21,7 @@ class contentUrlProp(SchemaProperty):
 
     """
     SchemaField for contentUrl
-    Usage: Include in SchemaObject SchemaFields as your_django_field = contentUrlProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = contentUrlProp()
     schema.org description:Actual bytes of the media object, for example the image file or video file. (previous spelling: contentURL)
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class uploadDateProp(SchemaProperty):
 
     """
     SchemaField for uploadDate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = uploadDateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = uploadDateProp()
     schema.org description:Date when this media object was uploaded to this site.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class playerTypeProp(SchemaProperty):
 
     """
     SchemaField for playerType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = playerTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = playerTypeProp()
     schema.org description:Player type required-for example, Flash or Silverlight.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class encodesCreativeWorkProp(SchemaProperty):
 
     """
     SchemaField for encodesCreativeWork
-    Usage: Include in SchemaObject SchemaFields as your_django_field = encodesCreativeWorkProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = encodesCreativeWorkProp()
     schema.org description:The creative work encoded by this media object
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class productionCompanyProp(SchemaProperty):
 
     """
     SchemaField for productionCompany
-    Usage: Include in SchemaObject SchemaFields as your_django_field = productionCompanyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = productionCompanyProp()
     schema.org description:The production company or studio that made the movie, tv/radio series, season, or episode, or media object.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class expiresProp(SchemaProperty):
 
     """
     SchemaField for expires
-    Usage: Include in SchemaObject SchemaFields as your_django_field = expiresProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = expiresProp()
     schema.org description:Date the content expires and is no longer useful or available. Useful for videos.
 
     prop_schema returns just the property without url#
@@ -123,7 +123,7 @@ class interactionCountProp(SchemaProperty):
 
     """
     SchemaField for interactionCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = interactionCountProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = interactionCountProp()
     schema.org description:A count of a specific user interactions with this item-for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.
 
     prop_schema returns just the property without url#
@@ -140,7 +140,7 @@ class heightProp(SchemaProperty):
 
     """
     SchemaField for height
-    Usage: Include in SchemaObject SchemaFields as your_django_field = heightProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = heightProp()
     schema.org description:The height of the item.
 
     prop_schema returns just the property without url#
@@ -157,7 +157,7 @@ class encodingFormatProp(SchemaProperty):
 
     """
     SchemaField for encodingFormat
-    Usage: Include in SchemaObject SchemaFields as your_django_field = encodingFormatProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = encodingFormatProp()
     schema.org description:mp3, mpeg4, etc.
 
     prop_schema returns just the property without url#
@@ -174,7 +174,7 @@ class associatedArticleProp(SchemaProperty):
 
     """
     SchemaField for associatedArticle
-    Usage: Include in SchemaObject SchemaFields as your_django_field = associatedArticleProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = associatedArticleProp()
     schema.org description:A NewsArticle associated with the Media Object.
 
     prop_schema returns just the property without url#
@@ -191,7 +191,7 @@ class offersProp(SchemaProperty):
 
     """
     SchemaField for offers
-    Usage: Include in SchemaObject SchemaFields as your_django_field = offersProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = offersProp()
     schema.org description:An offer to provide this item-for example, an offer to sell a product, rent the DVD of a movie, or give away tickets to an event.
 
     prop_schema returns just the property without url#
@@ -208,7 +208,7 @@ class publicationProp(SchemaProperty):
 
     """
     SchemaField for publication
-    Usage: Include in SchemaObject SchemaFields as your_django_field = publicationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = publicationProp()
     schema.org description:A publication event associated with the episode, clip or media object.
 
     prop_schema returns just the property without url#
@@ -225,7 +225,7 @@ class durationProp(SchemaProperty):
 
     """
     SchemaField for duration
-    Usage: Include in SchemaObject SchemaFields as your_django_field = durationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = durationProp()
     schema.org description:The duration of the item (movie, audio recording, event, etc.) in ISO 8601 date format.
 
     prop_schema returns just the property without url#
@@ -242,7 +242,7 @@ class requiresSubscriptionProp(SchemaProperty):
 
     """
     SchemaField for requiresSubscription
-    Usage: Include in SchemaObject SchemaFields as your_django_field = requiresSubscriptionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = requiresSubscriptionProp()
     schema.org description:Indicates if use of the media require a subscription (either paid or free). Allowed values are true or false (note that an earlier version had &#39;yes&#39;, &#39;no&#39;).
 
     prop_schema returns just the property without url#
@@ -259,7 +259,7 @@ class embedUrlProp(SchemaProperty):
 
     """
     SchemaField for embedUrl
-    Usage: Include in SchemaObject SchemaFields as your_django_field = embedUrlProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = embedUrlProp()
     schema.org description:A URL pointing to a player for a specific video. In general, this is the information in the src element of an embed tag and should not be the same as the content of the loc tag. (previous spelling: embedURL)
 
     prop_schema returns just the property without url#
@@ -276,7 +276,7 @@ class regionsAllowedProp(SchemaProperty):
 
     """
     SchemaField for regionsAllowed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = regionsAllowedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = regionsAllowedProp()
     schema.org description:The regions where the media is allowed. If not specified, then it&#39;s assumed to be allowed everywhere. Specify the countries in ISO 3166 format.
 
     prop_schema returns just the property without url#
@@ -293,7 +293,7 @@ class bitrateProp(SchemaProperty):
 
     """
     SchemaField for bitrate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = bitrateProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = bitrateProp()
     schema.org description:The bitrate of the media object.
 
     prop_schema returns just the property without url#
@@ -310,7 +310,7 @@ class widthProp(SchemaProperty):
 
     """
     SchemaField for width
-    Usage: Include in SchemaObject SchemaFields as your_django_field = widthProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = widthProp()
     schema.org description:The width of the item.
 
     prop_schema returns just the property without url#
@@ -327,7 +327,7 @@ class contentSizeProp(SchemaProperty):
 
     """
     SchemaField for contentSize
-    Usage: Include in SchemaObject SchemaFields as your_django_field = contentSizeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = contentSizeProp()
     schema.org description:File size in (mega/kilo) bytes.
 
     prop_schema returns just the property without url#

@@ -20,7 +20,7 @@ class logoProp(SchemaProperty):
 
     """
     SchemaField for logo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = logoProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = logoProp()
     schema.org description:A logo associated with an organization.
 
     prop_schema returns just the property without url#

@@ -23,7 +23,7 @@ class targetPlatformProp(SchemaProperty):
 
     """
     SchemaField for targetPlatform
-    Usage: Include in SchemaObject SchemaFields as your_django_field = targetPlatformProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = targetPlatformProp()
     schema.org description:Type of app development: phone, Metro style, desktop, XBox, etc.
 
     prop_schema returns just the property without url#
@@ -40,7 +40,7 @@ class assemblyProp(SchemaProperty):
 
     """
     SchemaField for assembly
-    Usage: Include in SchemaObject SchemaFields as your_django_field = assemblyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = assemblyProp()
     schema.org description:Library file name e.g., mscorlib.dll, system.web.dll
 
     prop_schema returns just the property without url#
@@ -57,7 +57,7 @@ class programmingModelProp(SchemaProperty):
 
     """
     SchemaField for programmingModel
-    Usage: Include in SchemaObject SchemaFields as your_django_field = programmingModelProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = programmingModelProp()
     schema.org description:Indicates whether API is managed or unmanaged.
 
     prop_schema returns just the property without url#
@@ -74,7 +74,7 @@ class assemblyVersionProp(SchemaProperty):
 
     """
     SchemaField for assemblyVersion
-    Usage: Include in SchemaObject SchemaFields as your_django_field = assemblyVersionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = assemblyVersionProp()
     schema.org description:Associated product/technology version. e.g., .NET Framework 4.5
 
     prop_schema returns just the property without url#

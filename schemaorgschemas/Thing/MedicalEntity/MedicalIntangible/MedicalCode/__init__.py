@@ -21,7 +21,7 @@ class codingSystemProp(SchemaProperty):
 
     """
     SchemaField for codingSystem
-    Usage: Include in SchemaObject SchemaFields as your_django_field = codingSystemProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = codingSystemProp()
     schema.org description:The coding system, e.g. &#39;ICD-10&#39;.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class codeValueProp(SchemaProperty):
 
     """
     SchemaField for codeValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = codeValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = codeValueProp()
     schema.org description:The actual code.
 
     prop_schema returns just the property without url#

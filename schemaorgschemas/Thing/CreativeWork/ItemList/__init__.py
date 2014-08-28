@@ -21,7 +21,7 @@ class itemListElementProp(SchemaProperty):
 
     """
     SchemaField for itemListElement
-    Usage: Include in SchemaObject SchemaFields as your_django_field = itemListElementProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = itemListElementProp()
     schema.org description:A single list item.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class itemListOrderProp(SchemaProperty):
 
     """
     SchemaField for itemListOrder
-    Usage: Include in SchemaObject SchemaFields as your_django_field = itemListOrderProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = itemListOrderProp()
     schema.org description:Type of ordering (e.g. Ascending, Descending, Unordered).
 
     prop_schema returns just the property without url#

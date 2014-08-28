@@ -21,7 +21,7 @@ class collectionProp(SchemaProperty):
 
     """
     SchemaField for collection
-    Usage: Include in SchemaObject SchemaFields as your_django_field = collectionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = collectionProp()
     schema.org description:A sub property of object. The collection target of the action.
 
     prop_schema returns just the property without url#

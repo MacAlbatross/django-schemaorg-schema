@@ -22,7 +22,7 @@ class infectiousAgentProp(SchemaProperty):
 
     """
     SchemaField for infectiousAgent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = infectiousAgentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = infectiousAgentProp()
     schema.org description:The actual infectious agent, such as a specific bacterium.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class infectiousAgentClassProp(SchemaProperty):
 
     """
     SchemaField for infectiousAgentClass
-    Usage: Include in SchemaObject SchemaFields as your_django_field = infectiousAgentClassProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = infectiousAgentClassProp()
     schema.org description:The class of infectious agent (bacteria, prion, etc.) that causes the disease.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class transmissionMethodProp(SchemaProperty):
 
     """
     SchemaField for transmissionMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = transmissionMethodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = transmissionMethodProp()
     schema.org description:How the disease spreads, either as a route or vector, for example &#39;direct contact&#39;, &#39;Aedes aegypti&#39;, etc.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class applicableLocationProp(SchemaProperty):
 
     """
     SchemaField for applicableLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = applicableLocationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = applicableLocationProp()
     schema.org description:The location in which the status applies.
 
     prop_schema returns just the property without url#

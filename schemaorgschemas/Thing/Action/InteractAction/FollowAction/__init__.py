@@ -21,7 +21,7 @@ class followeeProp(SchemaProperty):
 
     """
     SchemaField for followee
-    Usage: Include in SchemaObject SchemaFields as your_django_field = followeeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = followeeProp()
     schema.org description:A sub property of object. The person or organization being followed.
 
     prop_schema returns just the property without url#

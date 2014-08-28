@@ -21,7 +21,7 @@ class fromLocationProp(SchemaProperty):
 
     """
     SchemaField for fromLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = fromLocationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = fromLocationProp()
     schema.org description:A sub property of location. The original location of the object or the agent before the action.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class toLocationProp(SchemaProperty):
 
     """
     SchemaField for toLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = toLocationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = toLocationProp()
     schema.org description:A sub property of location. The final location of the object or the agent after the action.
 
     prop_schema returns just the property without url#

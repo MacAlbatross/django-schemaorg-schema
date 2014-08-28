@@ -20,7 +20,7 @@ class worstRatingProp(SchemaProperty):
 
     """
     SchemaField for worstRating
-    Usage: Include in SchemaObject SchemaFields as your_django_field = worstRatingProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = worstRatingProp()
     schema.org description:The lowest value allowed in this rating system. If worstRating is omitted, 1 is assumed.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class ratingValueProp(SchemaProperty):
 
     """
     SchemaField for ratingValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ratingValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ratingValueProp()
     schema.org description:The rating for the content.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class bestRatingProp(SchemaProperty):
 
     """
     SchemaField for bestRating
-    Usage: Include in SchemaObject SchemaFields as your_django_field = bestRatingProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = bestRatingProp()
     schema.org description:The highest value allowed in this rating system. If bestRating is omitted, 5 is assumed.
 
     prop_schema returns just the property without url#

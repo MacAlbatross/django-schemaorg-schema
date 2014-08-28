@@ -22,7 +22,7 @@ class tissueSampleProp(SchemaProperty):
 
     """
     SchemaField for tissueSample
-    Usage: Include in SchemaObject SchemaFields as your_django_field = tissueSampleProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = tissueSampleProp()
     schema.org description:The type of tissue sample required for the test.
 
     prop_schema returns just the property without url#

@@ -22,7 +22,7 @@ class algorithmProp(SchemaProperty):
 
     """
     SchemaField for algorithm
-    Usage: Include in SchemaObject SchemaFields as your_django_field = algorithmProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = algorithmProp()
     schema.org description:The algorithm or rules to follow to compute the score.
 
     prop_schema returns just the property without url#

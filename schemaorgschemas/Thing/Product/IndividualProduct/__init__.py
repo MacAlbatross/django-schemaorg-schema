@@ -21,7 +21,7 @@ class serialNumberProp(SchemaProperty):
 
     """
     SchemaField for serialNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = serialNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = serialNumberProp()
     schema.org description:The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
 
     prop_schema returns just the property without url#

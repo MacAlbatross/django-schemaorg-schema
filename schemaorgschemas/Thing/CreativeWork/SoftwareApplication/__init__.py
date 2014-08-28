@@ -21,7 +21,7 @@ class countriesNotSupportedProp(SchemaProperty):
 
     """
     SchemaField for countriesNotSupported
-    Usage: Include in SchemaObject SchemaFields as your_django_field = countriesNotSupportedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = countriesNotSupportedProp()
     schema.org description:Countries for which the application is not supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class screenshotProp(SchemaProperty):
 
     """
     SchemaField for screenshot
-    Usage: Include in SchemaObject SchemaFields as your_django_field = screenshotProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = screenshotProp()
     schema.org description:A link to a screenshot image of the app.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class installUrlProp(SchemaProperty):
 
     """
     SchemaField for installUrl
-    Usage: Include in SchemaObject SchemaFields as your_django_field = installUrlProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = installUrlProp()
     schema.org description:URL at which the app may be installed, if different from the URL of the item.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class operatingSystemProp(SchemaProperty):
 
     """
     SchemaField for operatingSystem
-    Usage: Include in SchemaObject SchemaFields as your_django_field = operatingSystemProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = operatingSystemProp()
     schema.org description:Operating systems supported (Windows 7, OSX 10.6, Android 1.6).
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class processorRequirementsProp(SchemaProperty):
 
     """
     SchemaField for processorRequirements
-    Usage: Include in SchemaObject SchemaFields as your_django_field = processorRequirementsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = processorRequirementsProp()
     schema.org description:Processor architecture required to run the application (e.g. IA64).
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class releaseNotesProp(SchemaProperty):
 
     """
     SchemaField for releaseNotes
-    Usage: Include in SchemaObject SchemaFields as your_django_field = releaseNotesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = releaseNotesProp()
     schema.org description:Description of what changed in this version.
 
     prop_schema returns just the property without url#
@@ -123,7 +123,7 @@ class softwareVersionProp(SchemaProperty):
 
     """
     SchemaField for softwareVersion
-    Usage: Include in SchemaObject SchemaFields as your_django_field = softwareVersionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = softwareVersionProp()
     schema.org description:Version of the software instance.
 
     prop_schema returns just the property without url#
@@ -140,7 +140,7 @@ class memoryRequirementsProp(SchemaProperty):
 
     """
     SchemaField for memoryRequirements
-    Usage: Include in SchemaObject SchemaFields as your_django_field = memoryRequirementsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = memoryRequirementsProp()
     schema.org description:Minimum memory requirements.
 
     prop_schema returns just the property without url#
@@ -157,7 +157,7 @@ class downloadUrlProp(SchemaProperty):
 
     """
     SchemaField for downloadUrl
-    Usage: Include in SchemaObject SchemaFields as your_django_field = downloadUrlProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = downloadUrlProp()
     schema.org description:If the file can be downloaded, URL to download the binary.
 
     prop_schema returns just the property without url#
@@ -174,7 +174,7 @@ class applicationCategoryProp(SchemaProperty):
 
     """
     SchemaField for applicationCategory
-    Usage: Include in SchemaObject SchemaFields as your_django_field = applicationCategoryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = applicationCategoryProp()
     schema.org description:Type of software application, e.g. &quot;Game, Multimedia&quot;.
 
     prop_schema returns just the property without url#
@@ -191,7 +191,7 @@ class countriesSupportedProp(SchemaProperty):
 
     """
     SchemaField for countriesSupported
-    Usage: Include in SchemaObject SchemaFields as your_django_field = countriesSupportedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = countriesSupportedProp()
     schema.org description:Countries for which the application is supported. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
 
     prop_schema returns just the property without url#
@@ -208,7 +208,7 @@ class storageRequirementsProp(SchemaProperty):
 
     """
     SchemaField for storageRequirements
-    Usage: Include in SchemaObject SchemaFields as your_django_field = storageRequirementsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = storageRequirementsProp()
     schema.org description:Storage requirements (free space required).
 
     prop_schema returns just the property without url#
@@ -225,7 +225,7 @@ class featureListProp(SchemaProperty):
 
     """
     SchemaField for featureList
-    Usage: Include in SchemaObject SchemaFields as your_django_field = featureListProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = featureListProp()
     schema.org description:Features or modules provided by this application (and possibly required by other applications).
 
     prop_schema returns just the property without url#
@@ -242,7 +242,7 @@ class deviceProp(SchemaProperty):
 
     """
     SchemaField for device
-    Usage: Include in SchemaObject SchemaFields as your_django_field = deviceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = deviceProp()
     schema.org description:Device required to run the application. Used in cases where a specific make/model is required to run the application.
 
     prop_schema returns just the property without url#
@@ -259,7 +259,7 @@ class requirementsProp(SchemaProperty):
 
     """
     SchemaField for requirements
-    Usage: Include in SchemaObject SchemaFields as your_django_field = requirementsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = requirementsProp()
     schema.org description:Component dependency requirements for application. This includes runtime environments and shared libraries that are not included in the application distribution package, but required to run the application (Examples: DirectX, Java or .NET runtime).
 
     prop_schema returns just the property without url#
@@ -276,7 +276,7 @@ class applicationSubCategoryProp(SchemaProperty):
 
     """
     SchemaField for applicationSubCategory
-    Usage: Include in SchemaObject SchemaFields as your_django_field = applicationSubCategoryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = applicationSubCategoryProp()
     schema.org description:Subcategory of the application, e.g. &quot;Arcade Game&quot;.
 
     prop_schema returns just the property without url#
@@ -293,7 +293,7 @@ class permissionsProp(SchemaProperty):
 
     """
     SchemaField for permissions
-    Usage: Include in SchemaObject SchemaFields as your_django_field = permissionsProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = permissionsProp()
     schema.org description:Permission(s) required to run the app (for example, a mobile app may require full internet access or may run only on wifi).
 
     prop_schema returns just the property without url#
@@ -310,7 +310,7 @@ class fileFormatProp(SchemaProperty):
 
     """
     SchemaField for fileFormat
-    Usage: Include in SchemaObject SchemaFields as your_django_field = fileFormatProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = fileFormatProp()
     schema.org description:MIME format of the binary (e.g. application/zip).
 
     prop_schema returns just the property without url#
@@ -327,7 +327,7 @@ class applicationSuiteProp(SchemaProperty):
 
     """
     SchemaField for applicationSuite
-    Usage: Include in SchemaObject SchemaFields as your_django_field = applicationSuiteProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = applicationSuiteProp()
     schema.org description:The name of the application suite to which the application belongs (e.g. Excel belongs to Office)
 
     prop_schema returns just the property without url#
@@ -344,7 +344,7 @@ class fileSizeProp(SchemaProperty):
 
     """
     SchemaField for fileSize
-    Usage: Include in SchemaObject SchemaFields as your_django_field = fileSizeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = fileSizeProp()
     schema.org description:Size of the application / package (e.g. 18MB). In the absence of a unit (MB, KB etc.), KB will be assumed.
 
     prop_schema returns just the property without url#

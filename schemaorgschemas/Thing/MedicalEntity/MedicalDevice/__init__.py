@@ -21,7 +21,7 @@ class contraindicationProp(SchemaProperty):
 
     """
     SchemaField for contraindication
-    Usage: Include in SchemaObject SchemaFields as your_django_field = contraindicationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = contraindicationProp()
     schema.org description:A contraindication for this therapy.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class indicationProp(SchemaProperty):
 
     """
     SchemaField for indication
-    Usage: Include in SchemaObject SchemaFields as your_django_field = indicationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = indicationProp()
     schema.org description:A factor that indicates use of this therapy for treatment and/or prevention of a condition, symptom, etc. For therapies such as drugs, indications can include both officially-approved indications as well as off-label uses. These can be distinguished by using the ApprovedIndication subtype of MedicalIndication.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class purposeProp(SchemaProperty):
 
     """
     SchemaField for purpose
-    Usage: Include in SchemaObject SchemaFields as your_django_field = purposeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = purposeProp()
     schema.org description:A goal towards an action is taken. Can be concrete or abstract.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class preOpProp(SchemaProperty):
 
     """
     SchemaField for preOp
-    Usage: Include in SchemaObject SchemaFields as your_django_field = preOpProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = preOpProp()
     schema.org description:A description of the workup, testing, and other preparations required before implanting this device.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class postOpProp(SchemaProperty):
 
     """
     SchemaField for postOp
-    Usage: Include in SchemaObject SchemaFields as your_django_field = postOpProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = postOpProp()
     schema.org description:A description of the postoperative procedures, care, and/or followups for this device.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class adverseOutcomeProp(SchemaProperty):
 
     """
     SchemaField for adverseOutcome
-    Usage: Include in SchemaObject SchemaFields as your_django_field = adverseOutcomeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = adverseOutcomeProp()
     schema.org description:A possible complication and/or side effect of this therapy. If it is known that an adverse outcome is serious (resulting in death, disability, or permanent damage; requiring hospitalization; or is otherwise life-threatening or requires immediate medical attention), tag it as a seriouseAdverseOutcome instead.
 
     prop_schema returns just the property without url#
@@ -123,7 +123,7 @@ class seriousAdverseOutcomeProp(SchemaProperty):
 
     """
     SchemaField for seriousAdverseOutcome
-    Usage: Include in SchemaObject SchemaFields as your_django_field = seriousAdverseOutcomeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = seriousAdverseOutcomeProp()
     schema.org description:A possible serious complication and/or serious side effect of this therapy. Serious adverse outcomes include those that are life-threatening; result in death, disability, or permanent damage; require hospitalization or prolong existing hospitalization; cause congenital anomalies or birth defects; or jeopardize the patient and may require medical or surgical intervention to prevent one of the outcomes in this definition.
 
     prop_schema returns just the property without url#
@@ -140,7 +140,7 @@ class procedureProp(SchemaProperty):
 
     """
     SchemaField for procedure
-    Usage: Include in SchemaObject SchemaFields as your_django_field = procedureProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = procedureProp()
     schema.org description:A description of the procedure involved in setting up, using, and/or installing the device.
 
     prop_schema returns just the property without url#

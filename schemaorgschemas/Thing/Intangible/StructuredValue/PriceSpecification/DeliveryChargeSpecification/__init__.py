@@ -21,7 +21,7 @@ class eligibleRegionProp(SchemaProperty):
 
     """
     SchemaField for eligibleRegion
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleRegionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleRegionProp()
     schema.org description:The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class appliesToDeliveryMethodProp(SchemaProperty):
 
     """
     SchemaField for appliesToDeliveryMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = appliesToDeliveryMethodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = appliesToDeliveryMethodProp()
     schema.org description:The delivery method(s) to which the delivery charge or payment charge specification applies.
 
     prop_schema returns just the property without url#

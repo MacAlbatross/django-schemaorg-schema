@@ -20,7 +20,7 @@ class geographicAreaProp(SchemaProperty):
 
     """
     SchemaField for geographicArea
-    Usage: Include in SchemaObject SchemaFields as your_django_field = geographicAreaProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = geographicAreaProp()
     schema.org description:The geographic area associated with the audience.
 
     prop_schema returns just the property without url#
@@ -37,8 +37,8 @@ class audienceTypeProp(SchemaProperty):
 
     """
     SchemaField for audienceType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = audienceTypeProp()  
-    schema.org description:The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.) domain: Audience Range: Text 
+    Usage: Include in SchemaObject SchemaFields as your_django_field = audienceTypeProp()
+    schema.org description:The target group associated with a given audience (e.g. veterans, car owners, musicians, etc.) domain: Audience Range: Text
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype

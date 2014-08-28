@@ -20,7 +20,7 @@ class multipleValuesProp(SchemaProperty):
 
     """
     SchemaField for multipleValues
-    Usage: Include in SchemaObject SchemaFields as your_django_field = multipleValuesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = multipleValuesProp()
     schema.org description:Whether multiple values are allowed for the property. Default is false.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class stepValueProp(SchemaProperty):
 
     """
     SchemaField for stepValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = stepValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = stepValueProp()
     schema.org description:Specifies a regular expression for testing literal values according to the HTML spec.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class valuePatternProp(SchemaProperty):
 
     """
     SchemaField for valuePattern
-    Usage: Include in SchemaObject SchemaFields as your_django_field = valuePatternProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = valuePatternProp()
     schema.org description:Specifies a regular expression for testing literal values according to the HTML spec.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class valueRequiredProp(SchemaProperty):
 
     """
     SchemaField for valueRequired
-    Usage: Include in SchemaObject SchemaFields as your_django_field = valueRequiredProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = valueRequiredProp()
     schema.org description:Whether the property must be filled in to complete the action. Default is false.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class readonlyValueProp(SchemaProperty):
 
     """
     SchemaField for readonlyValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = readonlyValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = readonlyValueProp()
     schema.org description:Whether or not a property is mutable. Default is false. Specifying this for a property that also has a value makes it act similar to a &quot;hidden&quot; input in an HTML form.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class valueMaxLengthProp(SchemaProperty):
 
     """
     SchemaField for valueMaxLength
-    Usage: Include in SchemaObject SchemaFields as your_django_field = valueMaxLengthProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = valueMaxLengthProp()
     schema.org description:Specifies the allowed range for number of characters in a literal value.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class defaultValueProp(SchemaProperty):
 
     """
     SchemaField for defaultValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = defaultValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = defaultValueProp()
     schema.org description:The default value of the input. For properties that expect a literal, the default is a literal value, for properties that expect an object, it&#39;s an ID reference to one of the current values.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class valueMinLengthProp(SchemaProperty):
 
     """
     SchemaField for valueMinLength
-    Usage: Include in SchemaObject SchemaFields as your_django_field = valueMinLengthProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = valueMinLengthProp()
     schema.org description:Specifies the minimum allowed range for number of characters in a literal value.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class maxValueProp(SchemaProperty):
 
     """
     SchemaField for maxValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = maxValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = maxValueProp()
     schema.org description:The upper of the product characteristic.
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class minValueProp(SchemaProperty):
 
     """
     SchemaField for minValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = minValueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = minValueProp()
     schema.org description:The lower value of the product characteristic.
 
     prop_schema returns just the property without url#

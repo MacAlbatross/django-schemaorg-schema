@@ -20,7 +20,7 @@ class busNumberProp(SchemaProperty):
 
     """
     SchemaField for busNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = busNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = busNumberProp()
     schema.org description:The unique identifier for the bus.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class departureTimeProp(SchemaProperty):
 
     """
     SchemaField for departureTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departureTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departureTimeProp()
     schema.org description:The expected departure time.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class departureBusStopProp(SchemaProperty):
 
     """
     SchemaField for departureBusStop
-    Usage: Include in SchemaObject SchemaFields as your_django_field = departureBusStopProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = departureBusStopProp()
     schema.org description:The stop or station from which the bus departs.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class arrivalTimeProp(SchemaProperty):
 
     """
     SchemaField for arrivalTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalTimeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalTimeProp()
     schema.org description:The expected arrival time.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class busNameProp(SchemaProperty):
 
     """
     SchemaField for busName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = busNameProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = busNameProp()
     schema.org description:The name of the bus (e.g. Bolt Express).
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class providerProp(SchemaProperty):
 
     """
     SchemaField for provider
-    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()
     schema.org description:The organization or agency that is providing the service.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class arrivalBusStopProp(SchemaProperty):
 
     """
     SchemaField for arrivalBusStop
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalBusStopProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arrivalBusStopProp()
     schema.org description:The stop or station from which the bus arrives.
 
     prop_schema returns just the property without url#

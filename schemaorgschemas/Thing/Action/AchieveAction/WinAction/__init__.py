@@ -21,7 +21,7 @@ class loserProp(SchemaProperty):
 
     """
     SchemaField for loser
-    Usage: Include in SchemaObject SchemaFields as your_django_field = loserProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = loserProp()
     schema.org description:A sub property of participant. The loser of the action.
 
     prop_schema returns just the property without url#

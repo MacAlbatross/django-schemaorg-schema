@@ -20,7 +20,7 @@ class applicationProp(SchemaProperty):
 
     """
     SchemaField for application
-    Usage: Include in SchemaObject SchemaFields as your_django_field = applicationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = applicationProp()
     schema.org description:An application that can complete the request.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class encodingTypeProp(SchemaProperty):
 
     """
     SchemaField for encodingType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = encodingTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = encodingTypeProp()
     schema.org description:The supported encoding type(s) for an EntryPoint request.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class contentTypeProp(SchemaProperty):
 
     """
     SchemaField for contentType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = contentTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = contentTypeProp()
     schema.org description:The supported content type(s) for an EntryPoint response.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class httpMethodProp(SchemaProperty):
 
     """
     SchemaField for httpMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = httpMethodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = httpMethodProp()
     schema.org description:An HTTP method that specifies the appropriate HTTP method for a request to an HTTP EntryPoint. Values are capitalized strings as used in HTTP.
 
     prop_schema returns just the property without url#

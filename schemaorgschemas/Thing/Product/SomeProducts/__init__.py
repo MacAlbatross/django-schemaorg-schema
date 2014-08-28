@@ -21,7 +21,7 @@ class inventoryLevelProp(SchemaProperty):
 
     """
     SchemaField for inventoryLevel
-    Usage: Include in SchemaObject SchemaFields as your_django_field = inventoryLevelProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = inventoryLevelProp()
     schema.org description:The current approximate inventory level for the item or items.
 
     prop_schema returns just the property without url#

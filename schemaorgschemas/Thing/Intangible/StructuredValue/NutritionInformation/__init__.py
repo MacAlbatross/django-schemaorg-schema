@@ -20,7 +20,7 @@ class fatContentProp(SchemaProperty):
 
     """
     SchemaField for fatContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = fatContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = fatContentProp()
     schema.org description:The number of grams of fat.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class caloriesProp(SchemaProperty):
 
     """
     SchemaField for calories
-    Usage: Include in SchemaObject SchemaFields as your_django_field = caloriesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = caloriesProp()
     schema.org description:The number of calories
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class saturatedFatContentProp(SchemaProperty):
 
     """
     SchemaField for saturatedFatContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = saturatedFatContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = saturatedFatContentProp()
     schema.org description:The number of grams of saturated fat.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class unsaturatedFatContentProp(SchemaProperty):
 
     """
     SchemaField for unsaturatedFatContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = unsaturatedFatContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = unsaturatedFatContentProp()
     schema.org description:The number of grams of unsaturated fat.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class sodiumContentProp(SchemaProperty):
 
     """
     SchemaField for sodiumContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = sodiumContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sodiumContentProp()
     schema.org description:The number of milligrams of sodium.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class fiberContentProp(SchemaProperty):
 
     """
     SchemaField for fiberContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = fiberContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = fiberContentProp()
     schema.org description:The number of grams of fiber.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class cholesterolContentProp(SchemaProperty):
 
     """
     SchemaField for cholesterolContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = cholesterolContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = cholesterolContentProp()
     schema.org description:The number of milligrams of cholesterol.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class carbohydrateContentProp(SchemaProperty):
 
     """
     SchemaField for carbohydrateContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = carbohydrateContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = carbohydrateContentProp()
     schema.org description:The number of grams of carbohydrates.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class sugarContentProp(SchemaProperty):
 
     """
     SchemaField for sugarContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = sugarContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sugarContentProp()
     schema.org description:The number of grams of sugar.
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class servingSizeProp(SchemaProperty):
 
     """
     SchemaField for servingSize
-    Usage: Include in SchemaObject SchemaFields as your_django_field = servingSizeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = servingSizeProp()
     schema.org description:The serving size, in terms of the number of volume or mass.
 
     prop_schema returns just the property without url#
@@ -190,7 +190,7 @@ class transFatContentProp(SchemaProperty):
 
     """
     SchemaField for transFatContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = transFatContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = transFatContentProp()
     schema.org description:The number of grams of trans fat.
 
     prop_schema returns just the property without url#
@@ -207,7 +207,7 @@ class proteinContentProp(SchemaProperty):
 
     """
     SchemaField for proteinContent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = proteinContentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = proteinContentProp()
     schema.org description:The number of grams of protein.
 
     prop_schema returns just the property without url#

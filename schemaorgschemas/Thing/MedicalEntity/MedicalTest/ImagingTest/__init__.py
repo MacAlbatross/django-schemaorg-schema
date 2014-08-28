@@ -22,7 +22,7 @@ class imagingTechniqueProp(SchemaProperty):
 
     """
     SchemaField for imagingTechnique
-    Usage: Include in SchemaObject SchemaFields as your_django_field = imagingTechniqueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = imagingTechniqueProp()
     schema.org description:Imaging technique used.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class addressCountryProp(SchemaProperty):
 
     """
     SchemaField for addressCountry
-    Usage: Include in SchemaObject SchemaFields as your_django_field = addressCountryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = addressCountryProp()
     schema.org description:The country. For example, USA. You can also provide the two-letter ISO 3166-1 alpha-2 country code.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class addressLocalityProp(SchemaProperty):
 
     """
     SchemaField for addressLocality
-    Usage: Include in SchemaObject SchemaFields as your_django_field = addressLocalityProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = addressLocalityProp()
     schema.org description:The locality. For example, Mountain View.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class streetAddressProp(SchemaProperty):
 
     """
     SchemaField for streetAddress
-    Usage: Include in SchemaObject SchemaFields as your_django_field = streetAddressProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = streetAddressProp()
     schema.org description:The street address. For example, 1600 Amphitheatre Pkwy.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class postOfficeBoxNumberProp(SchemaProperty):
 
     """
     SchemaField for postOfficeBoxNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = postOfficeBoxNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = postOfficeBoxNumberProp()
     schema.org description:The post office box number for PO box addresses.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class postalCodeProp(SchemaProperty):
 
     """
     SchemaField for postalCode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = postalCodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = postalCodeProp()
     schema.org description:The postal code. For example, 94043.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class addressRegionProp(SchemaProperty):
 
     """
     SchemaField for addressRegion
-    Usage: Include in SchemaObject SchemaFields as your_django_field = addressRegionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = addressRegionProp()
     schema.org description:The region. For example, CA.
 
     prop_schema returns just the property without url#

@@ -22,7 +22,7 @@ class functionalClassProp(SchemaProperty):
 
     """
     SchemaField for functionalClass
-    Usage: Include in SchemaObject SchemaFields as your_django_field = functionalClassProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = functionalClassProp()
     schema.org description:The degree of mobility the joint allows.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class structuralClassProp(SchemaProperty):
 
     """
     SchemaField for structuralClass
-    Usage: Include in SchemaObject SchemaFields as your_django_field = structuralClassProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = structuralClassProp()
     schema.org description:The name given to how bone physically connects to each other.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class biomechnicalClassProp(SchemaProperty):
 
     """
     SchemaField for biomechnicalClass
-    Usage: Include in SchemaObject SchemaFields as your_django_field = biomechnicalClassProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = biomechnicalClassProp()
     schema.org description:The biomechanical properties of the bone.
 
     prop_schema returns just the property without url#

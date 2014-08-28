@@ -22,7 +22,7 @@ class publicationTypeProp(SchemaProperty):
 
     """
     SchemaField for publicationType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = publicationTypeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = publicationTypeProp()
     schema.org description:The type of the medical article, taken from the US NLM MeSH publication type catalog.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class bookEditionProp(SchemaProperty):
 
     """
     SchemaField for bookEdition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = bookEditionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = bookEditionProp()
     schema.org description:The edition of the book.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class illustratorProp(SchemaProperty):
 
     """
     SchemaField for illustrator
-    Usage: Include in SchemaObject SchemaFields as your_django_field = illustratorProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = illustratorProp()
     schema.org description:The illustrator of the book.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class bookFormatProp(SchemaProperty):
 
     """
     SchemaField for bookFormat
-    Usage: Include in SchemaObject SchemaFields as your_django_field = bookFormatProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = bookFormatProp()
     schema.org description:The format of the book.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class isbnProp(SchemaProperty):
 
     """
     SchemaField for isbn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = isbnProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isbnProp()
     schema.org description:The ISBN of the book.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class numberOfPagesProp(SchemaProperty):
 
     """
     SchemaField for numberOfPages
-    Usage: Include in SchemaObject SchemaFields as your_django_field = numberOfPagesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = numberOfPagesProp()
     schema.org description:The number of pages in the book.
 
     prop_schema returns just the property without url#

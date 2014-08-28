@@ -22,7 +22,7 @@ class questionProp(SchemaProperty):
 
     """
     SchemaField for question
-    Usage: Include in SchemaObject SchemaFields as your_django_field = questionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = questionProp()
     schema.org description:A sub property of object. A question.
 
     prop_schema returns just the property without url#

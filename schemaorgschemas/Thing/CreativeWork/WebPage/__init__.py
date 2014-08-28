@@ -21,7 +21,7 @@ class breadcrumbProp(SchemaProperty):
 
     """
     SchemaField for breadcrumb
-    Usage: Include in SchemaObject SchemaFields as your_django_field = breadcrumbProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = breadcrumbProp()
     schema.org description:A set of links that can help a user understand and navigate a website hierarchy.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class significantLinkProp(SchemaProperty):
 
     """
     SchemaField for significantLink
-    Usage: Include in SchemaObject SchemaFields as your_django_field = significantLinkProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = significantLinkProp()
     schema.org description:One of the more significant URLs on the page. Typically, these are the non-navigation links that are clicked on the most. Supercedes significantLinks.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class reviewedByProp(SchemaProperty):
 
     """
     SchemaField for reviewedBy
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewedByProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewedByProp()
     schema.org description:People or organizations that have reviewed the content on this web page for accuracy and/or completeness.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class mainContentOfPageProp(SchemaProperty):
 
     """
     SchemaField for mainContentOfPage
-    Usage: Include in SchemaObject SchemaFields as your_django_field = mainContentOfPageProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = mainContentOfPageProp()
     schema.org description:Indicates if this web page element is the main subject of the page.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class isPartOfProp(SchemaProperty):
 
     """
     SchemaField for isPartOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = isPartOfProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isPartOfProp()
     schema.org description:Indicates the collection or gallery to which the item belongs.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class lastReviewedProp(SchemaProperty):
 
     """
     SchemaField for lastReviewed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = lastReviewedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = lastReviewedProp()
     schema.org description:Date on which the content on this web page was last reviewed for accuracy and/or completeness.
 
     prop_schema returns just the property without url#
@@ -123,7 +123,7 @@ class primaryImageOfPageProp(SchemaProperty):
 
     """
     SchemaField for primaryImageOfPage
-    Usage: Include in SchemaObject SchemaFields as your_django_field = primaryImageOfPageProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = primaryImageOfPageProp()
     schema.org description:Indicates the main image on the page.
 
     prop_schema returns just the property without url#
@@ -140,7 +140,7 @@ class relatedLinkProp(SchemaProperty):
 
     """
     SchemaField for relatedLink
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedLinkProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedLinkProp()
     schema.org description:A link related to this web page, for example to other related web pages.
 
     prop_schema returns just the property without url#
@@ -157,7 +157,7 @@ class specialtyProp(SchemaProperty):
 
     """
     SchemaField for specialty
-    Usage: Include in SchemaObject SchemaFields as your_django_field = specialtyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = specialtyProp()
     schema.org description:One of the domain specialities to which this web page&#39;s content applies.
 
     prop_schema returns just the property without url#

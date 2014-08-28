@@ -21,7 +21,7 @@ class aboutProp(SchemaProperty):
 
     """
     SchemaField for about
-    Usage: Include in SchemaObject SchemaFields as your_django_field = aboutProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = aboutProp()
     schema.org description:The subject matter of the content.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class recipientProp(SchemaProperty):
 
     """
     SchemaField for recipient
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipientProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipientProp()
     schema.org description:A sub property of participant. The participant who is at the receiving end of the action.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class languageProp(SchemaProperty):
 
     """
     SchemaField for language
-    Usage: Include in SchemaObject SchemaFields as your_django_field = languageProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = languageProp()
     schema.org description:A sub property of instrument. The languaged used on this action.
 
     prop_schema returns just the property without url#

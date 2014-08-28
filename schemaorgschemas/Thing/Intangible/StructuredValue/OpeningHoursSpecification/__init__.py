@@ -20,7 +20,7 @@ class dayOfWeekProp(SchemaProperty):
 
     """
     SchemaField for dayOfWeek
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dayOfWeekProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dayOfWeekProp()
     schema.org description:The day of the week for which these opening hours are valid.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class closesProp(SchemaProperty):
 
     """
     SchemaField for closes
-    Usage: Include in SchemaObject SchemaFields as your_django_field = closesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = closesProp()
     schema.org description:The closing hour of the place or service on the given day(s) of the week.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class validFromProp(SchemaProperty):
 
     """
     SchemaField for validFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = validFromProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = validFromProp()
     schema.org description:The date when the item becomes valid.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class validThroughProp(SchemaProperty):
 
     """
     SchemaField for validThrough
-    Usage: Include in SchemaObject SchemaFields as your_django_field = validThroughProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = validThroughProp()
     schema.org description:The end of the validity of offer, price specification, or opening hours data.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class opensProp(SchemaProperty):
 
     """
     SchemaField for opens
-    Usage: Include in SchemaObject SchemaFields as your_django_field = opensProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = opensProp()
     schema.org description:The opening hour of the place or service on the given day(s) of the week.
 
     prop_schema returns just the property without url#

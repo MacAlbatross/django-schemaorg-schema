@@ -21,7 +21,7 @@ class reviewBodyProp(SchemaProperty):
 
     """
     SchemaField for reviewBody
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewBodyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewBodyProp()
     schema.org description:The actual body of the review.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class itemReviewedProp(SchemaProperty):
 
     """
     SchemaField for itemReviewed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = itemReviewedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = itemReviewedProp()
     schema.org description:The item that is being reviewed/rated.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class reviewRatingProp(SchemaProperty):
 
     """
     SchemaField for reviewRating
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewRatingProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewRatingProp()
     schema.org description:The rating given in this review. Note that reviews can themselves be rated. The reviewRating applies to rating given by the review. The aggregateRating property applies to the review itself, as a creative work.
 
     prop_schema returns just the property without url#

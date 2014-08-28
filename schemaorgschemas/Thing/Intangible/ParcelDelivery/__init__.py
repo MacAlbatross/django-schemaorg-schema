@@ -20,7 +20,7 @@ class itemShippedProp(SchemaProperty):
 
     """
     SchemaField for itemShipped
-    Usage: Include in SchemaObject SchemaFields as your_django_field = itemShippedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = itemShippedProp()
     schema.org description:Item(s) being shipped.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class originAddressProp(SchemaProperty):
 
     """
     SchemaField for originAddress
-    Usage: Include in SchemaObject SchemaFields as your_django_field = originAddressProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = originAddressProp()
     schema.org description:Shipper&#39;s address.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class expectedArrivalFromProp(SchemaProperty):
 
     """
     SchemaField for expectedArrivalFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = expectedArrivalFromProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = expectedArrivalFromProp()
     schema.org description:The earliest date the package may arrive.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class hasDeliveryMethodProp(SchemaProperty):
 
     """
     SchemaField for hasDeliveryMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = hasDeliveryMethodProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = hasDeliveryMethodProp()
     schema.org description:Method used for delivery or shipping.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class trackingUrlProp(SchemaProperty):
 
     """
     SchemaField for trackingUrl
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trackingUrlProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trackingUrlProp()
     schema.org description:Tracking url for the parcel delivery.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class deliveryStatusProp(SchemaProperty):
 
     """
     SchemaField for deliveryStatus
-    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryStatusProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryStatusProp()
     schema.org description:New entry added as the package passes through each leg of its journey (from shipment to final delivery).
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class expectedArrivalUntilProp(SchemaProperty):
 
     """
     SchemaField for expectedArrivalUntil
-    Usage: Include in SchemaObject SchemaFields as your_django_field = expectedArrivalUntilProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = expectedArrivalUntilProp()
     schema.org description:The latest date the package may arrive.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class carrierProp(SchemaProperty):
 
     """
     SchemaField for carrier
-    Usage: Include in SchemaObject SchemaFields as your_django_field = carrierProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = carrierProp()
     schema.org description:The party responsible for the parcel delivery.
 
     prop_schema returns just the property without url#
@@ -156,7 +156,7 @@ class deliveryAddressProp(SchemaProperty):
 
     """
     SchemaField for deliveryAddress
-    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryAddressProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryAddressProp()
     schema.org description:Destination address.
 
     prop_schema returns just the property without url#
@@ -173,7 +173,7 @@ class trackingNumberProp(SchemaProperty):
 
     """
     SchemaField for trackingNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trackingNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trackingNumberProp()
     schema.org description:Shipper tracking number.
 
     prop_schema returns just the property without url#
@@ -190,7 +190,7 @@ class partOfOrderProp(SchemaProperty):
 
     """
     SchemaField for partOfOrder
-    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfOrderProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = partOfOrderProp()
     schema.org description:The overall order the items in this delivery were included in.
 
     prop_schema returns just the property without url#

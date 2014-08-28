@@ -22,7 +22,7 @@ class activeIngredientProp(SchemaProperty):
 
     """
     SchemaField for activeIngredient
-    Usage: Include in SchemaObject SchemaFields as your_django_field = activeIngredientProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = activeIngredientProp()
     schema.org description:An active ingredient, typically chemical compounds and/or biologic substances.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class dosageFormProp(SchemaProperty):
 
     """
     SchemaField for dosageForm
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dosageFormProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dosageFormProp()
     schema.org description:A dosage form in which this drug/supplement is available, e.g. &#39;tablet&#39;, &#39;suspension&#39;, &#39;injection&#39;.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class nonProprietaryNameProp(SchemaProperty):
 
     """
     SchemaField for nonProprietaryName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = nonProprietaryNameProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = nonProprietaryNameProp()
     schema.org description:The generic name of this drug or supplement.
 
     prop_schema returns just the property without url#
@@ -73,7 +73,7 @@ class mechanismOfActionProp(SchemaProperty):
 
     """
     SchemaField for mechanismOfAction
-    Usage: Include in SchemaObject SchemaFields as your_django_field = mechanismOfActionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = mechanismOfActionProp()
     schema.org description:The specific biochemical interaction through which this drug or supplement produces its pharmacological effect.
 
     prop_schema returns just the property without url#
@@ -90,7 +90,7 @@ class safetyConsiderationProp(SchemaProperty):
 
     """
     SchemaField for safetyConsideration
-    Usage: Include in SchemaObject SchemaFields as your_django_field = safetyConsiderationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = safetyConsiderationProp()
     schema.org description:Any potential safety concern associated with the supplement. May include interactions with other drugs and foods, pregnancy, breastfeeding, known adverse reactions, and documented efficacy of the supplement.
 
     prop_schema returns just the property without url#
@@ -107,7 +107,7 @@ class targetPopulationProp(SchemaProperty):
 
     """
     SchemaField for targetPopulation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = targetPopulationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = targetPopulationProp()
     schema.org description:Characteristics of the population for which this is intended, or which typically uses it, e.g. &#39;adults&#39;.
 
     prop_schema returns just the property without url#
@@ -124,7 +124,7 @@ class backgroundProp(SchemaProperty):
 
     """
     SchemaField for background
-    Usage: Include in SchemaObject SchemaFields as your_django_field = backgroundProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = backgroundProp()
     schema.org description:Descriptive information establishing a historical perspective on the supplement. May include the rationale for the name, the population where the supplement first came to prominence, etc.
 
     prop_schema returns just the property without url#
@@ -141,7 +141,7 @@ class recommendedIntakeProp(SchemaProperty):
 
     """
     SchemaField for recommendedIntake
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recommendedIntakeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recommendedIntakeProp()
     schema.org description:Recommended intake of this supplement for a given population as defined by a specific recommending authority.
 
     prop_schema returns just the property without url#
@@ -158,7 +158,7 @@ class isProprietaryProp(SchemaProperty):
 
     """
     SchemaField for isProprietary
-    Usage: Include in SchemaObject SchemaFields as your_django_field = isProprietaryProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isProprietaryProp()
     schema.org description:True if this item&#39;s name is a proprietary/brand name (vs. generic name).
 
     prop_schema returns just the property without url#
@@ -175,7 +175,7 @@ class maximumIntakeProp(SchemaProperty):
 
     """
     SchemaField for maximumIntake
-    Usage: Include in SchemaObject SchemaFields as your_django_field = maximumIntakeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = maximumIntakeProp()
     schema.org description:Recommended intake of this supplement for a given population as defined by a specific recommending authority.
 
     prop_schema returns just the property without url#
@@ -192,7 +192,7 @@ class legalStatusProp(SchemaProperty):
 
     """
     SchemaField for legalStatus
-    Usage: Include in SchemaObject SchemaFields as your_django_field = legalStatusProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = legalStatusProp()
     schema.org description:The drug or supplement&#39;s legal status, including any controlled substance schedules that apply.
 
     prop_schema returns just the property without url#
@@ -209,7 +209,7 @@ class manufacturerProp(SchemaProperty):
 
     """
     SchemaField for manufacturer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = manufacturerProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = manufacturerProp()
     schema.org description:The manufacturer of the product.
 
     prop_schema returns just the property without url#

@@ -21,7 +21,7 @@ class audienceProp(SchemaProperty):
 
     """
     SchemaField for audience
-    Usage: Include in SchemaObject SchemaFields as your_django_field = audienceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = audienceProp()
     schema.org description:The intended audience of the item, i.e. the group for whom the item was created.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class eventProp(SchemaProperty):
 
     """
     SchemaField for event
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eventProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eventProp()
     schema.org description:Upcoming or past event associated with this place or organization. Supercedes events.
 
     prop_schema returns just the property without url#

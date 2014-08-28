@@ -21,7 +21,7 @@ class causeOfProp(SchemaProperty):
 
     """
     SchemaField for causeOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = causeOfProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = causeOfProp()
     schema.org description:The condition, complication, symptom, sign, etc. caused.
 
     prop_schema returns just the property without url#

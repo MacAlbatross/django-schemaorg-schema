@@ -21,7 +21,7 @@ class yearlyRevenueProp(SchemaProperty):
 
     """
     SchemaField for yearlyRevenue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = yearlyRevenueProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = yearlyRevenueProp()
     schema.org description:The size of the business in annual revenue.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class yearsInOperationProp(SchemaProperty):
 
     """
     SchemaField for yearsInOperation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = yearsInOperationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = yearsInOperationProp()
     schema.org description:The age of the business.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class numberofEmployeesProp(SchemaProperty):
 
     """
     SchemaField for numberofEmployees
-    Usage: Include in SchemaObject SchemaFields as your_django_field = numberofEmployeesProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = numberofEmployeesProp()
     schema.org description:The size of business by number of employees.
 
     prop_schema returns just the property without url#

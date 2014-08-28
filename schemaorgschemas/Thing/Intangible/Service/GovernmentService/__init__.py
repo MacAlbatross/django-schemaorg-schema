@@ -21,7 +21,7 @@ class serviceOperatorProp(SchemaProperty):
 
     """
     SchemaField for serviceOperator
-    Usage: Include in SchemaObject SchemaFields as your_django_field = serviceOperatorProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = serviceOperatorProp()
     schema.org description:The operating organization, if different from the provider. This enables the representation of services that are provided by an organization, but operated by another organization like a subcontractor.
 
     prop_schema returns just the property without url#

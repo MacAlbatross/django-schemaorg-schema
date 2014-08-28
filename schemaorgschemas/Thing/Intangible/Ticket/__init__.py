@@ -20,7 +20,7 @@ class ticketTokenProp(SchemaProperty):
 
     """
     SchemaField for ticketToken
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ticketTokenProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ticketTokenProp()
     schema.org description:Reference to an asset (e.g., Barcode, QR code image or PDF) usable for entrance.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class totalPriceProp(SchemaProperty):
 
     """
     SchemaField for totalPrice
-    Usage: Include in SchemaObject SchemaFields as your_django_field = totalPriceProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = totalPriceProp()
     schema.org description:The total price for the reservation or ticket, including applicable taxes, shipping, etc.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class ticketedSeatProp(SchemaProperty):
 
     """
     SchemaField for ticketedSeat
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ticketedSeatProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ticketedSeatProp()
     schema.org description:The seat associated with the ticket.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class priceCurrencyProp(SchemaProperty):
 
     """
     SchemaField for priceCurrency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceCurrencyProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceCurrencyProp()
     schema.org description:The currency (in 3-letter ISO 4217 format) of the offer price or a price component, when attached to PriceSpecification and its subtypes.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class dateIssuedProp(SchemaProperty):
 
     """
     SchemaField for dateIssued
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dateIssuedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dateIssuedProp()
     schema.org description:The date the ticket was issued.
 
     prop_schema returns just the property without url#
@@ -105,7 +105,7 @@ class ticketNumberProp(SchemaProperty):
 
     """
     SchemaField for ticketNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ticketNumberProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ticketNumberProp()
     schema.org description:The unique identifier for the ticket.
 
     prop_schema returns just the property without url#
@@ -122,7 +122,7 @@ class issuedByProp(SchemaProperty):
 
     """
     SchemaField for issuedBy
-    Usage: Include in SchemaObject SchemaFields as your_django_field = issuedByProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = issuedByProp()
     schema.org description:The organization issuing the permit.
 
     prop_schema returns just the property without url#
@@ -139,7 +139,7 @@ class underNameProp(SchemaProperty):
 
     """
     SchemaField for underName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = underNameProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = underNameProp()
     schema.org description:The person or organization the reservation or ticket is for.
 
     prop_schema returns just the property without url#

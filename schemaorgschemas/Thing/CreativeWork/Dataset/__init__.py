@@ -21,7 +21,7 @@ class catalogProp(SchemaProperty):
 
     """
     SchemaField for catalog
-    Usage: Include in SchemaObject SchemaFields as your_django_field = catalogProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = catalogProp()
     schema.org description:A data catalog which contains a dataset.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class temporalProp(SchemaProperty):
 
     """
     SchemaField for temporal
-    Usage: Include in SchemaObject SchemaFields as your_django_field = temporalProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = temporalProp()
     schema.org description:The range of temporal applicability of a dataset, e.g. for a 2011 census dataset, the year 2011 (in ISO 8601 time interval format).
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class distributionProp(SchemaProperty):
 
     """
     SchemaField for distribution
-    Usage: Include in SchemaObject SchemaFields as your_django_field = distributionProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = distributionProp()
     schema.org description:A downloadable form of this dataset, at a specific location, in a specific format.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class spatialProp(SchemaProperty):
 
     """
     SchemaField for spatial
-    Usage: Include in SchemaObject SchemaFields as your_django_field = spatialProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = spatialProp()
     schema.org description:The range of spatial applicability of a dataset, e.g. for a dataset of New York weather, the state of New York.
 
     prop_schema returns just the property without url#

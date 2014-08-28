@@ -22,7 +22,7 @@ class identifyingExamProp(SchemaProperty):
 
     """
     SchemaField for identifyingExam
-    Usage: Include in SchemaObject SchemaFields as your_django_field = identifyingExamProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = identifyingExamProp()
     schema.org description:A physical examination that can identify this sign.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class identifyingTestProp(SchemaProperty):
 
     """
     SchemaField for identifyingTest
-    Usage: Include in SchemaObject SchemaFields as your_django_field = identifyingTestProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = identifyingTestProp()
     schema.org description:A diagnostic test that can identify this sign.
 
     prop_schema returns just the property without url#

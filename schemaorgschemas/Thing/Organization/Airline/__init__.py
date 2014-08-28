@@ -21,7 +21,7 @@ class iataCodeProp(SchemaProperty):
 
     """
     SchemaField for iataCode
-    Usage: Include in SchemaObject SchemaFields as your_django_field = iataCodeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = iataCodeProp()
     schema.org description:IATA identifier for an airline or airport
 
     prop_schema returns just the property without url#

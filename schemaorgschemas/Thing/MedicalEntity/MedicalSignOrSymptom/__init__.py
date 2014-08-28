@@ -21,7 +21,7 @@ class possibleTreatmentProp(SchemaProperty):
 
     """
     SchemaField for possibleTreatment
-    Usage: Include in SchemaObject SchemaFields as your_django_field = possibleTreatmentProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = possibleTreatmentProp()
     schema.org description:A possible treatment to address this condition, sign or symptom.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class causeProp(SchemaProperty):
 
     """
     SchemaField for cause
-    Usage: Include in SchemaObject SchemaFields as your_django_field = causeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = causeProp()
     schema.org description:An underlying cause. More specifically, one of the causative agent(s) that are most directly responsible for the pathophysiologic process that eventually results in the occurrence.
 
     prop_schema returns just the property without url#

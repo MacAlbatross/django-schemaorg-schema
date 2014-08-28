@@ -21,7 +21,7 @@ class statusProp(SchemaProperty):
 
     """
     SchemaField for status
-    Usage: Include in SchemaObject SchemaFields as your_django_field = statusProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = statusProp()
     schema.org description:The status of the study (enumerated).
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class studySubjectProp(SchemaProperty):
 
     """
     SchemaField for studySubject
-    Usage: Include in SchemaObject SchemaFields as your_django_field = studySubjectProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = studySubjectProp()
     schema.org description:A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class sponsorProp(SchemaProperty):
 
     """
     SchemaField for sponsor
-    Usage: Include in SchemaObject SchemaFields as your_django_field = sponsorProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sponsorProp()
     schema.org description:Sponsor of the study.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class studyLocationProp(SchemaProperty):
 
     """
     SchemaField for studyLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = studyLocationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = studyLocationProp()
     schema.org description:The location in which the study is taking/took place.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class outcomeProp(SchemaProperty):
 
     """
     SchemaField for outcome
-    Usage: Include in SchemaObject SchemaFields as your_django_field = outcomeProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = outcomeProp()
     schema.org description:Expected or actual outcomes of the study.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class populationProp(SchemaProperty):
 
     """
     SchemaField for population
-    Usage: Include in SchemaObject SchemaFields as your_django_field = populationProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = populationProp()
     schema.org description:Any characteristics of the population used in the study, e.g. &#39;males under 65&#39;.
 
     prop_schema returns just the property without url#

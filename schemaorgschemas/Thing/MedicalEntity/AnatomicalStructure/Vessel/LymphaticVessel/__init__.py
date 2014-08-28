@@ -22,7 +22,7 @@ class regionDrainedProp(SchemaProperty):
 
     """
     SchemaField for regionDrained
-    Usage: Include in SchemaObject SchemaFields as your_django_field = regionDrainedProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = regionDrainedProp()
     schema.org description:The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class runsToProp(SchemaProperty):
 
     """
     SchemaField for runsTo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = runsToProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = runsToProp()
     schema.org description:The vasculature the lymphatic structure runs, or efferents, to.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class originatesFromProp(SchemaProperty):
 
     """
     SchemaField for originatesFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = originatesFromProp()  
+    Usage: Include in SchemaObject SchemaFields as your_django_field = originatesFromProp()
     schema.org description:The vasculature the lymphatic structure originates, or afferents, from.
 
     prop_schema returns just the property without url#
