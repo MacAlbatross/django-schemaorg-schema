@@ -12,12 +12,20 @@ def schemaprop(item, field_name=None):
     if not field_name:
         raise TemplateSyntaxError('need to specify field name')
     if field_name[-8:] == '_display' and field_name[:4] == 'get_':
-            cut_name = field_name[4:-8]
-            try:
-                store_value = getattr(item, cut_name)
-                field_name = cut_name
-            except:
-                print "SchemaError, field_name not in SchemaFields"
+        cut_name = field_name[4:-8]
+        try:
+            store_value = getattr(item, cut_name)
+            field_name = cut_name
+        except:
+            print "SchemaError, field_name not in SchemaFields"
+    if "." in field_name:
+        find_point = field_name.find(".")
+        try:
+            new_item = getattr(item, field_name[:find_point])
+            new_field_name = field_name[find_point + 1:]
+            return schemaprop(new_item, new_field_name)
+        except:
+            print "SchemaError"
     try:
         store_value = getattr(item, field_name)
     except:
@@ -61,9 +69,10 @@ def do_schema_render(parser, token):
     # defaults the HTML class to section unless over-ride specified
     section = 'section'
     htmlattr = None
-    if token.count > 2:
+    c = token.__len__()
+    if c > 2:
         section = token[2]
-    if token.count > 3:
+    if c > 3:
         htmlattr = token[3]
         # remove quotes
         htmlattr = htmlattr[1:-1]
@@ -72,7 +81,9 @@ def do_schema_render(parser, token):
 
 
 class SchemaNode(template.Node):
-    def __init__(self, nodelist, object_name, html_class=None, html_attribute=None):
+
+    def __init__(self, nodelist, object_name, html_class=None,
+                 html_attribute=None):
         self.nodelist = nodelist
         self.object_name = object_name
         self.html_class = html_class
@@ -99,7 +110,8 @@ class SchemaNode(template.Node):
 
     def render(self, context):
         i = context.dicts.__len__() - 1
-        # going backwards as it seems the information is stored in the last list
+        # going backwards as it seems the information is stored in the last
+        # list
         while i >= 0:
             dic = context.dicts[i]
             obj = dic.get(self.object_name, None)
@@ -107,7 +119,9 @@ class SchemaNode(template.Node):
                 break
             i = i - 1
         if not obj:
-            raise Exception(self.object_name + ' not found in template context')
+            raise Exception(
+                self.object_name +
+                ' not found in template context')
         new_nodes = NodeList()
         variable_nodes = []
         i = self.nodelist.__len__() - 1
@@ -116,12 +130,13 @@ class SchemaNode(template.Node):
             this_node = self.nodelist[l]
             node_class = this_node.__class__.__name__
             if node_class == 'TextNode':
-                    splitted = self.split_text_node(this_node.s)
-                    for item in splitted:
-                        new_nodes.append(item)
+                splitted = self.split_text_node(this_node.s)
+                for item in splitted:
+                    new_nodes.append(item)
             else:
                 new_nodes.append(this_node)
-                # variable_nodes list holds the indexes of all the VariableNodes
+                # variable_nodes list holds the indexes of all the
+                # VariableNodes
                 variable_nodes.append(new_nodes.__len__() - 1)
             l = l + 1
         for item in variable_nodes:
@@ -143,7 +158,9 @@ class SchemaNode(template.Node):
                 next_node_counter = next_node_counter + 1
                 next_node = new_nodes[item + next_node_counter]
                 next_node_text = next_node.s
-            html_class = next_node_text[next_node_text.find("<"):next_node_text.find(">") + 1]
+            html_class = next_node_text[
+                next_node_text.find("<"):next_node_text.find(">") +
+                1]
             html_class = html_class.replace("/", "")
             html_class = html_class.replace(">", '')
             prior_node_counter = 1
@@ -154,7 +171,8 @@ class SchemaNode(template.Node):
                 prior_node = new_nodes[item - prior_node_counter]
                 prior_node_text = prior_node.s
             cutter = prior_node_text.find('>')
-            prior_node.s = prior_node_text[:cutter] + ' ' + schema_prop + prior_node_text[cutter:]
+            prior_node.s = prior_node_text[
+                :cutter] + ' ' + schema_prop + prior_node_text[cutter:]
         scope = schemascope(obj)
         top_text = "<" + self.html_class + ' '
         if self.html_attribute:
