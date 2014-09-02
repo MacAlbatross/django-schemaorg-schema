@@ -1,0 +1,5 @@
+include READ.md
+recursive-include schemaorgschemas/templates *
+recursive-include schemaorgschemas/docs *
+recursive-include schemaorgschemas/Thing *
+recursive-include schemaorgschemas/templatetags *
