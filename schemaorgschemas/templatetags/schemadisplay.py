@@ -20,7 +20,7 @@ def schemaprop(item, field_name=None):
             store_value = getattr(item, cut_name)
             field_name = cut_name
         except:
-            print "SchemaError, field_name not in SchemaFields"
+            #print "SchemaError, field_name not in SchemaFields"
     if "." in field_name:
         find_point = field_name.find(".")
         try:
@@ -28,11 +28,11 @@ def schemaprop(item, field_name=None):
             new_field_name = field_name[find_point + 1:]
             return schemaprop(new_item, new_field_name)
         except:
-            print "SchemaError"
+            #print "SchemaError"
     try:
         store_value = getattr(item, field_name)
     except:
-        print "SchemaError, field_name not in SchemaFields"
+        #print "SchemaError, field_name not in SchemaFields"
     schema = getattr(item.SchemaFields, field_name)
     format_as = schema._format_as
     if (schema._format_as == 'ForeignKey'):
@@ -237,7 +237,7 @@ class SchemaNode(template.Node):
         
         for item in variable_nodes:
             node_in_question = new_nodes[item]
-            print node_in_question
+            #print node_in_question
             schema_prop = ''
             if hasattr(node_in_question, 'filter_expression'):
                 filter_exp = str(node_in_question.filter_expression)
