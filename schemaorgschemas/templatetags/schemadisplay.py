@@ -11,6 +11,10 @@ register = Library()
 
 @register.simple_tag(takes_context=False)
 def schemaprop(item, field_name=None):
+    """takes an instance of an model object and field name
+    and returns the schema.org property and value formatted
+    version where appropriate.
+    """
     magix = None
     if not field_name:
         raise TemplateSyntaxError('need to specify field name')
@@ -57,6 +61,10 @@ def schemaprop(item, field_name=None):
 
 @register.simple_tag(takes_context=False)
 def schemascope(item):
+    """
+    Takes instance of model object and includes the schema.org url
+    If there's an internal url that is also included.
+    """
     try:
         ret = '"' + item.schema_url + '"'
     except:
@@ -73,6 +81,15 @@ def schemascope(item):
 
 @register.tag(name="schemaobject")
 def do_schema_render(parser, token):
+    """
+    The schemaobject and endschemaobject tag replace the html element that contains the object.  
+    This is then provided as the second argument should the default 'section' not be desired.
+    The third optional parameter is contained inside quotes is the html class details.
+     
+    {% schemaobject object section "class='otherstuff'" %}
+    
+    The all fields that have relevant schema.org information associated through their SchemaFields will have the schema.org information inserted into the HTML.
+    """
     token = token.split_contents()
     nodelist = parser.parse(('endschemaobject',))
     parser.delete_first_token()
@@ -228,8 +245,6 @@ class SchemaNode(template.Node):
                     new_nodes.append(item)
             else:
                 new_nodes.append(this_node)
-                # variable_nodes list holds the indexes of all the
-                # VariableNodes
             if node_class == "DebugVariableNode":
                 variable_nodes.append(new_nodes.__len__() - 1)
             l = l + 1
