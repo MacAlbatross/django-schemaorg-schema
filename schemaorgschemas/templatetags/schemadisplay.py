@@ -1,7 +1,6 @@
 from django import template
 from django.template import Context
 from django.template import Library, NodeList, VariableNode
-from django.template.defaulttags import ForNode, IfNode
 from django.template.base import TemplateSyntaxError, TextNode
 from formatters import SchemaPropFormatter, EnumPropFormatter
 from django.db.models.loading import get_model
@@ -82,7 +81,7 @@ def schemascope(item):
 @register.tag(name="schemaobject")
 def do_schema_render(parser, token):
     """
-    The schemaobject and endschemaobject tag replace the html element that contains the object.  
+    The schemaobject and endschemaobject tag replace the html element that contains the object.
     This is then provided as the second argument should the default 'section' not be desired.
     The third optional parameter is contained inside quotes is the html class details.
     The forth option allows the use of ids for the section,  appending the object.pk to the id text
@@ -113,7 +112,7 @@ def do_schema_render(parser, token):
 class SchemaNode(template.Node):
 
     def __init__(self, nodelist, object_name, html_class=None,
-                 html_attribute=None, id_attr = None):
+                 html_attribute=None, id_attr=None):
         self.nodelist = nodelist
         self.object_name = object_name
         self.html_class = html_class
@@ -137,8 +136,7 @@ class SchemaNode(template.Node):
                 output.append(item)
             if f == -1:
                 return output
-    
-         
+
     def get_context_object(self, context):
         i = context.dicts.__len__() - 1
         # going backwards as it seems the information is stored in the last
@@ -175,9 +173,9 @@ class SchemaNode(template.Node):
         while "/" not in section_text:
             end = new_nodes.pop()
             section_text = end.s
-        section_text = section_text.replace("<","")
-        section_text = section_text.replace(">","")
-        section_text = section_text.replace("/","")
+        section_text = section_text.replace("<", "")
+        section_text = section_text.replace(">", "")
+        section_text = section_text.replace("/", "")
         section_text = section_text.strip("\r\n")
         top = new_nodes.pop(0)
         top_text = top.s
@@ -185,13 +183,11 @@ class SchemaNode(template.Node):
         top_text = top_text.replace(">", "")
         top_text = top_text.replace(section_text, '')
         top_text = top_text.strip("\r\n")
-        output = SchemaNode(new_nodes,node.loopvars[0], section_text, top_text )
+        output = SchemaNode(new_nodes, node.loopvars[0], section_text, top_text)
         out = output.render(context)
-        return out  
-        
-        #should be topped an tailed
+        return out
+
     def render_if_node(self, node, context):
-        out = node.render(context)
         new_nodes = NodeList()
         index = 0
         l = node.nodelist.__len__()
@@ -200,7 +196,6 @@ class SchemaNode(template.Node):
             node_class = new_node.__class__.__name__
             if node_class == "DebugVariableNode":
                 if hasattr(new_node, 'filter_expression'):
-                    #is it schema?
                     filter_exp = str(new_node.filter_expression)
                     filter_exp = filter_exp.replace(self.object_name + '.', '')
                 # ensure ones with added template tags work properly
@@ -225,21 +220,17 @@ class SchemaNode(template.Node):
             index = index + 1
         out = new_nodes.render(context)
         return out
-        
 
     def render(self, context):
         self.obj = self.get_context_object(context)
         new_nodes = NodeList()
         variable_nodes = []
-        for_nodes = []
         i = self.nodelist.__len__() - 1
         l = 0
-        for_nodes = self.nodelist.get_nodes_by_type(ForNode)
         while l <= i:
             this_node = self.nodelist[l]
             node_class = this_node.__class__.__name__
             if node_class == "ForNode":
-                #try to render them first
                 this_node = TextNode(self.render_for_node(this_node, context))
             if node_class == "IfNode":
                 this_node = TextNode(self.render_if_node(this_node, context))
@@ -252,11 +243,8 @@ class SchemaNode(template.Node):
             if node_class == "DebugVariableNode":
                 variable_nodes.append(new_nodes.__len__() - 1)
             l = l + 1
-         
-        
         for item in variable_nodes:
             node_in_question = new_nodes[item]
-            #print node_in_question
             schema_prop = ''
             if hasattr(node_in_question, 'filter_expression'):
                 filter_exp = str(node_in_question.filter_expression)
@@ -298,7 +286,7 @@ class SchemaNode(template.Node):
         if self.html_attribute:
             top_text = top_text + self.html_attribute
         if self.id_attr:
-            top_text = top_text + ' id="#' + self.id_attr + str(self.obj.pk) + '"' 
+            top_text = top_text + ' id="#' + self.id_attr + str(self.obj.pk) + '"'
         top_text = top_text + ' itemscope itemtype=' + scope + '>'
         bottom_text = "</" + self.html_class + ">"
         topnode = TextNode(top_text)
@@ -306,8 +294,4 @@ class SchemaNode(template.Node):
         new_nodes.insert(0, topnode)
         new_nodes.append(bottomnode)
         output = new_nodes.render(context)
-        nl = []
-        for node in new_nodes:
-            result = node.render(context)
-            nl.append(result)
-        return ''.join(nl)
+        return output
