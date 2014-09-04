@@ -85,9 +85,8 @@ def do_schema_render(parser, token):
     The schemaobject and endschemaobject tag replace the html element that contains the object.  
     This is then provided as the second argument should the default 'section' not be desired.
     The third optional parameter is contained inside quotes is the html class details.
-     
-    {% schemaobject object section "class='otherstuff'" %}
-    
+    The forth option allows the use of ids for the section,  appending the object.pk to the id text
+    {% schemaobject object section "class='otherstuff'" 'obj' %}
     The all fields that have relevant schema.org information associated through their SchemaFields will have the schema.org information inserted into the HTML.
     """
     token = token.split_contents()
@@ -96,6 +95,7 @@ def do_schema_render(parser, token):
     # defaults the HTML class to section unless over-ride specified
     section = 'section'
     htmlattr = None
+    id_attr = None
     c = token.__len__()
     if c > 2:
         section = token[2]
@@ -103,18 +103,22 @@ def do_schema_render(parser, token):
         htmlattr = token[3]
         # remove quotes
         htmlattr = htmlattr[1:-1]
-    rets = SchemaNode(nodelist, token[1], section, htmlattr)
+    if c > 4:
+        id_attr = token[4]
+        id_attr = id_attr[1:-1]
+    rets = SchemaNode(nodelist, token[1], section, htmlattr, id_attr)
     return rets
 
 
 class SchemaNode(template.Node):
 
     def __init__(self, nodelist, object_name, html_class=None,
-                 html_attribute=None):
+                 html_attribute=None, id_attr = None):
         self.nodelist = nodelist
         self.object_name = object_name
         self.html_class = html_class
         self.html_attribute = html_attribute
+        self.id_attr = id_attr
 
     @staticmethod
     def split_text_node(text_node_string):
@@ -292,7 +296,9 @@ class SchemaNode(template.Node):
         scope = schemascope(self.obj)
         top_text = "<" + self.html_class + ' '
         if self.html_attribute:
-            top_text = top_text + self.html_attribute + ' '
+            top_text = top_text + self.html_attribute
+        if self.id_attr:
+            top_text = top_text + ' id="#' + self.id_attr + str(self.obj.pk) + '"' 
         top_text = top_text + ' itemscope itemtype=' + scope + '>'
         bottom_text = "</" + self.html_class + ">"
         topnode = TextNode(top_text)
