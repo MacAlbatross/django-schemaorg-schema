@@ -4,9 +4,12 @@ from django.template import Library, NodeList, VariableNode
 from django.template.base import TemplateSyntaxError, TextNode
 from formatters import SchemaPropFormatter, EnumPropFormatter
 from django.db.models.loading import get_model
+from django.db.models import F
 
 register = Library()
 
+VOID_ELEMENTS = ["<area ", "<base ", "<br>", "<col ", "<command ", "<embed ", "<hr>", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
+FILE_FIELD_SPECIALS = ['.url', '.path']
 
 @register.simple_tag(takes_context=False)
 def schemaprop(item, field_name=None):
@@ -23,7 +26,7 @@ def schemaprop(item, field_name=None):
             store_value = getattr(item, cut_name)
             field_name = cut_name
         except:
-            print "SchemaError, field_name not in SchemaFields"
+            print "SchemaError, " + field_name + "not in SchemaFields"
     if "." in field_name:
         find_point = field_name.find(".")
         try:
@@ -31,11 +34,14 @@ def schemaprop(item, field_name=None):
             new_field_name = field_name[find_point + 1:]
             return schemaprop(new_item, new_field_name)
         except:
-            print "SchemaError"
+            for last_check in FILE_FIELD_SPECIALS:
+                if field_name[-len(last_check):] == last_check:
+                    new_field_name = field_name[:-len(last_check)]
+                    return schemaprop(item, new_field_name)
     try:
         store_value = getattr(item, field_name)
     except:
-        print "SchemaError, field_name not in SchemaFields"
+        print "SchemaError, " + field_name + " not in SchemaFields"
     schema = getattr(item.SchemaFields, field_name)
     format_as = schema._format_as
     if (schema._format_as == 'ForeignKey'):
@@ -150,15 +156,19 @@ class SchemaNode(template.Node):
             raise Exception(
                 self.object_name +
                 ' not found in template context')
-        
+
+    #def schema_model_extract(self, ):
+
     def render_for_node(self, node, context):
         if self.object_name not in str(node.sequence):
             return node.render(context)
         sub_obj = str(node.sequence).replace(self.object_name + '.', '')
         sub_obj = sub_obj[:sub_obj.find("_")]
         my_model = get_model(self.obj._meta.app_label, sub_obj)
+        if not my_model:
+            sub_obj = sub_obj[:sub_obj.find(".")]
+            my_model = get_model(self.obj._meta.app_label, sub_obj)
         schema_model = my_model.objects.all()[0]
-        context.update({node.loopvars[0]: schema_model})
         if not hasattr(my_model, 'SchemaFields'):
             return node.render(context)
         new_nodes = NodeList()
@@ -183,9 +193,16 @@ class SchemaNode(template.Node):
         top_text = top_text.replace(">", "")
         top_text = top_text.replace(section_text, '')
         top_text = top_text.strip("\r\n")
-        output = SchemaNode(new_nodes, node.loopvars[0], section_text, top_text)
-        out = output.render(context)
-        return out
+        outlist = []
+        #here we need to evaluate the foor loop queryset and loop through it
+        if hasattr(self.obj,sub_obj + '_set'):
+            filter_dict = getattr(self.obj, sub_obj + '_set').core_filters
+            schema_models = my_model.objects.filter(**filter_dict)
+        for schema_model in schema_models:
+            context.update({node.loopvars[0]: schema_model})
+            output = SchemaNode(new_nodes, node.loopvars[0], section_text, top_text)
+            outlist.append(output.render(context))
+        return ''.join(outlist)
 
     def render_if_node(self, node, context):
         new_nodes = NodeList()
@@ -258,29 +275,19 @@ class SchemaNode(template.Node):
                     # someone's snuck in a non-schema field, so lets just ignore it
                     pass
             if schema_prop:
-                next_node_counter = 1
-                next_node = new_nodes[item + next_node_counter]
-                next_node_text = next_node.s
-                while "<" not in next_node_text:
-                    next_node_counter = next_node_counter + 1
-                    next_node = new_nodes[item + next_node_counter]
-                    next_node_text = next_node.s
-                html_class = next_node_text[
-                    next_node_text.find("<"):next_node_text.find(">") +
-                    1]
-                html_class = html_class.replace("/", "")
-                html_class = html_class.replace(">", '')
                 prior_node_counter = 1
                 prior_node = new_nodes[item - prior_node_counter]
                 prior_node_text = prior_node.s
-                while html_class not in prior_node_text:
+                while "<" not in prior_node_text:
                     prior_node_counter = prior_node_counter + 1
                     prior_node = new_nodes[item - prior_node_counter]
                     if hasattr(prior_node, "s"):
                         prior_node_text = prior_node.s
-                cutter = prior_node_text.find('>')
-                prior_node.s = prior_node_text[
-                    :cutter] + ' ' + schema_prop + prior_node_text[cutter:]
+                if any(void in prior_node_text for void in VOID_ELEMENTS):
+                    cutter = prior_node_text.find(" ")
+                else:
+                    cutter = prior_node_text.find(">")
+                prior_node.s = prior_node_text[:cutter] + ' ' + schema_prop + prior_node_text[cutter:]
         scope = schemascope(self.obj)
         top_text = "<" + self.html_class + ' '
         if self.html_attribute:
