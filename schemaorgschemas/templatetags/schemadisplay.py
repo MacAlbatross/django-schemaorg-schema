@@ -160,6 +160,14 @@ class SchemaNode(template.Node):
                 self.object_name +
                 ' not found in template context')
 
+    @staticmethod
+    def strip_annoying_text(text_to_strip, text_replace=''):
+        text_to_strip = text_to_strip.replace("<", "")
+        text_to_strip = text_to_strip.replace(">", "")
+        text_to_strip = text_to_strip.replace(text_replace, "")
+        text_to_strip = text_to_strip.strip("\r\n")
+        return text_to_strip
+
     def render_for_node(self, node, context):
         if self.object_name not in str(node.sequence):
             return node.render(context)
@@ -177,11 +185,12 @@ class SchemaNode(template.Node):
             obj_manager = getattr(self.obj, sub_obj)
             my_model = obj_manager.model
             #see if the object is actually a manager rather than a field
-
         schema_model = my_model.objects.all()[0]
         if not hasattr(my_model, 'SchemaFields'):
             return node.render(context)
         new_nodes = NodeList()
+        # due to getting the actual object the parent schema property wasn't being captured
+        
         for item in node.nodelist_loop:
             if item.__class__.__name__ == "TextNode":
                 split = self.split_text_node(item.s)
@@ -193,18 +202,14 @@ class SchemaNode(template.Node):
         while "/" not in section_text:
             end = new_nodes.pop()
             section_text = end.s
-        section_text = section_text.replace("<", "")
-        section_text = section_text.replace(">", "")
-        section_text = section_text.replace("/", "")
-        section_text = section_text.strip("\r\n")
+        section_text = self.strip_annoying_text(section_text, "/")
         top = new_nodes.pop(0)
         top_text = top.s
-        top_text = top_text.replace("<", "")
-        top_text = top_text.replace(">", "")
-        top_text = top_text.replace(section_text, '')
-        top_text = top_text.strip("\r\n")
+        top_text = self.strip_annoying_text(top_text, section_text)
+        schema_prop = getattr(self.obj.SchemaFields, sub_obj, "")
+        if schema_prop:
+            top_text = top_text + ' itemprop="' + schema_prop.schema_prop + '"'
         outlist = []
-        
         fliter_dict = {}
         if hasattr(self.obj, sub_obj + '_set'):
             filter_dict = getattr(self.obj, sub_obj + '_set').core_filters
