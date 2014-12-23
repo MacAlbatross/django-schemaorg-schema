@@ -268,7 +268,13 @@ class SchemaNode(template.Node):
         while l <= i:
             this_node = self.nodelist[l]
             node_class = this_node.__class__.__name__
+            #This process is incorrect, the rendering clearly should be delayed
+            #and a list of nodes returned allowing the final template node compilation to be pickled and cached
+            #and context_dictionaries to be applied to a cached version
             if node_class == "ForNode":
+                #these should all return nodelist rather than rendered nodes, so they get
+                #appended to the big node list and rendered at the end
+                #school boy error
                 this_node = TextNode(self.render_for_node(this_node, context))
             if node_class == "IfNode":
                 this_node = TextNode(self.render_if_node(this_node, context))

@@ -36,7 +36,7 @@ class Author(models.Model, Person.PersonSchema):
 class Publisher(models.Model, Organization.OrganizationSchema):
     name = models.CharField(max_length=30)
     website = models.URLField()
-    suddenly_stopped = models.DateTimeField(blank=True)
+    suddenly_stopped = models.TimeField(blank=True)
     non_schema_field = models.CharField(max_length="5", blank=True)
 
 
@@ -90,6 +90,7 @@ class SchemaTemplateTagTester(TestCase):
         book_b.authors.add(auth_a.pk)
 
 
+
     def test_item_scope(self):
         out = Template("{% load schemadisplay %}"
                        """<section itemscope itemtype={% schemascope object %}></section>"""
@@ -103,36 +104,35 @@ class SchemaTemplateTagTester(TestCase):
                        """<p {% schemaprop object 'family_friendly' %}>boolean:{{object.family_friendly}} </p>"""
                        ).render(Context({'object': Book.objects.get(id=1)}))
         expected_string = """<p itemprop="isFamilyFriendly">boolean:True </p>"""
-        self.assertEqual(out,expected_string)
+        self.assertEqual(out, expected_string)
 
     def test_datatype_date(self):
         out = Template("{% load schemadisplay %}"
                        """<p {% schemaprop object 'publication_date' %}>date: {{object.publication_date}}</p>"""
                        ).render(Context({'object': Book.objects.get(id=1)}))
         expected_string = """<p itemprop="datePublished" datetime="1999-12-31">date: Dec. 31, 1999</p>"""
-        self.assertEqual(out,expected_string)
-
+        self.assertEqual(out, expected_string)
 
     def test_datatype_datetime(self):
         out = Template("{% load schemadisplay %}"
                        """<p {% schemaprop object 'suddenly_stopped' %}>time:{{object.suddenly_stopped}}</p>"""
                        ).render(Context({'object': Publisher.objects.get(id=1)}))
         expected_string = """<p itemprop="endTime" datetime="2000-01-01T01:01:01-06:00">time:Jan. 1, 2000, 1:01 a.m.</p>"""
-        self.assertEqual(out,expected_string)
+        self.assertEqual(out, expected_string)
 
     def test_datatype_number(self):
         out = Template("{% load schemadisplay %}"
                        """<p {% schemaprop object 'copyright_year' %}>integer: {{object.copyright_year}}</p>"""
                        ).render(Context({'object': Book.objects.get(id=1)}))
         expected_string = """<p itemprop="copyrightYear">integer: 2014</p>"""
-        self.assertEqual(out,expected_string)
+        self.assertEqual(out, expected_string)
 
     def test_datatype_text(self):
         out = Template("{% load schemadisplay %}"
                        """<p {% schemaprop object 'title' %}>text: {{object.title}}</p>"""
                        ).render(Context({'object': Book.objects.get(id=1)}))
         expected_string = """<p itemprop="headline">text: A for Apple</p>"""
-        self.assertEqual(out,expected_string)
+        self.assertEqual(out, expected_string)
 
     def test_datatype_time(self):
         pass
