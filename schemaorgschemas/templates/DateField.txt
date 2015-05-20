@@ -1,1 +1,1 @@
-itemprop="{{schema_prop}}" datetime="{{value|date:"Y-m-d"}}" 
+itemprop="{{schema_prop}}" datetime="{{value|date:"Y-m-d"}}"

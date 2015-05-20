@@ -1,4 +1,5 @@
 include READ.md
+include tests
 recursive-include schemaorgschemas/templates *
 recursive-include schemaorgschemas/docs *
 recursive-include schemaorgschemas/Thing *

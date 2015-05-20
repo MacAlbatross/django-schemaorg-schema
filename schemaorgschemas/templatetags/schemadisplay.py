@@ -190,7 +190,6 @@ class SchemaNode(template.Node):
             return node.render(context)
         new_nodes = NodeList()
         # due to getting the actual object the parent schema property wasn't being captured
-        
         for item in node.nodelist_loop:
             if item.__class__.__name__ == "TextNode":
                 split = self.split_text_node(item.s)
