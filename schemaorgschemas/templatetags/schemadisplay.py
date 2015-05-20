@@ -231,7 +231,7 @@ class SchemaNode(template.Node):
         while index != l:
             new_node = node.nodelist[index]
             node_class = new_node.__class__.__name__
-            if node_class == "DebugVariableNode":
+            if "VariableNode" in node_class:
                 if hasattr(new_node, 'filter_expression'):
                     filter_exp = str(new_node.filter_expression)
                     filter_exp = filter_exp.replace(self.object_name + '.', '')
@@ -283,7 +283,7 @@ class SchemaNode(template.Node):
                     new_nodes.append(item)
             else:
                 new_nodes.append(this_node)
-            if node_class == "DebugVariableNode":
+            if "VariableNode" in node_class:
                 variable_nodes.append(new_nodes.__len__() - 1)
             l = l + 1
         for item in variable_nodes:
