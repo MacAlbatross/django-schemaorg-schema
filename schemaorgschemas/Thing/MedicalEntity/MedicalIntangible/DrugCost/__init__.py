@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class applicableLocationProp(SchemaProperty):
 
     """
     SchemaField for applicableLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = applicableLocationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = applicableLocationProp()  
     schema.org description:The location in which the status applies.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class drugUnitProp(SchemaProperty):
 
     """
     SchemaField for drugUnit
-    Usage: Include in SchemaObject SchemaFields as your_django_field = drugUnitProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = drugUnitProp()  
     schema.org description:The unit in which the drug is measured, e.g. &#39;5 mg tablet&#39;.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class costPerUnitProp(SchemaProperty):
 
     """
     SchemaField for costPerUnit
-    Usage: Include in SchemaObject SchemaFields as your_django_field = costPerUnitProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = costPerUnitProp()  
     schema.org description:The cost per unit of the drug.
 
     prop_schema returns just the property without url#
@@ -65,14 +65,14 @@ class costPerUnitProp(SchemaProperty):
     _prop_schema = 'costPerUnit'
     _expected_schema = None
     _enum = False
-    _format_as = "TextField"
+    _format_as = "FloatField"
 
 
 class costCategoryProp(SchemaProperty):
 
     """
     SchemaField for costCategory
-    Usage: Include in SchemaObject SchemaFields as your_django_field = costCategoryProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = costCategoryProp()  
     schema.org description:The category of cost, such as wholesale, retail, reimbursement cap, etc.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class costCurrencyProp(SchemaProperty):
 
     """
     SchemaField for costCurrency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = costCurrencyProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = costCurrencyProp()  
     schema.org description:The currency (in 3-letter ISO 4217 format) of the drug cost.
 
     prop_schema returns just the property without url#
@@ -106,7 +106,7 @@ class costOriginProp(SchemaProperty):
 
     """
     SchemaField for costOrigin
-    Usage: Include in SchemaObject SchemaFields as your_django_field = costOriginProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = costOriginProp()  
     schema.org description:Additional details to capture the origin of the cost data. For example, &#39;Medicare Part B&#39;.
 
     prop_schema returns just the property without url#
@@ -117,3 +117,6 @@ class costOriginProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

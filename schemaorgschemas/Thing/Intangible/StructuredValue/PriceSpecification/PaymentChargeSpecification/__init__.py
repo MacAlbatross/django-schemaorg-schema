@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.Intangible.StructuredValue.PriceSpecification import validFromProp, priceCurrencyProp, priceProp, maxPriceProp, eligibleTransactionVolumeProp, valueAddedTaxIncludedProp, eligibleQuantityProp, validThroughProp, minPriceProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -21,7 +21,7 @@ class appliesToDeliveryMethodProp(SchemaProperty):
 
     """
     SchemaField for appliesToDeliveryMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = appliesToDeliveryMethodProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = appliesToDeliveryMethodProp()  
     schema.org description:The delivery method(s) to which the delivery charge or payment charge specification applies.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class appliesToPaymentMethodProp(SchemaProperty):
 
     """
     SchemaField for appliesToPaymentMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = appliesToPaymentMethodProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = appliesToPaymentMethodProp()  
     schema.org description:The payment method(s) to which the payment charge specification applies.
 
     prop_schema returns just the property without url#
@@ -49,3 +49,6 @@ class appliesToPaymentMethodProp(SchemaProperty):
     _expected_schema = 'PaymentMethod'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,31 +21,34 @@ class fromLocationProp(SchemaProperty):
 
     """
     SchemaField for fromLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = fromLocationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = fromLocationProp()  
     schema.org description:A sub property of location. The original location of the object or the agent before the action.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference Place"""
 
     _prop_schema = 'fromLocation'
-    _expected_schema = None
+    _expected_schema = 'Place'
     _enum = False
-    _format_as = "FloatField"
+    _format_as = "TextField"
 
 
 class toLocationProp(SchemaProperty):
 
     """
     SchemaField for toLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = toLocationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = toLocationProp()  
     schema.org description:A sub property of location. The final location of the object or the agent after the action.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference Place"""
 
     _prop_schema = 'toLocation'
-    _expected_schema = None
+    _expected_schema = 'Place'
     _enum = False
-    _format_as = "FloatField"
+    _format_as = "TextField"
+
+
+# schema.org version 2.0

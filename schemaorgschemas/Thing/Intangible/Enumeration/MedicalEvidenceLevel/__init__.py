@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
+from schemaorgschemas.Thing.Intangible.Enumeration import supersededByProp
+
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
 
@@ -16,28 +18,28 @@ class MedicalEvidenceLevelSchema(SchemaObject):
         self.schema = 'MedicalEvidenceLevel'
 
 
-EVIDENCELEVEL_CHOICES = (
-    ('EVIDENCELEVELB',
-     'EvidenceLevelB: Data derived from a single randomized trial, or nonrandomized studies.'),
-    ('EVIDENCELEVELC',
-     'EvidenceLevelC: Only consensus opinion of experts, case studies, or standard-of-care.'),
-    ('EVIDENCELEVELA',
-     'EvidenceLevelA: Data derived from multiple randomized clinical trials or meta-analyses.'),
+/EVIDENCELEVEL_CHOICES = (
+    ('/EVIDENCELEVELB', '/EvidenceLevelB'),
+    ('/EVIDENCELEVELC', '/EvidenceLevelC'),
+    ('/EVIDENCELEVELA', '/EvidenceLevelA'),
 )
 
 
-class evidenceLevelProp(SchemaEnumProperty):
+class / evidenceLevelProp(SchemaEnumProperty):
 
     """
-    Enumeration for evidenceLevel
+    Enumeration for /evidenceLevel
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = 'evidenceLevel'
-    choices = EVIDENCELEVEL_CHOICES
+    _prop_schema = '/evidenceLevel'
+    choices = /EVIDENCELEVEL_CHOICES
     _format_as = "enum"
     adapter = {
-        'EVIDENCELEVELB': 'EvidenceLevelB',
-        'EVIDENCELEVELC': 'EvidenceLevelC',
-        'EVIDENCELEVELA': 'EvidenceLevelA',
+        '/EVIDENCELEVELB': '/EvidenceLevelB',
+        '/EVIDENCELEVELC': '/EvidenceLevelC',
+        '/EVIDENCELEVELA': '/EvidenceLevelA',
     }
+
+
+# schema.org version 2.0

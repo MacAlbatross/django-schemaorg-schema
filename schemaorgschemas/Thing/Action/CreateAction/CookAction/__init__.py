@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class recipeProp(SchemaProperty):
 
     """
     SchemaField for recipe
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeProp()  
     schema.org description:A sub property of instrument. The recipe/instructions used to perform the action.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class foodEstablishmentProp(SchemaProperty):
 
     """
     SchemaField for foodEstablishment
-    Usage: Include in SchemaObject SchemaFields as your_django_field = foodEstablishmentProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = foodEstablishmentProp()  
     schema.org description:A sub property of location. The specific food establishment where the action occurred.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class foodEventProp(SchemaProperty):
 
     """
     SchemaField for foodEvent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = foodEventProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = foodEventProp()  
     schema.org description:A sub property of location. The specific food event where the action occurred.
 
     prop_schema returns just the property without url#
@@ -66,3 +66,6 @@ class foodEventProp(SchemaProperty):
     _expected_schema = 'FoodEvent'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

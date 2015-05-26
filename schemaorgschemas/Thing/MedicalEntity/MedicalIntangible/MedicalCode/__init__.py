@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class codingSystemProp(SchemaProperty):
 
     """
     SchemaField for codingSystem
-    Usage: Include in SchemaObject SchemaFields as your_django_field = codingSystemProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = codingSystemProp()  
     schema.org description:The coding system, e.g. &#39;ICD-10&#39;.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class codeValueProp(SchemaProperty):
 
     """
     SchemaField for codeValue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = codeValueProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = codeValueProp()  
     schema.org description:The actual code.
 
     prop_schema returns just the property without url#
@@ -49,3 +49,6 @@ class codeValueProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

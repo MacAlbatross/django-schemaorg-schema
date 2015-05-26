@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -20,7 +20,7 @@ class dayOfWeekProp(SchemaProperty):
 
     """
     SchemaField for dayOfWeek
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dayOfWeekProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dayOfWeekProp()  
     schema.org description:The day of the week for which these opening hours are valid.
 
     prop_schema returns just the property without url#
@@ -37,24 +37,24 @@ class closesProp(SchemaProperty):
 
     """
     SchemaField for closes
-    Usage: Include in SchemaObject SchemaFields as your_django_field = closesProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = closesProp()  
     schema.org description:The closing hour of the place or service on the given day(s) of the week.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference Time"""
 
     _prop_schema = 'closes'
-    _expected_schema = None
+    _expected_schema = 'Time'
     _enum = False
-    _format_as = "TimeField"
+    _format_as = "ForeignKey"
 
 
 class validFromProp(SchemaProperty):
 
     """
     SchemaField for validFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = validFromProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = validFromProp()  
     schema.org description:The date when the item becomes valid.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class validThroughProp(SchemaProperty):
 
     """
     SchemaField for validThrough
-    Usage: Include in SchemaObject SchemaFields as your_django_field = validThroughProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = validThroughProp()  
     schema.org description:The end of the validity of offer, price specification, or opening hours data.
 
     prop_schema returns just the property without url#
@@ -88,7 +88,7 @@ class opensProp(SchemaProperty):
 
     """
     SchemaField for opens
-    Usage: Include in SchemaObject SchemaFields as your_django_field = opensProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = opensProp()  
     schema.org description:The opening hour of the place or service on the given day(s) of the week.
 
     prop_schema returns just the property without url#
@@ -99,3 +99,6 @@ class opensProp(SchemaProperty):
     _expected_schema = 'Time'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Intangible.Enumeration import supersededByProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -13,13 +14,15 @@ class BusinessEntityTypeSchema(SchemaObject):
 
     Commonly used values:
 
-    http://purl.org/goodrelations/v1#Business
-    http://purl.org/goodrelations/v1#Enduser
-    http://purl.org/goodrelations/v1#PublicInstitution
-    http://purl.org/goodrelations/v1#Reseller
-
+    http://purl.org/goodrelations/v1#Business 
+    http://purl.org/goodrelations/v1#Enduser 
+    http://purl.org/goodrelations/v1#PublicInstitution 
+    http://purl.org/goodrelations/v1#Reseller 
 
     """
 
     def __init__(self):
         self.schema = 'BusinessEntityType'
+
+
+# schema.org version 2.0

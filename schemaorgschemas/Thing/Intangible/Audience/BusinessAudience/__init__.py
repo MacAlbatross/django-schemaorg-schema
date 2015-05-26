@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.Intangible.Audience import geographicAreaProp, audienceTypeProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -21,7 +21,7 @@ class yearlyRevenueProp(SchemaProperty):
 
     """
     SchemaField for yearlyRevenue
-    Usage: Include in SchemaObject SchemaFields as your_django_field = yearlyRevenueProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = yearlyRevenueProp()  
     schema.org description:The size of the business in annual revenue.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class yearsInOperationProp(SchemaProperty):
 
     """
     SchemaField for yearsInOperation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = yearsInOperationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = yearsInOperationProp()  
     schema.org description:The age of the business.
 
     prop_schema returns just the property without url#
@@ -51,18 +51,21 @@ class yearsInOperationProp(SchemaProperty):
     _format_as = "IntegerField"
 
 
-class numberofEmployeesProp(SchemaProperty):
+class numberOfEmployeesProp(SchemaProperty):
 
     """
-    SchemaField for numberofEmployees
-    Usage: Include in SchemaObject SchemaFields as your_django_field = numberofEmployeesProp()
-    schema.org description:The size of business by number of employees.
+    SchemaField for numberOfEmployees
+    Usage: Include in SchemaObject SchemaFields as your_django_field = numberOfEmployeesProp()  
+    schema.org description:The number of employees in an organization e.g. business.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     used to reference QuantitativeValue"""
 
-    _prop_schema = 'numberofEmployees'
+    _prop_schema = 'numberOfEmployees'
     _expected_schema = 'QuantitativeValue'
     _enum = False
     _format_as = "IntegerField"
+
+
+# schema.org version 2.0

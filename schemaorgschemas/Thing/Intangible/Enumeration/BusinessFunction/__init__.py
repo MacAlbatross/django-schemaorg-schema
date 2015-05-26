@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, nameProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, descriptionProp
+from schemaorgschemas.Thing.Intangible.Enumeration import supersededByProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -13,16 +14,19 @@ class BusinessFunctionSchema(SchemaObject):
 
     Commonly used values:
 
-    http://purl.org/goodrelations/v1#ConstructionInstallation
-    http://purl.org/goodrelations/v1#Dispose
-    http://purl.org/goodrelations/v1#LeaseOut
-    http://purl.org/goodrelations/v1#Maintain
-    http://purl.org/goodrelations/v1#ProvideService
-    http://purl.org/goodrelations/v1#Repair
-    http://purl.org/goodrelations/v1#Sell
-    http://purl.org/goodrelations/v1#Buy
+    http://purl.org/goodrelations/v1#ConstructionInstallation 
+    http://purl.org/goodrelations/v1#Dispose 
+    http://purl.org/goodrelations/v1#LeaseOut 
+    http://purl.org/goodrelations/v1#Maintain 
+    http://purl.org/goodrelations/v1#ProvideService 
+    http://purl.org/goodrelations/v1#Repair 
+    http://purl.org/goodrelations/v1#Sell 
+    http://purl.org/goodrelations/v1#Buy 
 
     """
 
     def __init__(self):
         self.schema = 'BusinessFunction'
+
+
+# schema.org version 2.0

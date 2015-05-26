@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class scheduledTimeProp(SchemaProperty):
 
     """
     SchemaField for scheduledTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = scheduledTimeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = scheduledTimeProp()  
     schema.org description:The time the object is scheduled to.
 
     prop_schema returns just the property without url#
@@ -32,3 +32,6 @@ class scheduledTimeProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "DateTimeField"
+
+
+# schema.org version 2.0

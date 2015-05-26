@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.MedicalEntity.MedicalStudy import statusProp, studySubjectProp, sponsorProp, studyLocationProp, outcomeProp, populationProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -22,7 +22,7 @@ class phaseProp(SchemaProperty):
 
     """
     SchemaField for phase
-    Usage: Include in SchemaObject SchemaFields as your_django_field = phaseProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = phaseProp()  
     schema.org description:The phase of the trial.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class trialDesignProp(SchemaProperty):
 
     """
     SchemaField for trialDesign
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trialDesignProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trialDesignProp()  
     schema.org description:Specifics about the trial design (enumerated).
 
     prop_schema returns just the property without url#
@@ -50,3 +50,6 @@ class trialDesignProp(SchemaProperty):
     _expected_schema = 'MedicalTrialDesign'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 from schemaorgschemas.Thing.MedicalEntity.AnatomicalStructure import functionProp, associatedPathophysiologyProp, bodyLocationProp, relatedTherapyProp, connectedToProp, partOfSystemProp, diagramProp, relatedConditionProp, subStructureProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -22,7 +22,7 @@ class regionDrainedProp(SchemaProperty):
 
     """
     SchemaField for regionDrained
-    Usage: Include in SchemaObject SchemaFields as your_django_field = regionDrainedProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = regionDrainedProp()  
     schema.org description:The anatomical or organ system drained by this vessel; generally refers to a specific part of an organ.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class drainsToProp(SchemaProperty):
 
     """
     SchemaField for drainsTo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = drainsToProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = drainsToProp()  
     schema.org description:The vasculature that the vein drains into.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class tributaryProp(SchemaProperty):
 
     """
     SchemaField for tributary
-    Usage: Include in SchemaObject SchemaFields as your_django_field = tributaryProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = tributaryProp()  
     schema.org description:The anatomical or organ system that the vein flows into; a larger structure that the vein connects to.
 
     prop_schema returns just the property without url#
@@ -67,3 +67,6 @@ class tributaryProp(SchemaProperty):
     _expected_schema = 'AnatomicalStructure'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

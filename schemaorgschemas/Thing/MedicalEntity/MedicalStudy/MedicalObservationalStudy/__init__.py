@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.MedicalEntity.MedicalStudy import statusProp, studySubjectProp, sponsorProp, studyLocationProp, outcomeProp, populationProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -22,7 +22,7 @@ class studyDesignProp(SchemaProperty):
 
     """
     SchemaField for studyDesign
-    Usage: Include in SchemaObject SchemaFields as your_django_field = studyDesignProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = studyDesignProp()  
     schema.org description:Specifics about the observational study design (enumerated).
 
     prop_schema returns just the property without url#
@@ -33,3 +33,6 @@ class studyDesignProp(SchemaProperty):
     _expected_schema = 'MedicalObservationalStudyDesign'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, resultProp, startTimeProp, errorProp, endTimeProp, locationProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.Action.TransferAction import fromLocationProp, toLocationProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -22,7 +22,7 @@ class borrowerProp(SchemaProperty):
 
     """
     SchemaField for borrower
-    Usage: Include in SchemaObject SchemaFields as your_django_field = borrowerProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = borrowerProp()  
     schema.org description:A sub property of participant. The person that borrows the object being lent.
 
     prop_schema returns just the property without url#
@@ -33,3 +33,6 @@ class borrowerProp(SchemaProperty):
     _expected_schema = 'Person'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

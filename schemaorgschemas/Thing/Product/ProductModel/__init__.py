@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Product import isConsumableForProp, weightProp, isAccessoryOrSparePartForProp, colorProp, gtin8Prop, heightProp, releaseDateProp, isRelatedToProp, logoProp, productIDProp, skuProp, isSimilarToProp, reviewProp, audienceProp, widthProp, offersProp, mpnProp, brandProp, itemConditionProp, manufacturerProp, aggregateRatingProp, gtin14Prop, depthProp, gtin13Prop, modelProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Product import isConsumableForProp, weightProp, isAccessoryOrSparePartForProp, colorProp, purchaseDateProp, gtin8Prop, heightProp, releaseDateProp, isRelatedToProp, logoProp, productIDProp, categoryProp, isSimilarToProp, reviewProp, audienceProp, widthProp, additionalPropertyProp, offersProp, productionDateProp, skuProp, mpnProp, brandProp, awardProp, itemConditionProp, manufacturerProp, aggregateRatingProp, gtin14Prop, depthProp, gtin13Prop, gtin12Prop, modelProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class predecessorOfProp(SchemaProperty):
 
     """
     SchemaField for predecessorOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = predecessorOfProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = predecessorOfProp()  
     schema.org description:A pointer from a previous, often discontinued variant of the product to its newer variant.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class successorOfProp(SchemaProperty):
 
     """
     SchemaField for successorOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = successorOfProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = successorOfProp()  
     schema.org description:A pointer from a newer variant of a product to its previous, often discontinued predecessor.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class isVariantOfProp(SchemaProperty):
 
     """
     SchemaField for isVariantOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = isVariantOfProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isVariantOfProp()  
     schema.org description:A pointer to a base product from which this product is a variant. It is safe to infer that the variant inherits all product features from the base model, unless defined locally. This is not transitive.
 
     prop_schema returns just the property without url#
@@ -66,3 +66,6 @@ class isVariantOfProp(SchemaProperty):
     _expected_schema = 'ProductModel'
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

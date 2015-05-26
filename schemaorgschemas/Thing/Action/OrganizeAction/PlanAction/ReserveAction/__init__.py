@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
 from schemaorgschemas.Thing.Action.OrganizeAction.PlanAction import scheduledTimeProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -18,18 +18,4 @@ class ReserveActionSchema(SchemaObject):
         self.schema = 'ReserveAction'
 
 
-class scheduledTimeProp(SchemaProperty):
-
-    """
-    SchemaField for scheduledTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = scheduledTimeProp()
-    schema.org description:The time the object is scheduled to.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'scheduledTime'
-    _expected_schema = None
-    _enum = False
-    _format_as = "DateTimeField"
+# schema.org version 2.0

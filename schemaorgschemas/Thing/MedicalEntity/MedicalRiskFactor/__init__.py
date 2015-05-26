@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class increasesRiskOfProp(SchemaProperty):
 
     """
     SchemaField for increasesRiskOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = increasesRiskOfProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = increasesRiskOfProp()  
     schema.org description:The condition, complication, etc. influenced by this factor.
 
     prop_schema returns just the property without url#
@@ -32,3 +32,6 @@ class increasesRiskOfProp(SchemaProperty):
     _expected_schema = 'MedicalEntity'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

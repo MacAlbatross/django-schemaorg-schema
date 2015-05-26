@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 from schemaorgschemas.Thing.MedicalEntity.AnatomicalStructure import functionProp, associatedPathophysiologyProp, bodyLocationProp, relatedTherapyProp, connectedToProp, partOfSystemProp, diagramProp, relatedConditionProp, subStructureProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -22,7 +22,7 @@ class sourceProp(SchemaProperty):
 
     """
     SchemaField for source
-    Usage: Include in SchemaObject SchemaFields as your_django_field = sourceProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sourceProp()  
     schema.org description:The anatomical or organ system that the artery originates from.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class supplyToProp(SchemaProperty):
 
     """
     SchemaField for supplyTo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = supplyToProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = supplyToProp()  
     schema.org description:The area to which the artery supplies blood.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class arterialBranchProp(SchemaProperty):
 
     """
     SchemaField for arterialBranch
-    Usage: Include in SchemaObject SchemaFields as your_django_field = arterialBranchProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = arterialBranchProp()  
     schema.org description:The branches that comprise the arterial structure.
 
     prop_schema returns just the property without url#
@@ -67,3 +67,6 @@ class arterialBranchProp(SchemaProperty):
     _expected_schema = 'AnatomicalStructure'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

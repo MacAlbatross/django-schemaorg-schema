@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Intangible.Service import serviceAreaProp, serviceTypeProp, serviceAudienceProp, availableChannelProp, producesProp, providerProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Intangible.Service import serviceAreaProp, serviceTypeProp, availableChannelProp, reviewProp, providerProp, aggregateRatingProp, serviceOutputProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -15,3 +15,6 @@ class TaxiSchema(SchemaObject):
 
     def __init__(self):
         self.schema = 'Taxi'
+
+
+# schema.org version 2.0

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class queryProp(SchemaProperty):
 
     """
     SchemaField for query
-    Usage: Include in SchemaObject SchemaFields as your_django_field = queryProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = queryProp()  
     schema.org description:A sub property of instrument. The query used on this action.
 
     prop_schema returns just the property without url#
@@ -32,3 +32,6 @@ class queryProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

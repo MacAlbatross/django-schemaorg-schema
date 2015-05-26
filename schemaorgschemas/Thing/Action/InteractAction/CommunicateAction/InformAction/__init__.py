@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Action.InteractAction.CommunicateAction import aboutProp, recipientProp, languageProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action.InteractAction.CommunicateAction import inLanguageProp, aboutProp, recipientProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -22,8 +22,8 @@ class eventProp(SchemaProperty):
 
     """
     SchemaField for event
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eventProp()
-    schema.org description:Upcoming or past event associated with this place or organization. Supercedes events.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eventProp()  
+    schema.org description:Upcoming or past event associated with this place, organization, or action. Supersedes events.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -33,3 +33,6 @@ class eventProp(SchemaProperty):
     _expected_schema = 'Event'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

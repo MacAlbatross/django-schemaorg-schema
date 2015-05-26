@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -17,18 +17,21 @@ class ChooseActionSchema(SchemaObject):
         self.schema = 'ChooseAction'
 
 
-class optionProp(SchemaProperty):
+class actionOptionProp(SchemaProperty):
 
     """
-    SchemaField for option
-    Usage: Include in SchemaObject SchemaFields as your_django_field = optionProp()
-    schema.org description:A sub property of object. The options subject to this action.
+    SchemaField for actionOption
+    Usage: Include in SchemaObject SchemaFields as your_django_field = actionOptionProp()  
+    schema.org description:A sub property of object. The options subject to this action. Supersedes option.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     """
 
-    _prop_schema = 'option'
+    _prop_schema = 'actionOption'
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

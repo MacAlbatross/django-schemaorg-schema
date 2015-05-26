@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 from schemaorgschemas.Thing.MedicalEntity.MedicalRiskEstimator import estimatesRiskOfProp, includedRiskFactorProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -22,7 +22,7 @@ class algorithmProp(SchemaProperty):
 
     """
     SchemaField for algorithm
-    Usage: Include in SchemaObject SchemaFields as your_django_field = algorithmProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = algorithmProp()  
     schema.org description:The algorithm or rules to follow to compute the score.
 
     prop_schema returns just the property without url#
@@ -33,3 +33,6 @@ class algorithmProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

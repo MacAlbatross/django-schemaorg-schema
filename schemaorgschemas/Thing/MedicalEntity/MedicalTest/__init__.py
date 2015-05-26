@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class affectedByProp(SchemaProperty):
 
     """
     SchemaField for affectedBy
-    Usage: Include in SchemaObject SchemaFields as your_django_field = affectedByProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = affectedByProp()  
     schema.org description:Drugs that affect the test&#39;s results.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class usedToDiagnoseProp(SchemaProperty):
 
     """
     SchemaField for usedToDiagnose
-    Usage: Include in SchemaObject SchemaFields as your_django_field = usedToDiagnoseProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = usedToDiagnoseProp()  
     schema.org description:A condition the test is used to diagnose.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class normalRangeProp(SchemaProperty):
 
     """
     SchemaField for normalRange
-    Usage: Include in SchemaObject SchemaFields as your_django_field = normalRangeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = normalRangeProp()  
     schema.org description:Range of acceptable values for a typical patient, when applicable.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class usesDeviceProp(SchemaProperty):
 
     """
     SchemaField for usesDevice
-    Usage: Include in SchemaObject SchemaFields as your_django_field = usesDeviceProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = usesDeviceProp()  
     schema.org description:Device used to perform the test.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class signDetectedProp(SchemaProperty):
 
     """
     SchemaField for signDetected
-    Usage: Include in SchemaObject SchemaFields as your_django_field = signDetectedProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = signDetectedProp()  
     schema.org description:A sign detected by the test.
 
     prop_schema returns just the property without url#
@@ -100,3 +100,6 @@ class signDetectedProp(SchemaProperty):
     _expected_schema = 'MedicalSign'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

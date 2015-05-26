@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, nameProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, descriptionProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 from schemaorgschemas.Thing.MedicalEntity.MedicalTherapy import contraindicationProp, indicationProp, adverseOutcomeProp, seriousAdverseOutcomeProp, duplicateTherapyProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -22,7 +22,7 @@ class drugProp(SchemaProperty):
 
     """
     SchemaField for drug
-    Usage: Include in SchemaObject SchemaFields as your_django_field = drugProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = drugProp()  
     schema.org description:A drug in this drug class.
 
     prop_schema returns just the property without url#
@@ -33,3 +33,6 @@ class drugProp(SchemaProperty):
     _expected_schema = 'Drug'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

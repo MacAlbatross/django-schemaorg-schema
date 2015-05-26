@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -20,7 +20,7 @@ class isicV4Prop(SchemaProperty):
 
     """
     SchemaField for isicV4
-    Usage: Include in SchemaObject SchemaFields as your_django_field = isicV4Prop()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isicV4Prop()  
     schema.org description:The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
 
     prop_schema returns just the property without url#
@@ -33,28 +33,11 @@ class isicV4Prop(SchemaProperty):
     _format_as = "TextField"
 
 
-class mapProp(SchemaProperty):
-
-    """
-    SchemaField for map
-    Usage: Include in SchemaObject SchemaFields as your_django_field = mapProp()
-    schema.org description:A URL to a map of the place. Supercedes maps.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'map'
-    _expected_schema = None
-    _enum = False
-    _format_as = "URLField"
-
-
 class openingHoursSpecificationProp(SchemaProperty):
 
     """
     SchemaField for openingHoursSpecification
-    Usage: Include in SchemaObject SchemaFields as your_django_field = openingHoursSpecificationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = openingHoursSpecificationProp()  
     schema.org description:The opening hours of a certain place.
 
     prop_schema returns just the property without url#
@@ -71,15 +54,32 @@ class photoProp(SchemaProperty):
 
     """
     SchemaField for photo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = photoProp()
-    schema.org description:A photograph of this place. Supercedes photos.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = photoProp()  
+    schema.org description:A photograph of this place. Supersedes photos.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference Photograph"""
+    used to reference ImageObject"""
 
     _prop_schema = 'photo'
-    _expected_schema = 'Photograph'
+    _expected_schema = 'ImageObject'
+    _enum = False
+    _format_as = "URLField"
+
+
+class geoProp(SchemaProperty):
+
+    """
+    SchemaField for geo
+    Usage: Include in SchemaObject SchemaFields as your_django_field = geoProp()  
+    schema.org description:The geo coordinates of the place.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference GeoCoordinates"""
+
+    _prop_schema = 'geo'
+    _expected_schema = 'GeoCoordinates'
     _enum = False
     _format_as = "ForeignKey"
 
@@ -88,8 +88,8 @@ class reviewProp(SchemaProperty):
 
     """
     SchemaField for review
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewProp()
-    schema.org description:A review of the item. Supercedes reviews.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewProp()  
+    schema.org description:A review of the item. Supersedes reviews.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -101,28 +101,11 @@ class reviewProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
-class interactionCountProp(SchemaProperty):
-
-    """
-    SchemaField for interactionCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = interactionCountProp()
-    schema.org description:A count of a specific user interactions with this item-for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'interactionCount'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
-
-
 class containedInProp(SchemaProperty):
 
     """
     SchemaField for containedIn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = containedInProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = containedInProp()  
     schema.org description:The basic containment relation between places.
 
     prop_schema returns just the property without url#
@@ -135,11 +118,28 @@ class containedInProp(SchemaProperty):
     _format_as = "TextField"
 
 
+class faxNumberProp(SchemaProperty):
+
+    """
+    SchemaField for faxNumber
+    Usage: Include in SchemaObject SchemaFields as your_django_field = faxNumberProp()  
+    schema.org description:The fax number.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'faxNumber'
+    _expected_schema = None
+    _enum = False
+    _format_as = "TextField"
+
+
 class aggregateRatingProp(SchemaProperty):
 
     """
     SchemaField for aggregateRating
-    Usage: Include in SchemaObject SchemaFields as your_django_field = aggregateRatingProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = aggregateRatingProp()  
     schema.org description:The overall rating, based on a collection of reviews or ratings, of the item.
 
     prop_schema returns just the property without url#
@@ -152,11 +152,28 @@ class aggregateRatingProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
+class additionalPropertyProp(SchemaProperty):
+
+    """
+    SchemaField for additionalProperty
+    Usage: Include in SchemaObject SchemaFields as your_django_field = additionalPropertyProp()  
+    schema.org description:A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org. Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference PropertyValue"""
+
+    _prop_schema = 'additionalProperty'
+    _expected_schema = 'PropertyValue'
+    _enum = False
+    _format_as = "ForeignKey"
+
+
 class addressProp(SchemaProperty):
 
     """
     SchemaField for address
-    Usage: Include in SchemaObject SchemaFields as your_django_field = addressProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = addressProp()  
     schema.org description:Physical address of the item.
 
     prop_schema returns just the property without url#
@@ -173,7 +190,7 @@ class telephoneProp(SchemaProperty):
 
     """
     SchemaField for telephone
-    Usage: Include in SchemaObject SchemaFields as your_django_field = telephoneProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = telephoneProp()  
     schema.org description:The telephone number.
 
     prop_schema returns just the property without url#
@@ -190,59 +207,42 @@ class logoProp(SchemaProperty):
 
     """
     SchemaField for logo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = logoProp()
-    schema.org description:A logo associated with an organization.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = logoProp()  
+    schema.org description:An associated logo.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference ImageObject"""
 
     _prop_schema = 'logo'
-    _expected_schema = None
+    _expected_schema = 'ImageObject'
     _enum = False
     _format_as = "URLField"
 
 
-class faxNumberProp(SchemaProperty):
+class hasMapProp(SchemaProperty):
 
     """
-    SchemaField for faxNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = faxNumberProp()
-    schema.org description:The fax number.
+    SchemaField for hasMap
+    Usage: Include in SchemaObject SchemaFields as your_django_field = hasMapProp()  
+    schema.org description:A URL to a map of the place. Supersedes map, maps.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference Map"""
 
-    _prop_schema = 'faxNumber'
-    _expected_schema = None
+    _prop_schema = 'hasMap'
+    _expected_schema = 'Map'
     _enum = False
-    _format_as = "TextField"
-
-
-class geoProp(SchemaProperty):
-
-    """
-    SchemaField for geo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = geoProp()
-    schema.org description:The geo coordinates of the place.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    used to reference GeoShape"""
-
-    _prop_schema = 'geo'
-    _expected_schema = 'GeoShape'
-    _enum = False
-    _format_as = "CharField"
+    _format_as = "ForeignKey"
 
 
 class eventProp(SchemaProperty):
 
     """
     SchemaField for event
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eventProp()
-    schema.org description:Upcoming or past event associated with this place or organization. Supercedes events.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eventProp()  
+    schema.org description:Upcoming or past event associated with this place, organization, or action. Supersedes events.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -258,7 +258,7 @@ class globalLocationNumberProp(SchemaProperty):
 
     """
     SchemaField for globalLocationNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = globalLocationNumberProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = globalLocationNumberProp()  
     schema.org description:The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
 
     prop_schema returns just the property without url#
@@ -269,3 +269,6 @@ class globalLocationNumberProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class applicableLocationProp(SchemaProperty):
 
     """
     SchemaField for applicableLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = applicableLocationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = applicableLocationProp()  
     schema.org description:The location in which the status applies.
 
     prop_schema returns just the property without url#
@@ -32,3 +32,6 @@ class applicableLocationProp(SchemaProperty):
     _expected_schema = 'AdministrativeArea'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

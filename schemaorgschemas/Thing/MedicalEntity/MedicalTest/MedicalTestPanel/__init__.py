@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.MedicalEntity.MedicalTest import affectedByProp, usedToDiagnoseProp, normalRangeProp, usesDeviceProp, signDetectedProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -22,7 +22,7 @@ class subTestProp(SchemaProperty):
 
     """
     SchemaField for subTest
-    Usage: Include in SchemaObject SchemaFields as your_django_field = subTestProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = subTestProp()  
     schema.org description:A component test of the panel.
 
     prop_schema returns just the property without url#
@@ -33,3 +33,6 @@ class subTestProp(SchemaProperty):
     _expected_schema = 'MedicalTest'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

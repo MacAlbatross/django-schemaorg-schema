@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 from schemaorgschemas.Thing.MedicalEntity.MedicalSignOrSymptom import possibleTreatmentProp, causeProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -22,7 +22,7 @@ class identifyingExamProp(SchemaProperty):
 
     """
     SchemaField for identifyingExam
-    Usage: Include in SchemaObject SchemaFields as your_django_field = identifyingExamProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = identifyingExamProp()  
     schema.org description:A physical examination that can identify this sign.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class identifyingTestProp(SchemaProperty):
 
     """
     SchemaField for identifyingTest
-    Usage: Include in SchemaObject SchemaFields as your_django_field = identifyingTestProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = identifyingTestProp()  
     schema.org description:A diagnostic test that can identify this sign.
 
     prop_schema returns just the property without url#
@@ -50,3 +50,6 @@ class identifyingTestProp(SchemaProperty):
     _expected_schema = 'MedicalTest'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

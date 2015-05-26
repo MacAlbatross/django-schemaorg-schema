@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Intangible.Enumeration import supersededByProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -13,11 +14,14 @@ class WarrantyScopeSchema(SchemaObject):
 
     Commonly used values:
 
-    http://purl.org/goodrelations/v1#Labor-BringIn
-    http://purl.org/goodrelations/v1#PartsAndLabor-BringIn
-    http://purl.org/goodrelations/v1#PartsAndLabor-PickUp
+    http://purl.org/goodrelations/v1#Labor-BringIn 
+    http://purl.org/goodrelations/v1#PartsAndLabor-BringIn 
+    http://purl.org/goodrelations/v1#PartsAndLabor-PickUp 
 
     """
 
     def __init__(self):
         self.schema = 'WarrantyScope'
+
+
+# schema.org version 2.0

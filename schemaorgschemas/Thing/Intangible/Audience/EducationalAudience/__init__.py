@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.Intangible.Audience import geographicAreaProp, audienceTypeProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -10,7 +10,7 @@ class EducationalAudienceSchema(SchemaObject):
 
     """Schema Mixin for EducationalAudience
     Usage: place after django model in class definition, schema will return the schema.org url for the object
-    An EducationalAudience
+    An EducationalAudience.
     """
 
     def __init__(self):
@@ -21,8 +21,8 @@ class educationalRoleProp(SchemaProperty):
 
     """
     SchemaField for educationalRole
-    Usage: Include in SchemaObject SchemaFields as your_django_field = educationalRoleProp()
-    schema.org description:An educationalRole of an EducationalAudience
+    Usage: Include in SchemaObject SchemaFields as your_django_field = educationalRoleProp()  
+    schema.org description:An educationalRole of an EducationalAudience.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -32,3 +32,6 @@ class educationalRoleProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

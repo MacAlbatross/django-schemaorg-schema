@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class relatedStructureProp(SchemaProperty):
 
     """
     SchemaField for relatedStructure
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedStructureProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedStructureProp()  
     schema.org description:Related anatomical structure(s) that are not part of the system but relate or connect to it, such as vascular bundles associated with an organ system.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class relatedConditionProp(SchemaProperty):
 
     """
     SchemaField for relatedCondition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedConditionProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedConditionProp()  
     schema.org description:A medical condition associated with this anatomy.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class comprisedOfProp(SchemaProperty):
 
     """
     SchemaField for comprisedOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = comprisedOfProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = comprisedOfProp()  
     schema.org description:The underlying anatomical structures, such as organs, that comprise the anatomical system.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class associatedPathophysiologyProp(SchemaProperty):
 
     """
     SchemaField for associatedPathophysiology
-    Usage: Include in SchemaObject SchemaFields as your_django_field = associatedPathophysiologyProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = associatedPathophysiologyProp()  
     schema.org description:If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.
 
     prop_schema returns just the property without url#
@@ -89,7 +89,7 @@ class relatedTherapyProp(SchemaProperty):
 
     """
     SchemaField for relatedTherapy
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedTherapyProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedTherapyProp()  
     schema.org description:A medical therapy related to this anatomy.
 
     prop_schema returns just the property without url#
@@ -100,3 +100,6 @@ class relatedTherapyProp(SchemaProperty):
     _expected_schema = 'MedicalTherapy'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

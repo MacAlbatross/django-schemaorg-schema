@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class followeeProp(SchemaProperty):
 
     """
     SchemaField for followee
-    Usage: Include in SchemaObject SchemaFields as your_django_field = followeeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = followeeProp()  
     schema.org description:A sub property of object. The person or organization being followed.
 
     prop_schema returns just the property without url#
@@ -32,3 +32,6 @@ class followeeProp(SchemaProperty):
     _expected_schema = 'Organization'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

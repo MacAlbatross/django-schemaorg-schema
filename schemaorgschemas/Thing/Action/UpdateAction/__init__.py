@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -17,18 +17,21 @@ class UpdateActionSchema(SchemaObject):
         self.schema = 'UpdateAction'
 
 
-class collectionProp(SchemaProperty):
+class targetCollectionProp(SchemaProperty):
 
     """
-    SchemaField for collection
-    Usage: Include in SchemaObject SchemaFields as your_django_field = collectionProp()
-    schema.org description:A sub property of object. The collection target of the action.
+    SchemaField for targetCollection
+    Usage: Include in SchemaObject SchemaFields as your_django_field = targetCollectionProp()  
+    schema.org description:A sub property of object. The collection target of the action. Supersedes collection.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     used to reference Thing"""
 
-    _prop_schema = 'collection'
+    _prop_schema = 'targetCollection'
     _expected_schema = 'Thing'
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

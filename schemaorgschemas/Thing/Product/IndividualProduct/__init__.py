@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Product import isConsumableForProp, weightProp, isAccessoryOrSparePartForProp, colorProp, gtin8Prop, heightProp, releaseDateProp, isRelatedToProp, logoProp, productIDProp, skuProp, isSimilarToProp, reviewProp, audienceProp, widthProp, offersProp, mpnProp, brandProp, itemConditionProp, manufacturerProp, aggregateRatingProp, gtin14Prop, depthProp, gtin13Prop, modelProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Product import isConsumableForProp, weightProp, isAccessoryOrSparePartForProp, colorProp, purchaseDateProp, gtin8Prop, heightProp, releaseDateProp, aggregateRatingProp, logoProp, productIDProp, categoryProp, isSimilarToProp, reviewProp, audienceProp, widthProp, additionalPropertyProp, offersProp, productionDateProp, skuProp, mpnProp, brandProp, awardProp, itemConditionProp, manufacturerProp, isRelatedToProp, gtin14Prop, depthProp, gtin13Prop, gtin12Prop, modelProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class serialNumberProp(SchemaProperty):
 
     """
     SchemaField for serialNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = serialNumberProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = serialNumberProp()  
     schema.org description:The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
 
     prop_schema returns just the property without url#
@@ -32,3 +32,6 @@ class serialNumberProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

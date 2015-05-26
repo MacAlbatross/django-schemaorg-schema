@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -20,7 +20,7 @@ class honorificPrefixProp(SchemaProperty):
 
     """
     SchemaField for honorificPrefix
-    Usage: Include in SchemaObject SchemaFields as your_django_field = honorificPrefixProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = honorificPrefixProp()  
     schema.org description:An honorific prefix preceding a Person&#39;s name such as Dr/Mrs/Mr.
 
     prop_schema returns just the property without url#
@@ -33,11 +33,28 @@ class honorificPrefixProp(SchemaProperty):
     _format_as = "TextField"
 
 
+class weightProp(SchemaProperty):
+
+    """
+    SchemaField for weight
+    Usage: Include in SchemaObject SchemaFields as your_django_field = weightProp()  
+    schema.org description:The weight of the product or person.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference QuantitativeValue"""
+
+    _prop_schema = 'weight'
+    _expected_schema = 'QuantitativeValue'
+    _enum = False
+    _format_as = "IntegerField"
+
+
 class followsProp(SchemaProperty):
 
     """
     SchemaField for follows
-    Usage: Include in SchemaObject SchemaFields as your_django_field = followsProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = followsProp()  
     schema.org description:The most generic uni-directional social relation.
 
     prop_schema returns just the property without url#
@@ -54,7 +71,7 @@ class relatedToProp(SchemaProperty):
 
     """
     SchemaField for relatedTo
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedToProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relatedToProp()  
     schema.org description:The most generic familial relation.
 
     prop_schema returns just the property without url#
@@ -67,18 +84,18 @@ class relatedToProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
-class interactionCountProp(SchemaProperty):
+class telephoneProp(SchemaProperty):
 
     """
-    SchemaField for interactionCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = interactionCountProp()
-    schema.org description:A count of a specific user interactions with this item-for example, 20 UserLikes, 5 UserComments, or 300 UserDownloads. The user interaction type should be one of the sub types of UserInteraction.
+    SchemaField for telephone
+    Usage: Include in SchemaObject SchemaFields as your_django_field = telephoneProp()  
+    schema.org description:The telephone number.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     """
 
-    _prop_schema = 'interactionCount'
+    _prop_schema = 'telephone'
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
@@ -88,24 +105,24 @@ class birthDateProp(SchemaProperty):
 
     """
     SchemaField for birthDate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = birthDateProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = birthDateProp()  
     schema.org description:Date of birth.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference Date"""
 
     _prop_schema = 'birthDate'
-    _expected_schema = None
+    _expected_schema = 'Date'
     _enum = False
-    _format_as = "DateField"
+    _format_as = "ForeignKey"
 
 
 class faxNumberProp(SchemaProperty):
 
     """
     SchemaField for faxNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = faxNumberProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = faxNumberProp()  
     schema.org description:The fax number.
 
     prop_schema returns just the property without url#
@@ -122,8 +139,8 @@ class siblingProp(SchemaProperty):
 
     """
     SchemaField for sibling
-    Usage: Include in SchemaObject SchemaFields as your_django_field = siblingProp()
-    schema.org description:A sibling of the person. Supercedes siblings.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = siblingProp()  
+    schema.org description:A sibling of the person. Supersedes siblings.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -139,7 +156,7 @@ class additionalNameProp(SchemaProperty):
 
     """
     SchemaField for additionalName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = additionalNameProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = additionalNameProp()  
     schema.org description:An additional name for a Person, can be used for a middle name.
 
     prop_schema returns just the property without url#
@@ -156,7 +173,7 @@ class workLocationProp(SchemaProperty):
 
     """
     SchemaField for workLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = workLocationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = workLocationProp()  
     schema.org description:A contact location for a person&#39;s place of work.
 
     prop_schema returns just the property without url#
@@ -173,7 +190,7 @@ class genderProp(SchemaProperty):
 
     """
     SchemaField for gender
-    Usage: Include in SchemaObject SchemaFields as your_django_field = genderProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = genderProp()  
     schema.org description:Gender of the person.
 
     prop_schema returns just the property without url#
@@ -190,7 +207,7 @@ class childrenProp(SchemaProperty):
 
     """
     SchemaField for children
-    Usage: Include in SchemaObject SchemaFields as your_django_field = childrenProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = childrenProp()  
     schema.org description:A child of the person.
 
     prop_schema returns just the property without url#
@@ -207,7 +224,7 @@ class isicV4Prop(SchemaProperty):
 
     """
     SchemaField for isicV4
-    Usage: Include in SchemaObject SchemaFields as your_django_field = isicV4Prop()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isicV4Prop()  
     schema.org description:The International Standard of Industrial Classification of All Economic Activities (ISIC), Revision 4 code for a particular organization, business person, or place.
 
     prop_schema returns just the property without url#
@@ -224,7 +241,7 @@ class spouseProp(SchemaProperty):
 
     """
     SchemaField for spouse
-    Usage: Include in SchemaObject SchemaFields as your_django_field = spouseProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = spouseProp()  
     schema.org description:The person&#39;s spouse.
 
     prop_schema returns just the property without url#
@@ -241,7 +258,7 @@ class worksForProp(SchemaProperty):
 
     """
     SchemaField for worksFor
-    Usage: Include in SchemaObject SchemaFields as your_django_field = worksForProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = worksForProp()  
     schema.org description:Organizations that the person works for.
 
     prop_schema returns just the property without url#
@@ -258,7 +275,7 @@ class taxIDProp(SchemaProperty):
 
     """
     SchemaField for taxID
-    Usage: Include in SchemaObject SchemaFields as your_django_field = taxIDProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = taxIDProp()  
     schema.org description:The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.
 
     prop_schema returns just the property without url#
@@ -275,7 +292,7 @@ class honorificSuffixProp(SchemaProperty):
 
     """
     SchemaField for honorificSuffix
-    Usage: Include in SchemaObject SchemaFields as your_django_field = honorificSuffixProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = honorificSuffixProp()  
     schema.org description:An honorific suffix preceding a Person&#39;s name such as M.D. /PhD/MSCSW.
 
     prop_schema returns just the property without url#
@@ -288,11 +305,28 @@ class honorificSuffixProp(SchemaProperty):
     _format_as = "TextField"
 
 
+class netWorthProp(SchemaProperty):
+
+    """
+    SchemaField for netWorth
+    Usage: Include in SchemaObject SchemaFields as your_django_field = netWorthProp()  
+    schema.org description:The total financial value of the organization or person as calculated by subtracting assets from liabilities.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference PriceSpecification"""
+
+    _prop_schema = 'netWorth'
+    _expected_schema = 'PriceSpecification'
+    _enum = False
+    _format_as = "ForeignKey"
+
+
 class homeLocationProp(SchemaProperty):
 
     """
     SchemaField for homeLocation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = homeLocationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = homeLocationProp()  
     schema.org description:A contact location for a person&#39;s residence.
 
     prop_schema returns just the property without url#
@@ -309,7 +343,7 @@ class emailProp(SchemaProperty):
 
     """
     SchemaField for email
-    Usage: Include in SchemaObject SchemaFields as your_django_field = emailProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = emailProp()  
     schema.org description:Email address.
 
     prop_schema returns just the property without url#
@@ -326,7 +360,7 @@ class seeksProp(SchemaProperty):
 
     """
     SchemaField for seeks
-    Usage: Include in SchemaObject SchemaFields as your_django_field = seeksProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = seeksProp()  
     schema.org description:A pointer to products or services sought by the organization or person (demand).
 
     prop_schema returns just the property without url#
@@ -343,8 +377,8 @@ class colleagueProp(SchemaProperty):
 
     """
     SchemaField for colleague
-    Usage: Include in SchemaObject SchemaFields as your_django_field = colleagueProp()
-    schema.org description:A colleague of the person. Supercedes colleagues.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = colleagueProp()  
+    schema.org description:A colleague of the person. Supersedes colleagues.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -360,7 +394,7 @@ class performerInProp(SchemaProperty):
 
     """
     SchemaField for performerIn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = performerInProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = performerInProp()  
     schema.org description:Event that this person is a performer or participant in.
 
     prop_schema returns just the property without url#
@@ -373,11 +407,28 @@ class performerInProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
+class birthPlaceProp(SchemaProperty):
+
+    """
+    SchemaField for birthPlace
+    Usage: Include in SchemaObject SchemaFields as your_django_field = birthPlaceProp()  
+    schema.org description:The place where the person was born.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference Place"""
+
+    _prop_schema = 'birthPlace'
+    _expected_schema = 'Place'
+    _enum = False
+    _format_as = "TextField"
+
+
 class knowsProp(SchemaProperty):
 
     """
     SchemaField for knows
-    Usage: Include in SchemaObject SchemaFields as your_django_field = knowsProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = knowsProp()  
     schema.org description:The most generic bi-directional social/work relation.
 
     prop_schema returns just the property without url#
@@ -394,8 +445,8 @@ class parentProp(SchemaProperty):
 
     """
     SchemaField for parent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = parentProp()
-    schema.org description:A parent of this person. Supercedes parents.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = parentProp()  
+    schema.org description:A parent of this person. Supersedes parents.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -411,7 +462,7 @@ class jobTitleProp(SchemaProperty):
 
     """
     SchemaField for jobTitle
-    Usage: Include in SchemaObject SchemaFields as your_django_field = jobTitleProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = jobTitleProp()  
     schema.org description:The job title of the person (for example, Financial Manager).
 
     prop_schema returns just the property without url#
@@ -428,15 +479,15 @@ class brandProp(SchemaProperty):
 
     """
     SchemaField for brand
-    Usage: Include in SchemaObject SchemaFields as your_django_field = brandProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = brandProp()  
     schema.org description:The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference Brand"""
+    used to reference Organization"""
 
     _prop_schema = 'brand'
-    _expected_schema = 'Brand'
+    _expected_schema = 'Organization'
     _enum = False
     _format_as = "ForeignKey"
 
@@ -445,8 +496,8 @@ class familyNameProp(SchemaProperty):
 
     """
     SchemaField for familyName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = familyNameProp()
-    schema.org description:Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the Name property.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = familyNameProp()  
+    schema.org description:Family name. In the U.S., the last name of an Person. This can be used along with givenName instead of the name property.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -462,8 +513,8 @@ class awardProp(SchemaProperty):
 
     """
     SchemaField for award
-    Usage: Include in SchemaObject SchemaFields as your_django_field = awardProp()
-    schema.org description:An award won by this person or for this creative work. Supercedes awards.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = awardProp()  
+    schema.org description:An award won by or for this item. Supersedes awards.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -475,28 +526,11 @@ class awardProp(SchemaProperty):
     _format_as = "TextField"
 
 
-class telephoneProp(SchemaProperty):
-
-    """
-    SchemaField for telephone
-    Usage: Include in SchemaObject SchemaFields as your_django_field = telephoneProp()
-    schema.org description:The telephone number.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'telephone'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
-
-
 class addressProp(SchemaProperty):
 
     """
     SchemaField for address
-    Usage: Include in SchemaObject SchemaFields as your_django_field = addressProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = addressProp()  
     schema.org description:Physical address of the item.
 
     prop_schema returns just the property without url#
@@ -513,7 +547,7 @@ class dunsProp(SchemaProperty):
 
     """
     SchemaField for duns
-    Usage: Include in SchemaObject SchemaFields as your_django_field = dunsProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = dunsProp()  
     schema.org description:The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.
 
     prop_schema returns just the property without url#
@@ -530,7 +564,7 @@ class nationalityProp(SchemaProperty):
 
     """
     SchemaField for nationality
-    Usage: Include in SchemaObject SchemaFields as your_django_field = nationalityProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = nationalityProp()  
     schema.org description:Nationality of the person.
 
     prop_schema returns just the property without url#
@@ -547,8 +581,8 @@ class contactPointProp(SchemaProperty):
 
     """
     SchemaField for contactPoint
-    Usage: Include in SchemaObject SchemaFields as your_django_field = contactPointProp()
-    schema.org description:A contact point for a person or organization. Supercedes contactPoints.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = contactPointProp()  
+    schema.org description:A contact point for a person or organization. Supersedes contactPoints.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -564,7 +598,7 @@ class deathDateProp(SchemaProperty):
 
     """
     SchemaField for deathDate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = deathDateProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = deathDateProp()  
     schema.org description:Date of death.
 
     prop_schema returns just the property without url#
@@ -581,7 +615,7 @@ class makesOfferProp(SchemaProperty):
 
     """
     SchemaField for makesOffer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = makesOfferProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = makesOfferProp()  
     schema.org description:A pointer to products or services offered by the organization or person.
 
     prop_schema returns just the property without url#
@@ -598,7 +632,7 @@ class hasPOSProp(SchemaProperty):
 
     """
     SchemaField for hasPOS
-    Usage: Include in SchemaObject SchemaFields as your_django_field = hasPOSProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = hasPOSProp()  
     schema.org description:Points-of-Sales operated by the organization or person.
 
     prop_schema returns just the property without url#
@@ -611,18 +645,18 @@ class hasPOSProp(SchemaProperty):
     _format_as = "TextField"
 
 
-class givenNameProp(SchemaProperty):
+class vatIDProp(SchemaProperty):
 
     """
-    SchemaField for givenName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = givenNameProp()
-    schema.org description:Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the Name property.
+    SchemaField for vatID
+    Usage: Include in SchemaObject SchemaFields as your_django_field = vatIDProp()  
+    schema.org description:The Value-added Tax ID of the organization or person.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     """
 
-    _prop_schema = 'givenName'
+    _prop_schema = 'vatID'
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
@@ -632,7 +666,7 @@ class affiliationProp(SchemaProperty):
 
     """
     SchemaField for affiliation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = affiliationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = affiliationProp()  
     schema.org description:An organization that this person is affiliated with. For example, a school/university, a club, or a team.
 
     prop_schema returns just the property without url#
@@ -649,8 +683,8 @@ class memberOfProp(SchemaProperty):
 
     """
     SchemaField for memberOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = memberOfProp()
-    schema.org description:An organization to which the person belongs.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = memberOfProp()  
+    schema.org description:An Organization (or ProgramMembership) to which this Person or Organization belongs. Inverse property: member.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -666,7 +700,7 @@ class naicsProp(SchemaProperty):
 
     """
     SchemaField for naics
-    Usage: Include in SchemaObject SchemaFields as your_django_field = naicsProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = naicsProp()  
     schema.org description:The North American Industry Classification System (NAICS) code for a particular organization or business person.
 
     prop_schema returns just the property without url#
@@ -679,11 +713,45 @@ class naicsProp(SchemaProperty):
     _format_as = "TextField"
 
 
+class heightProp(SchemaProperty):
+
+    """
+    SchemaField for height
+    Usage: Include in SchemaObject SchemaFields as your_django_field = heightProp()  
+    schema.org description:The height of the item.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference QuantitativeValue"""
+
+    _prop_schema = 'height'
+    _expected_schema = 'QuantitativeValue'
+    _enum = False
+    _format_as = "IntegerField"
+
+
+class deathPlaceProp(SchemaProperty):
+
+    """
+    SchemaField for deathPlace
+    Usage: Include in SchemaObject SchemaFields as your_django_field = deathPlaceProp()  
+    schema.org description:The place where the person died.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference Place"""
+
+    _prop_schema = 'deathPlace'
+    _expected_schema = 'Place'
+    _enum = False
+    _format_as = "TextField"
+
+
 class ownsProp(SchemaProperty):
 
     """
     SchemaField for owns
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ownsProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ownsProp()  
     schema.org description:Products owned by the organization or person.
 
     prop_schema returns just the property without url#
@@ -696,18 +764,18 @@ class ownsProp(SchemaProperty):
     _format_as = "TextField"
 
 
-class vatIDProp(SchemaProperty):
+class givenNameProp(SchemaProperty):
 
     """
-    SchemaField for vatID
-    Usage: Include in SchemaObject SchemaFields as your_django_field = vatIDProp()
-    schema.org description:The Value-added Tax ID of the organisation or person.
+    SchemaField for givenName
+    Usage: Include in SchemaObject SchemaFields as your_django_field = givenNameProp()  
+    schema.org description:Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     """
 
-    _prop_schema = 'vatID'
+    _prop_schema = 'givenName'
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
@@ -717,8 +785,8 @@ class alumniOfProp(SchemaProperty):
 
     """
     SchemaField for alumniOf
-    Usage: Include in SchemaObject SchemaFields as your_django_field = alumniOfProp()
-    schema.org description:An educational organizations that the person is an alumni of.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = alumniOfProp()  
+    schema.org description:An educational organizations that the person is an alumni of. Inverse property: alumni.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -734,7 +802,7 @@ class globalLocationNumberProp(SchemaProperty):
 
     """
     SchemaField for globalLocationNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = globalLocationNumberProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = globalLocationNumberProp()  
     schema.org description:The Global Location Number (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.
 
     prop_schema returns just the property without url#
@@ -745,3 +813,6 @@ class globalLocationNumberProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

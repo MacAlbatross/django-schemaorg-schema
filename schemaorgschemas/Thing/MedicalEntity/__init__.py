@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -20,7 +20,7 @@ class codeProp(SchemaProperty):
 
     """
     SchemaField for code
-    Usage: Include in SchemaObject SchemaFields as your_django_field = codeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = codeProp()  
     schema.org description:A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class recognizingAuthorityProp(SchemaProperty):
 
     """
     SchemaField for recognizingAuthority
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recognizingAuthorityProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recognizingAuthorityProp()  
     schema.org description:If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class medicineSystemProp(SchemaProperty):
 
     """
     SchemaField for medicineSystem
-    Usage: Include in SchemaObject SchemaFields as your_django_field = medicineSystemProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = medicineSystemProp()  
     schema.org description:The system of medicine that includes this MedicalEntity, for example &#39;evidence-based&#39;, &#39;homeopathic&#39;, &#39;chiropractic&#39;, etc.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class relevantSpecialtyProp(SchemaProperty):
 
     """
     SchemaField for relevantSpecialty
-    Usage: Include in SchemaObject SchemaFields as your_django_field = relevantSpecialtyProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = relevantSpecialtyProp()  
     schema.org description:If applicable, a medical specialty in which this entity is relevant.
 
     prop_schema returns just the property without url#
@@ -84,28 +84,11 @@ class relevantSpecialtyProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
-class alternateNameProp(SchemaProperty):
-
-    """
-    SchemaField for alternateName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = alternateNameProp()
-    schema.org description:An alias for the item.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'alternateName'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
-
-
 class studyProp(SchemaProperty):
 
     """
     SchemaField for study
-    Usage: Include in SchemaObject SchemaFields as your_django_field = studyProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = studyProp()  
     schema.org description:A medical study or trial related to this entity.
 
     prop_schema returns just the property without url#
@@ -122,7 +105,7 @@ class guidelineProp(SchemaProperty):
 
     """
     SchemaField for guideline
-    Usage: Include in SchemaObject SchemaFields as your_django_field = guidelineProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = guidelineProp()  
     schema.org description:A medical guideline related to this entity.
 
     prop_schema returns just the property without url#
@@ -133,3 +116,6 @@ class guidelineProp(SchemaProperty):
     _expected_schema = 'MedicalGuideline'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

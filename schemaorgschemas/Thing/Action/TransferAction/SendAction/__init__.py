@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 from schemaorgschemas.Thing.Action.TransferAction import fromLocationProp, toLocationProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -22,15 +22,15 @@ class recipientProp(SchemaProperty):
 
     """
     SchemaField for recipient
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipientProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipientProp()  
     schema.org description:A sub property of participant. The participant who is at the receiving end of the action.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference Organization"""
+    used to reference Audience"""
 
     _prop_schema = 'recipient'
-    _expected_schema = 'Organization'
+    _expected_schema = 'Audience'
     _enum = False
     _format_as = "ForeignKey"
 
@@ -39,8 +39,8 @@ class deliveryMethodProp(SchemaProperty):
 
     """
     SchemaField for deliveryMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryMethodProp()
-    schema.org description:A sub property of instrument. The method of delivery
+    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryMethodProp()  
+    schema.org description:A sub property of instrument. The method of delivery.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -50,3 +50,6 @@ class deliveryMethodProp(SchemaProperty):
     _expected_schema = 'DeliveryMethod'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

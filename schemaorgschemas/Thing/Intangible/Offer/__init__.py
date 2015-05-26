@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -9,7 +9,12 @@ class OfferSchema(SchemaObject):
 
     """Schema Mixin for Offer
     Usage: place after django model in class definition, schema will return the schema.org url for the object
-    An offer to transfer some rights to an item or to provide a service-for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.
+    An offer to transfer some rights to an item or to provide a servicefor example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.
+
+      For GTIN-related fields, see
+      Check Digit calculator
+      and validation guide
+      from GS1.
     """
 
     def __init__(self):
@@ -20,8 +25,8 @@ class warrantyProp(SchemaProperty):
 
     """
     SchemaField for warranty
-    Usage: Include in SchemaObject SchemaFields as your_django_field = warrantyProp()
-    schema.org description:The warranty promise(s) included in the offer.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = warrantyProp()  
+    schema.org description:The warranty promise(s) included in the offer. Supersedes warrantyPromise.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -33,35 +38,35 @@ class warrantyProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
-class inventoryLevelProp(SchemaProperty):
+class skuProp(SchemaProperty):
 
     """
-    SchemaField for inventoryLevel
-    Usage: Include in SchemaObject SchemaFields as your_django_field = inventoryLevelProp()
-    schema.org description:The current approximate inventory level for the item or items.
+    SchemaField for sku
+    Usage: Include in SchemaObject SchemaFields as your_django_field = skuProp()  
+    schema.org description:The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference QuantitativeValue"""
+    """
 
-    _prop_schema = 'inventoryLevel'
-    _expected_schema = 'QuantitativeValue'
+    _prop_schema = 'sku'
+    _expected_schema = None
     _enum = False
-    _format_as = "IntegerField"
+    _format_as = "TextField"
 
 
-class serialNumberProp(SchemaProperty):
+class ineligibleRegionProp(SchemaProperty):
 
     """
-    SchemaField for serialNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = serialNumberProp()
-    schema.org description:The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+    SchemaField for ineligibleRegion
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ineligibleRegionProp()  
+    schema.org description:The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     """
 
-    _prop_schema = 'serialNumber'
+    _prop_schema = 'ineligibleRegion'
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
@@ -71,7 +76,7 @@ class availableAtOrFromProp(SchemaProperty):
 
     """
     SchemaField for availableAtOrFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availableAtOrFromProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availableAtOrFromProp()  
     schema.org description:The place(s) from which the offer can be obtained (e.g. store locations).
 
     prop_schema returns just the property without url#
@@ -88,7 +93,7 @@ class priceValidUntilProp(SchemaProperty):
 
     """
     SchemaField for priceValidUntil
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceValidUntilProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceValidUntilProp()  
     schema.org description:The date after which the price is no longer available.
 
     prop_schema returns just the property without url#
@@ -105,7 +110,7 @@ class mpnProp(SchemaProperty):
 
     """
     SchemaField for mpn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = mpnProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = mpnProp()  
     schema.org description:The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.
 
     prop_schema returns just the property without url#
@@ -122,8 +127,8 @@ class eligibleRegionProp(SchemaProperty):
 
     """
     SchemaField for eligibleRegion
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleRegionProp()
-    schema.org description:The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleRegionProp()  
+    schema.org description:The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -132,48 +137,48 @@ class eligibleRegionProp(SchemaProperty):
     _prop_schema = 'eligibleRegion'
     _expected_schema = None
     _enum = False
-    _format_as = "CharField"
+    _format_as = "TextField"
 
 
-class businessFunctionProp(SchemaProperty):
+class priceProp(SchemaProperty):
 
     """
-    SchemaField for businessFunction
-    Usage: Include in SchemaObject SchemaFields as your_django_field = businessFunctionProp()
-    schema.org description:The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
+    SchemaField for price
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceProp()  
+    schema.org description:The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.  Usage guidelines:  Use the priceCurrency property (with ISO 4217 codes e.g. &quot;USD&quot;) instead of including ambiguous symbols such as &#39;$&#39; in the value.  Use &#39;.&#39; (Unicode &#39;FULL STOP&#39; (U+002E)) rather than &#39;,&#39; to indicate a decimal point. Avoid using these symbols as a readability separator.  Note that both RDFa and Microdata syntax allow the use of a &quot;content=&quot; attribute for publishing simple machine-readable values alongside more human-friendly formatting.  Use values from 0123456789 (Unicode &#39;DIGIT ZERO&#39; (U+0030) to &#39;DIGIT NINE&#39; (U+0039)) rather than superficially similiar Unicode symbols. 
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference BusinessFunction"""
+    """
 
-    _prop_schema = 'businessFunction'
-    _expected_schema = 'BusinessFunction'
+    _prop_schema = 'price'
+    _expected_schema = None
     _enum = False
-    _format_as = "ForeignKey"
+    _format_as = "DecimalField"
 
 
-class eligibleCustomerTypeProp(SchemaProperty):
+class eligibleDurationProp(SchemaProperty):
 
     """
-    SchemaField for eligibleCustomerType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleCustomerTypeProp()
-    schema.org description:The type(s) of customers for which the given offer is valid.
+    SchemaField for eligibleDuration
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleDurationProp()  
+    schema.org description:The duration for which the given offer is valid.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference BusinessEntityType"""
+    used to reference QuantitativeValue"""
 
-    _prop_schema = 'eligibleCustomerType'
-    _expected_schema = 'BusinessEntityType'
+    _prop_schema = 'eligibleDuration'
+    _expected_schema = 'QuantitativeValue'
     _enum = False
-    _format_as = "ForeignKey"
+    _format_as = "IntegerField"
 
 
 class priceSpecificationProp(SchemaProperty):
 
     """
     SchemaField for priceSpecification
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceSpecificationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceSpecificationProp()  
     schema.org description:One or more detailed price specifications, indicating the unit price and delivery or payment charges.
 
     prop_schema returns just the property without url#
@@ -190,7 +195,7 @@ class acceptedPaymentMethodProp(SchemaProperty):
 
     """
     SchemaField for acceptedPaymentMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = acceptedPaymentMethodProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = acceptedPaymentMethodProp()  
     schema.org description:The payment method(s) accepted by seller for this offer.
 
     prop_schema returns just the property without url#
@@ -207,7 +212,7 @@ class eligibleTransactionVolumeProp(SchemaProperty):
 
     """
     SchemaField for eligibleTransactionVolume
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleTransactionVolumeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleTransactionVolumeProp()  
     schema.org description:The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.
 
     prop_schema returns just the property without url#
@@ -224,7 +229,7 @@ class deliveryLeadTimeProp(SchemaProperty):
 
     """
     SchemaField for deliveryLeadTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryLeadTimeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = deliveryLeadTimeProp()  
     schema.org description:The typical delay between the receipt of the order and the goods leaving the warehouse.
 
     prop_schema returns just the property without url#
@@ -241,7 +246,7 @@ class eligibleQuantityProp(SchemaProperty):
 
     """
     SchemaField for eligibleQuantity
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleQuantityProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleQuantityProp()  
     schema.org description:The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.
 
     prop_schema returns just the property without url#
@@ -258,7 +263,7 @@ class aggregateRatingProp(SchemaProperty):
 
     """
     SchemaField for aggregateRating
-    Usage: Include in SchemaObject SchemaFields as your_django_field = aggregateRatingProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = aggregateRatingProp()  
     schema.org description:The overall rating, based on a collection of reviews or ratings, of the item.
 
     prop_schema returns just the property without url#
@@ -271,113 +276,11 @@ class aggregateRatingProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
-class skuProp(SchemaProperty):
-
-    """
-    SchemaField for sku
-    Usage: Include in SchemaObject SchemaFields as your_django_field = skuProp()
-    schema.org description:The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'sku'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
-
-
-class itemConditionProp(SchemaProperty):
-
-    """
-    SchemaField for itemCondition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = itemConditionProp()
-    schema.org description:A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    used to reference OfferItemCondition"""
-
-    _prop_schema = 'itemCondition'
-    _expected_schema = 'OfferItemCondition'
-    _enum = False
-    _format_as = "ForeignKey"
-
-
-class gtin8Prop(SchemaProperty):
-
-    """
-    SchemaField for gtin8
-    Usage: Include in SchemaObject SchemaFields as your_django_field = gtin8Prop()
-    schema.org description:The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'gtin8'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
-
-
-class availabilityProp(SchemaProperty):
-
-    """
-    SchemaField for availability
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availabilityProp()
-    schema.org description:The availability of this item-for example In stock, Out of stock, Pre-order, etc.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    used to reference ItemAvailability"""
-
-    _prop_schema = 'availability'
-    _expected_schema = 'ItemAvailability'
-    _enum = False
-    _format_as = "ForeignKey"
-
-
-class categoryProp(SchemaProperty):
-
-    """
-    SchemaField for category
-    Usage: Include in SchemaObject SchemaFields as your_django_field = categoryProp()
-    schema.org description:A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'category'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
-
-
-class availabilityStartsProp(SchemaProperty):
-
-    """
-    SchemaField for availabilityStarts
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availabilityStartsProp()
-    schema.org description:The beginning of the availability of the product or service included in the offer.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'availabilityStarts'
-    _expected_schema = None
-    _enum = False
-    _format_as = "DateTimeField"
-
-
 class availabilityEndsProp(SchemaProperty):
 
     """
     SchemaField for availabilityEnds
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availabilityEndsProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availabilityEndsProp()  
     schema.org description:The end of the availability of the product or service included in the offer.
 
     prop_schema returns just the property without url#
@@ -390,79 +293,11 @@ class availabilityEndsProp(SchemaProperty):
     _format_as = "DateTimeField"
 
 
-class gtin14Prop(SchemaProperty):
-
-    """
-    SchemaField for gtin14
-    Usage: Include in SchemaObject SchemaFields as your_django_field = gtin14Prop()
-    schema.org description:The GTIN-14 code of the product, or the product to which the offer refers.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'gtin14'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
-
-
-class reviewProp(SchemaProperty):
-
-    """
-    SchemaField for review
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewProp()
-    schema.org description:A review of the item. Supercedes reviews.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    used to reference Review"""
-
-    _prop_schema = 'review'
-    _expected_schema = 'Review'
-    _enum = False
-    _format_as = "ForeignKey"
-
-
-class priceCurrencyProp(SchemaProperty):
-
-    """
-    SchemaField for priceCurrency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceCurrencyProp()
-    schema.org description:The currency (in 3-letter ISO 4217 format) of the offer price or a price component, when attached to PriceSpecification and its subtypes.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'priceCurrency'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
-
-
-class itemOfferedProp(SchemaProperty):
-
-    """
-    SchemaField for itemOffered
-    Usage: Include in SchemaObject SchemaFields as your_django_field = itemOfferedProp()
-    schema.org description:The item being offered.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    used to reference Product"""
-
-    _prop_schema = 'itemOffered'
-    _expected_schema = 'Product'
-    _enum = False
-    _format_as = "TextField"
-
-
 class validThroughProp(SchemaProperty):
 
     """
     SchemaField for validThrough
-    Usage: Include in SchemaObject SchemaFields as your_django_field = validThroughProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = validThroughProp()  
     schema.org description:The end of the validity of offer, price specification, or opening hours data.
 
     prop_schema returns just the property without url#
@@ -475,28 +310,113 @@ class validThroughProp(SchemaProperty):
     _format_as = "DateTimeField"
 
 
-class sellerProp(SchemaProperty):
+class gtin8Prop(SchemaProperty):
 
     """
-    SchemaField for seller
-    Usage: Include in SchemaObject SchemaFields as your_django_field = sellerProp()
-    schema.org description:The organization or person making the offer.
+    SchemaField for gtin8
+    Usage: Include in SchemaObject SchemaFields as your_django_field = gtin8Prop()  
+    schema.org description:The GTIN-8 code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See GS1 GTIN Summary for more details.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference Organization"""
+    """
 
-    _prop_schema = 'seller'
-    _expected_schema = 'Organization'
+    _prop_schema = 'gtin8'
+    _expected_schema = None
+    _enum = False
+    _format_as = "TextField"
+
+
+class gtin14Prop(SchemaProperty):
+
+    """
+    SchemaField for gtin14
+    Usage: Include in SchemaObject SchemaFields as your_django_field = gtin14Prop()  
+    schema.org description:The GTIN-14 code of the product, or the product to which the offer refers. See GS1 GTIN Summary for more details.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'gtin14'
+    _expected_schema = None
+    _enum = False
+    _format_as = "TextField"
+
+
+class categoryProp(SchemaProperty):
+
+    """
+    SchemaField for category
+    Usage: Include in SchemaObject SchemaFields as your_django_field = categoryProp()  
+    schema.org description:A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'category'
+    _expected_schema = None
+    _enum = False
+    _format_as = "TextField"
+
+
+class availabilityProp(SchemaProperty):
+
+    """
+    SchemaField for availability
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availabilityProp()  
+    schema.org description:The availability of this itemfor example In stock, Out of stock, Pre-order, etc.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference ItemAvailability"""
+
+    _prop_schema = 'availability'
+    _expected_schema = 'ItemAvailability'
     _enum = False
     _format_as = "ForeignKey"
+
+
+class itemConditionProp(SchemaProperty):
+
+    """
+    SchemaField for itemCondition
+    Usage: Include in SchemaObject SchemaFields as your_django_field = itemConditionProp()  
+    schema.org description:A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference OfferItemCondition"""
+
+    _prop_schema = 'itemCondition'
+    _expected_schema = 'OfferItemCondition'
+    _enum = False
+    _format_as = "ForeignKey"
+
+
+class inventoryLevelProp(SchemaProperty):
+
+    """
+    SchemaField for inventoryLevel
+    Usage: Include in SchemaObject SchemaFields as your_django_field = inventoryLevelProp()  
+    schema.org description:The current approximate inventory level for the item or items.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference QuantitativeValue"""
+
+    _prop_schema = 'inventoryLevel'
+    _expected_schema = 'QuantitativeValue'
+    _enum = False
+    _format_as = "IntegerField"
 
 
 class includesObjectProp(SchemaProperty):
 
     """
     SchemaField for includesObject
-    Usage: Include in SchemaObject SchemaFields as your_django_field = includesObjectProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = includesObjectProp()  
     schema.org description:This links to a node or nodes indicating the exact quantity of the products included in the offer.
 
     prop_schema returns just the property without url#
@@ -509,11 +429,113 @@ class includesObjectProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
+class itemOfferedProp(SchemaProperty):
+
+    """
+    SchemaField for itemOffered
+    Usage: Include in SchemaObject SchemaFields as your_django_field = itemOfferedProp()  
+    schema.org description:The item being offered.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference Product"""
+
+    _prop_schema = 'itemOffered'
+    _expected_schema = 'Product'
+    _enum = False
+    _format_as = "TextField"
+
+
+class priceCurrencyProp(SchemaProperty):
+
+    """
+    SchemaField for priceCurrency
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceCurrencyProp()  
+    schema.org description:The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to PriceSpecification and its subtypes.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'priceCurrency'
+    _expected_schema = None
+    _enum = False
+    _format_as = "TextField"
+
+
+class reviewProp(SchemaProperty):
+
+    """
+    SchemaField for review
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewProp()  
+    schema.org description:A review of the item. Supersedes reviews.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference Review"""
+
+    _prop_schema = 'review'
+    _expected_schema = 'Review'
+    _enum = False
+    _format_as = "ForeignKey"
+
+
+class serialNumberProp(SchemaProperty):
+
+    """
+    SchemaField for serialNumber
+    Usage: Include in SchemaObject SchemaFields as your_django_field = serialNumberProp()  
+    schema.org description:The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'serialNumber'
+    _expected_schema = None
+    _enum = False
+    _format_as = "TextField"
+
+
+class sellerProp(SchemaProperty):
+
+    """
+    SchemaField for seller
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sellerProp()  
+    schema.org description:An entity which offers (sells / leases / lends / loans) the services / goods. A seller may also be a provider. Supersedes vendor, merchant.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference Organization"""
+
+    _prop_schema = 'seller'
+    _expected_schema = 'Organization'
+    _enum = False
+    _format_as = "ForeignKey"
+
+
+class availabilityStartsProp(SchemaProperty):
+
+    """
+    SchemaField for availabilityStarts
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availabilityStartsProp()  
+    schema.org description:The beginning of the availability of the product or service included in the offer.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'availabilityStarts'
+    _expected_schema = None
+    _enum = False
+    _format_as = "DateTimeField"
+
+
 class availableDeliveryMethodProp(SchemaProperty):
 
     """
     SchemaField for availableDeliveryMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = availableDeliveryMethodProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = availableDeliveryMethodProp()  
     schema.org description:The delivery method(s) available for this offer.
 
     prop_schema returns just the property without url#
@@ -526,11 +548,28 @@ class availableDeliveryMethodProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
+class gtin12Prop(SchemaProperty):
+
+    """
+    SchemaField for gtin12
+    Usage: Include in SchemaObject SchemaFields as your_django_field = gtin12Prop()  
+    schema.org description:The GTIN-12 code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See GS1 GTIN Summary for more details.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'gtin12'
+    _expected_schema = None
+    _enum = False
+    _format_as = "TextField"
+
+
 class advanceBookingRequirementProp(SchemaProperty):
 
     """
     SchemaField for advanceBookingRequirement
-    Usage: Include in SchemaObject SchemaFields as your_django_field = advanceBookingRequirementProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = advanceBookingRequirementProp()  
     schema.org description:The amount of time that is required between accepting the offer and the actual usage of the resource or service.
 
     prop_schema returns just the property without url#
@@ -547,8 +586,8 @@ class gtin13Prop(SchemaProperty):
 
     """
     SchemaField for gtin13
-    Usage: Include in SchemaObject SchemaFields as your_django_field = gtin13Prop()
-    schema.org description:The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = gtin13Prop()  
+    schema.org description:The GTIN-13 code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See GS1 GTIN Summary for more details.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -560,28 +599,28 @@ class gtin13Prop(SchemaProperty):
     _format_as = "TextField"
 
 
-class eligibleDurationProp(SchemaProperty):
+class eligibleCustomerTypeProp(SchemaProperty):
 
     """
-    SchemaField for eligibleDuration
-    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleDurationProp()
-    schema.org description:The duration for which the given offer is valid.
+    SchemaField for eligibleCustomerType
+    Usage: Include in SchemaObject SchemaFields as your_django_field = eligibleCustomerTypeProp()  
+    schema.org description:The type(s) of customers for which the given offer is valid.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference QuantitativeValue"""
+    used to reference BusinessEntityType"""
 
-    _prop_schema = 'eligibleDuration'
-    _expected_schema = 'QuantitativeValue'
+    _prop_schema = 'eligibleCustomerType'
+    _expected_schema = 'BusinessEntityType'
     _enum = False
-    _format_as = "IntegerField"
+    _format_as = "ForeignKey"
 
 
 class validFromProp(SchemaProperty):
 
     """
     SchemaField for validFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = validFromProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = validFromProp()  
     schema.org description:The date when the item becomes valid.
 
     prop_schema returns just the property without url#
@@ -594,28 +633,28 @@ class validFromProp(SchemaProperty):
     _format_as = "DateTimeField"
 
 
-class priceProp(SchemaProperty):
+class businessFunctionProp(SchemaProperty):
 
     """
-    SchemaField for price
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceProp()
-    schema.org description:The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.
+    SchemaField for businessFunction
+    Usage: Include in SchemaObject SchemaFields as your_django_field = businessFunctionProp()  
+    schema.org description:The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference BusinessFunction"""
 
-    _prop_schema = 'price'
-    _expected_schema = None
+    _prop_schema = 'businessFunction'
+    _expected_schema = 'BusinessFunction'
     _enum = False
-    _format_as = "DecimalField"
+    _format_as = "ForeignKey"
 
 
 class addOnProp(SchemaProperty):
 
     """
     SchemaField for addOn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = addOnProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = addOnProp()  
     schema.org description:An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).
 
     prop_schema returns just the property without url#
@@ -626,3 +665,6 @@ class addOnProp(SchemaProperty):
     _expected_schema = 'Offer'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

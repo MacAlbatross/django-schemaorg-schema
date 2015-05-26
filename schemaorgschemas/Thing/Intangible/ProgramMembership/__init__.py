@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -20,7 +20,7 @@ class hostingOrganizationProp(SchemaProperty):
 
     """
     SchemaField for hostingOrganization
-    Usage: Include in SchemaObject SchemaFields as your_django_field = hostingOrganizationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = hostingOrganizationProp()  
     schema.org description:The organization (airline, travelers&#39; club, etc.) the membership is made with.
 
     prop_schema returns just the property without url#
@@ -37,8 +37,8 @@ class memberProp(SchemaProperty):
 
     """
     SchemaField for member
-    Usage: Include in SchemaObject SchemaFields as your_django_field = memberProp()
-    schema.org description:A member of this organization. Supercedes members.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = memberProp()  
+    schema.org description:A member of an Organization or a ProgramMembership. Organizations can be members of organizations; ProgramMembership is typically for individuals. Supersedes musicGroupMember, members. Inverse property: memberOf.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -54,7 +54,7 @@ class membershipNumberProp(SchemaProperty):
 
     """
     SchemaField for membershipNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = membershipNumberProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = membershipNumberProp()  
     schema.org description:A unique identifier for the membership.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class programNameProp(SchemaProperty):
 
     """
     SchemaField for programName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = programNameProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = programNameProp()  
     schema.org description:The program providing the membership.
 
     prop_schema returns just the property without url#
@@ -82,3 +82,6 @@ class programNameProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

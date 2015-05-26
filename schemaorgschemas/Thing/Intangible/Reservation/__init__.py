@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -20,7 +20,7 @@ class reservationForProp(SchemaProperty):
 
     """
     SchemaField for reservationFor
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationForProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationForProp()  
     schema.org description:The thing -- flight, event, restaurant,etc. being reserved.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class totalPriceProp(SchemaProperty):
 
     """
     SchemaField for totalPrice
-    Usage: Include in SchemaObject SchemaFields as your_django_field = totalPriceProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = totalPriceProp()  
     schema.org description:The total price for the reservation or ticket, including applicable taxes, shipping, etc.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class modifiedTimeProp(SchemaProperty):
 
     """
     SchemaField for modifiedTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = modifiedTimeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = modifiedTimeProp()  
     schema.org description:The date and time the reservation was modified.
 
     prop_schema returns just the property without url#
@@ -71,8 +71,8 @@ class priceCurrencyProp(SchemaProperty):
 
     """
     SchemaField for priceCurrency
-    Usage: Include in SchemaObject SchemaFields as your_django_field = priceCurrencyProp()
-    schema.org description:The currency (in 3-letter ISO 4217 format) of the offer price or a price component, when attached to PriceSpecification and its subtypes.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = priceCurrencyProp()  
+    schema.org description:The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to PriceSpecification and its subtypes.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -88,7 +88,7 @@ class reservationStatusProp(SchemaProperty):
 
     """
     SchemaField for reservationStatus
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationStatusProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationStatusProp()  
     schema.org description:The current status of the reservation.
 
     prop_schema returns just the property without url#
@@ -101,11 +101,28 @@ class reservationStatusProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
+class brokerProp(SchemaProperty):
+
+    """
+    SchemaField for broker
+    Usage: Include in SchemaObject SchemaFields as your_django_field = brokerProp()  
+    schema.org description:An entity that arranges for an exchange between a buyer and a seller. In most cases a broker never acquires or releases ownership of a product or service involved in an exchange. If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred. Supersedes bookingAgent.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    used to reference Person"""
+
+    _prop_schema = 'broker'
+    _expected_schema = 'Person'
+    _enum = False
+    _format_as = "ForeignKey"
+
+
 class reservedTicketProp(SchemaProperty):
 
     """
     SchemaField for reservedTicket
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reservedTicketProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reservedTicketProp()  
     schema.org description:A ticket associated with the reservation.
 
     prop_schema returns just the property without url#
@@ -118,28 +135,28 @@ class reservedTicketProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
-class bookingAgentProp(SchemaProperty):
+class reservationIdProp(SchemaProperty):
 
     """
-    SchemaField for bookingAgent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = bookingAgentProp()
-    schema.org description:If the reservation was not booked directly through the provider, the third-party booking agent can be recorded through this property.
+    SchemaField for reservationId
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationIdProp()  
+    schema.org description:A unique identifier for the reservation.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference Organization"""
+    """
 
-    _prop_schema = 'bookingAgent'
-    _expected_schema = 'Organization'
+    _prop_schema = 'reservationId'
+    _expected_schema = None
     _enum = False
-    _format_as = "ForeignKey"
+    _format_as = "TextField"
 
 
 class programMembershipUsedProp(SchemaProperty):
 
     """
     SchemaField for programMembershipUsed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = programMembershipUsedProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = programMembershipUsedProp()  
     schema.org description:Any membership in a frequent flyer, hotel loyalty program, etc. being applied to the reservation.
 
     prop_schema returns just the property without url#
@@ -156,41 +173,24 @@ class providerProp(SchemaProperty):
 
     """
     SchemaField for provider
-    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()
-    schema.org description:The organization or agency that is providing the service.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = providerProp()  
+    schema.org description:The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller. Supersedes carrier.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference Organization"""
+    used to reference Person"""
 
     _prop_schema = 'provider'
-    _expected_schema = 'Organization'
+    _expected_schema = 'Person'
     _enum = False
     _format_as = "ForeignKey"
-
-
-class reservationIdProp(SchemaProperty):
-
-    """
-    SchemaField for reservationId
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reservationIdProp()
-    schema.org description:A unique identifier for the reservation.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'reservationId'
-    _expected_schema = None
-    _enum = False
-    _format_as = "TextField"
 
 
 class bookingTimeProp(SchemaProperty):
 
     """
     SchemaField for bookingTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = bookingTimeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = bookingTimeProp()  
     schema.org description:The date and time the reservation was booked.
 
     prop_schema returns just the property without url#
@@ -207,14 +207,17 @@ class underNameProp(SchemaProperty):
 
     """
     SchemaField for underName
-    Usage: Include in SchemaObject SchemaFields as your_django_field = underNameProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = underNameProp()  
     schema.org description:The person or organization the reservation or ticket is for.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    used to reference Organization"""
+    used to reference Person"""
 
     _prop_schema = 'underName'
-    _expected_schema = 'Organization'
+    _expected_schema = 'Person'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

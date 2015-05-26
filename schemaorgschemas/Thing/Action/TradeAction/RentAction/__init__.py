@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Action.TradeAction import priceProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action.TradeAction import priceProp, priceSpecificationProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -22,7 +22,7 @@ class realEstateAgentProp(SchemaProperty):
 
     """
     SchemaField for realEstateAgent
-    Usage: Include in SchemaObject SchemaFields as your_django_field = realEstateAgentProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = realEstateAgentProp()  
     schema.org description:A sub property of participant. The real estate agent involved in the action.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class landlordProp(SchemaProperty):
 
     """
     SchemaField for landlord
-    Usage: Include in SchemaObject SchemaFields as your_django_field = landlordProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = landlordProp()  
     schema.org description:A sub property of participant. The owner of the real estate property.
 
     prop_schema returns just the property without url#
@@ -50,3 +50,6 @@ class landlordProp(SchemaProperty):
     _expected_schema = 'Organization'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

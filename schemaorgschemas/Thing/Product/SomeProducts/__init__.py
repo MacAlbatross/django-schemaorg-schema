@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Product import isConsumableForProp, weightProp, isAccessoryOrSparePartForProp, colorProp, gtin8Prop, heightProp, releaseDateProp, isRelatedToProp, logoProp, productIDProp, skuProp, isSimilarToProp, reviewProp, audienceProp, widthProp, offersProp, mpnProp, brandProp, itemConditionProp, manufacturerProp, aggregateRatingProp, gtin14Prop, depthProp, gtin13Prop, modelProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Product import isConsumableForProp, weightProp, isAccessoryOrSparePartForProp, colorProp, purchaseDateProp, gtin8Prop, heightProp, releaseDateProp, aggregateRatingProp, logoProp, productIDProp, categoryProp, isSimilarToProp, reviewProp, audienceProp, widthProp, additionalPropertyProp, offersProp, productionDateProp, skuProp, mpnProp, brandProp, awardProp, itemConditionProp, manufacturerProp, isRelatedToProp, gtin14Prop, depthProp, gtin13Prop, gtin12Prop, modelProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class inventoryLevelProp(SchemaProperty):
 
     """
     SchemaField for inventoryLevel
-    Usage: Include in SchemaObject SchemaFields as your_django_field = inventoryLevelProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = inventoryLevelProp()  
     schema.org description:The current approximate inventory level for the item or items.
 
     prop_schema returns just the property without url#
@@ -32,3 +32,6 @@ class inventoryLevelProp(SchemaProperty):
     _expected_schema = 'QuantitativeValue'
     _enum = False
     _format_as = "IntegerField"
+
+
+# schema.org version 2.0

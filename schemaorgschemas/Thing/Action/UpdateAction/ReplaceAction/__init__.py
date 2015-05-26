@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Action.UpdateAction import collectionProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action.UpdateAction import targetCollectionProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -22,7 +22,7 @@ class replacerProp(SchemaProperty):
 
     """
     SchemaField for replacer
-    Usage: Include in SchemaObject SchemaFields as your_django_field = replacerProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = replacerProp()  
     schema.org description:A sub property of object. The object that replaces.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class replaceeProp(SchemaProperty):
 
     """
     SchemaField for replacee
-    Usage: Include in SchemaObject SchemaFields as your_django_field = replaceeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = replaceeProp()  
     schema.org description:A sub property of object. The object that is being replaced.
 
     prop_schema returns just the property without url#
@@ -50,3 +50,6 @@ class replaceeProp(SchemaProperty):
     _expected_schema = 'Thing'
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

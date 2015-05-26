@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Intangible.Enumeration import supersededByProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -13,17 +14,20 @@ class PaymentMethodSchema(SchemaObject):
 
     Commonly used values:
 
-    http://purl.org/goodrelations/v1#ByBankTransferInAdvance
-    http://purl.org/goodrelations/v1#ByInvoice
-    http://purl.org/goodrelations/v1#Cash
-    http://purl.org/goodrelations/v1#CheckInAdvance
-    http://purl.org/goodrelations/v1#COD
-    http://purl.org/goodrelations/v1#DirectDebit
-    http://purl.org/goodrelations/v1#GoogleCheckout
-    http://purl.org/goodrelations/v1#PayPal
-    http://purl.org/goodrelations/v1#PaySwarm
+    http://purl.org/goodrelations/v1#ByBankTransferInAdvance 
+    http://purl.org/goodrelations/v1#ByInvoice 
+    http://purl.org/goodrelations/v1#Cash 
+    http://purl.org/goodrelations/v1#CheckInAdvance 
+    http://purl.org/goodrelations/v1#COD 
+    http://purl.org/goodrelations/v1#DirectDebit 
+    http://purl.org/goodrelations/v1#GoogleCheckout 
+    http://purl.org/goodrelations/v1#PayPal 
+    http://purl.org/goodrelations/v1#PaySwarm 
 
     """
 
     def __init__(self):
         self.schema = 'PaymentMethod'
+
+
+# schema.org version 2.0

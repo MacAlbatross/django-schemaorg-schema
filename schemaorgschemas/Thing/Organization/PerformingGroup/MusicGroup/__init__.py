@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Organization import founderProp, foundingDateProp, interactionCountProp, faxNumberProp, aggregateRatingProp, logoProp, eventProp, isicV4Prop, reviewProp, taxIDProp, memberProp, locationProp, employeeProp, emailProp, seeksProp, subOrganizationProp, brandProp, ownsProp, telephoneProp, departmentProp, addressProp, dunsProp, contactPointProp, makesOfferProp, hasPOSProp, naicsProp, legalNameProp, vatIDProp, globalLocationNumberProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Organization import founderProp, foundingDateProp, telephoneProp, faxNumberProp, aggregateRatingProp, logoProp, eventProp, isicV4Prop, reviewProp, taxIDProp, memberProp, foundingLocationProp, locationProp, employeeProp, emailProp, seeksProp, numberOfEmployeesProp, subOrganizationProp, brandProp, ownsProp, awardProp, departmentProp, dissolutionDateProp, addressProp, dunsProp, contactPointProp, makesOfferProp, hasPOSProp, naicsProp, memberOfProp, legalNameProp, vatIDProp, globalLocationNumberProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,8 +21,8 @@ class albumProp(SchemaProperty):
 
     """
     SchemaField for album
-    Usage: Include in SchemaObject SchemaFields as your_django_field = albumProp()
-    schema.org description:A music album. Supercedes albums.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = albumProp()  
+    schema.org description:A music album. Supersedes albums.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -34,12 +34,29 @@ class albumProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
+class genreProp(SchemaProperty):
+
+    """
+    SchemaField for genre
+    Usage: Include in SchemaObject SchemaFields as your_django_field = genreProp()  
+    schema.org description:Genre of the creative work or group.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'genre'
+    _expected_schema = None
+    _enum = False
+    _format_as = "TextField"
+
+
 class trackProp(SchemaProperty):
 
     """
     SchemaField for track
-    Usage: Include in SchemaObject SchemaFields as your_django_field = trackProp()
-    schema.org description:A music recording (track)-usually a single song. Supercedes tracks.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = trackProp()  
+    schema.org description:A music recording (track)usually a single song. If an ItemList is given, the list should contain items of type MusicRecording. Supersedes tracks.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -51,18 +68,4 @@ class trackProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
-class musicGroupMemberProp(SchemaProperty):
-
-    """
-    SchemaField for musicGroupMember
-    Usage: Include in SchemaObject SchemaFields as your_django_field = musicGroupMemberProp()
-    schema.org description:A member of the music group-for example, John, Paul, George, or Ringo.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    used to reference Person"""
-
-    _prop_schema = 'musicGroupMember'
-    _expected_schema = 'Person'
-    _enum = False
-    _format_as = "ForeignKey"
+# schema.org version 2.0

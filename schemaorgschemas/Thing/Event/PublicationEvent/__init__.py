@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Event import startDateProp, attendeeProp, performerProp, endDateProp, previousStartDateProp, superEventProp, subEventProp, offersProp, eventStatusProp, typicalAgeRangeProp, durationProp, workPerformedProp, doorTimeProp, locationProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Event import inLanguageProp, attendeeProp, performerProp, endDateProp, startDateProp, previousStartDateProp, superEventProp, reviewProp, recordedInProp, aggregateRatingProp, subEventProp, offersProp, eventStatusProp, typicalAgeRangeProp, durationProp, workPerformedProp, organizerProp, doorTimeProp, locationProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -17,11 +17,28 @@ class PublicationEventSchema(SchemaObject):
         self.schema = 'PublicationEvent'
 
 
+class isAccessibleForFreeProp(SchemaProperty):
+
+    """
+    SchemaField for isAccessibleForFree
+    Usage: Include in SchemaObject SchemaFields as your_django_field = isAccessibleForFreeProp()  
+    schema.org description:A flag to signal that the publication is accessible for free. Supersedes free.
+
+    prop_schema returns just the property without url#
+    format_as is used by app templatetags based upon schema.org datatype
+    """
+
+    _prop_schema = 'isAccessibleForFree'
+    _expected_schema = None
+    _enum = False
+    _format_as = "BooleanField"
+
+
 class publishedOnProp(SchemaProperty):
 
     """
     SchemaField for publishedOn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = publishedOnProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = publishedOnProp()  
     schema.org description:A broadcast service associated with the publication event.
 
     prop_schema returns just the property without url#
@@ -34,18 +51,4 @@ class publishedOnProp(SchemaProperty):
     _format_as = "ForeignKey"
 
 
-class freeProp(SchemaProperty):
-
-    """
-    SchemaField for free
-    Usage: Include in SchemaObject SchemaFields as your_django_field = freeProp()
-    schema.org description:A flag to signal that the publication is accessible for free.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    """
-
-    _prop_schema = 'free'
-    _expected_schema = None
-    _enum = False
-    _format_as = "BooleanField"
+# schema.org version 2.0

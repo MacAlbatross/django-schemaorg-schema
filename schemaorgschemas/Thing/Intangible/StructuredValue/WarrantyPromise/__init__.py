@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -20,7 +20,7 @@ class durationOfWarrantyProp(SchemaProperty):
 
     """
     SchemaField for durationOfWarranty
-    Usage: Include in SchemaObject SchemaFields as your_django_field = durationOfWarrantyProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = durationOfWarrantyProp()  
     schema.org description:The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class warrantyScopeProp(SchemaProperty):
 
     """
     SchemaField for warrantyScope
-    Usage: Include in SchemaObject SchemaFields as your_django_field = warrantyScopeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = warrantyScopeProp()  
     schema.org description:The scope of the warranty promise.
 
     prop_schema returns just the property without url#
@@ -48,3 +48,6 @@ class warrantyScopeProp(SchemaProperty):
     _expected_schema = 'WarrantyScope'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

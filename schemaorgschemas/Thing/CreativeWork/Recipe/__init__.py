@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.CreativeWork import commentProp, copyrightYearProp, versionProp, creatorProp, textProp, citationProp, interactionCountProp, datePublishedProp, commentCountProp, associatedMediaProp, alternativeHeadlineProp, accountablePersonProp, videoProp, typicalAgeRangeProp, contributorProp, thumbnailUrlProp, accessibilityFeatureProp, interactivityTypeProp, discussionUrlProp, authorProp, headlineProp, reviewProp, encodingProp, contentRatingProp, offersProp, editorProp, providerProp, publishingPrinciplesProp, accessibilityHazardProp, dateModifiedProp, timeRequiredProp, educationalAlignmentProp, learningResourceTypeProp, awardProp, dateCreatedProp, copyrightHolderProp, genreProp, contentLocationProp, educationalUseProp, accessibilityAPIProp, publisherProp, aboutProp, aggregateRatingProp, sourceOrganizationProp, inLanguageProp, isFamilyFriendlyProp, audienceProp, accessibilityControlProp, keywordsProp, mentionsProp, audioProp, isBasedOnUrlProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.CreativeWork import commentProp, copyrightYearProp, versionProp, producerProp, creatorProp, publishingPrinciplesProp, textProp, citationProp, datePublishedProp, commentCountProp, associatedMediaProp, alternativeHeadlineProp, accountablePersonProp, videoProp, typicalAgeRangeProp, contributorProp, thumbnailUrlProp, mainEntityProp, accessibilityFeatureProp, interactivityTypeProp, publicationProp, discussionUrlProp, authorProp, headlineProp, reviewProp, encodingProp, characterProp, contentRatingProp, hasPartProp, exampleOfWorkProp, editorProp, providerProp, isPartOfProp, recordedAtProp, accessibilityHazardProp, dateModifiedProp, timeRequiredProp, educationalAlignmentProp, learningResourceTypeProp, awardProp, dateCreatedProp, translatorProp, offersProp, copyrightHolderProp, releasedEventProp, mentionsProp, genreProp, schemaVersionProp, contentLocationProp, educationalUseProp, accessibilityAPIProp, publisherProp, aboutProp, licenseProp, aggregateRatingProp, workExampleProp, sourceOrganizationProp, inLanguageProp, isFamilyFriendlyProp, audienceProp, accessibilityControlProp, keywordsProp, positionProp, audioProp, isBasedOnUrlProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class totalTimeProp(SchemaProperty):
 
     """
     SchemaField for totalTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = totalTimeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = totalTimeProp()  
     schema.org description:The total time it takes to prepare and cook the recipe, in ISO 8601 duration format.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class nutritionProp(SchemaProperty):
 
     """
     SchemaField for nutrition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = nutritionProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = nutritionProp()  
     schema.org description:Nutrition information about the recipe.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class cookingMethodProp(SchemaProperty):
 
     """
     SchemaField for cookingMethod
-    Usage: Include in SchemaObject SchemaFields as your_django_field = cookingMethodProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = cookingMethodProp()  
     schema.org description:The method of cooking, such as Frying, Steaming, ...
 
     prop_schema returns just the property without url#
@@ -72,8 +72,8 @@ class recipeInstructionsProp(SchemaProperty):
 
     """
     SchemaField for recipeInstructions
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeInstructionsProp()
-    schema.org description:The steps to make the dish.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeInstructionsProp()  
+    schema.org description:A step or instruction involved in making the recipe.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -89,7 +89,7 @@ class recipeYieldProp(SchemaProperty):
 
     """
     SchemaField for recipeYield
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeYieldProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeYieldProp()  
     schema.org description:The quantity produced by the recipe (for example, number of people served, number of servings, etc).
 
     prop_schema returns just the property without url#
@@ -102,18 +102,18 @@ class recipeYieldProp(SchemaProperty):
     _format_as = "TextField"
 
 
-class ingredientsProp(SchemaProperty):
+class recipeIngredientProp(SchemaProperty):
 
     """
-    SchemaField for ingredients
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ingredientsProp()
-    schema.org description:An ingredient used in the recipe.
+    SchemaField for recipeIngredient
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeIngredientProp()  
+    schema.org description:A single ingredient used in the recipe, e.g. sugar, flour or garlic. Supersedes ingredients.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     """
 
-    _prop_schema = 'ingredients'
+    _prop_schema = 'recipeIngredient'
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
@@ -123,8 +123,8 @@ class recipeCategoryProp(SchemaProperty):
 
     """
     SchemaField for recipeCategory
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeCategoryProp()
-    schema.org description:The category of the recipe-for example, appetizer, entree, etc.
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeCategoryProp()  
+    schema.org description:The category of the recipefor example, appetizer, entree, etc.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -140,8 +140,8 @@ class recipeCuisineProp(SchemaProperty):
 
     """
     SchemaField for recipeCuisine
-    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeCuisineProp()
-    schema.org description:The cuisine of the recipe (for example, French or Ethopian).
+    Usage: Include in SchemaObject SchemaFields as your_django_field = recipeCuisineProp()  
+    schema.org description:The cuisine of the recipe (for example, French or Ethiopian).
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
@@ -157,7 +157,7 @@ class prepTimeProp(SchemaProperty):
 
     """
     SchemaField for prepTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = prepTimeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = prepTimeProp()  
     schema.org description:The length of time it takes to prepare the recipe, in ISO 8601 duration format.
 
     prop_schema returns just the property without url#
@@ -174,7 +174,7 @@ class cookTimeProp(SchemaProperty):
 
     """
     SchemaField for cookTime
-    Usage: Include in SchemaObject SchemaFields as your_django_field = cookTimeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = cookTimeProp()  
     schema.org description:The time it takes to actually cook the dish, in ISO 8601 duration format.
 
     prop_schema returns just the property without url#
@@ -185,3 +185,6 @@ class cookTimeProp(SchemaProperty):
     _expected_schema = 'Duration'
     _enum = False
     _format_as = "TimeField"
+
+
+# schema.org version 2.0

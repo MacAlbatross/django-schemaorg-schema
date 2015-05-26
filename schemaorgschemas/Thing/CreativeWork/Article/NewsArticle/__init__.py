@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.CreativeWork.Article import articleBodyProp, wordCountProp, articleSectionProp
-from schemaorgschemas.Thing.CreativeWork import commentProp, copyrightYearProp, versionProp, creatorProp, textProp, citationProp, interactionCountProp, datePublishedProp, commentCountProp, associatedMediaProp, alternativeHeadlineProp, accountablePersonProp, videoProp, typicalAgeRangeProp, contributorProp, thumbnailUrlProp, accessibilityFeatureProp, interactivityTypeProp, discussionUrlProp, authorProp, headlineProp, reviewProp, encodingProp, contentRatingProp, offersProp, editorProp, providerProp, publishingPrinciplesProp, accessibilityHazardProp, dateModifiedProp, timeRequiredProp, educationalAlignmentProp, learningResourceTypeProp, awardProp, dateCreatedProp, copyrightHolderProp, genreProp, contentLocationProp, educationalUseProp, accessibilityAPIProp, publisherProp, aboutProp, aggregateRatingProp, sourceOrganizationProp, inLanguageProp, isFamilyFriendlyProp, audienceProp, accessibilityControlProp, keywordsProp, mentionsProp, audioProp, isBasedOnUrlProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.CreativeWork.Article import articleBodyProp, paginationProp, wordCountProp, pageEndProp, articleSectionProp, pageStartProp
+from schemaorgschemas.Thing.CreativeWork import commentProp, copyrightYearProp, versionProp, producerProp, creatorProp, publishingPrinciplesProp, textProp, citationProp, datePublishedProp, commentCountProp, aggregateRatingProp, alternativeHeadlineProp, accountablePersonProp, videoProp, typicalAgeRangeProp, contributorProp, thumbnailUrlProp, mainEntityProp, accessibilityFeatureProp, interactivityTypeProp, publicationProp, discussionUrlProp, authorProp, headlineProp, reviewProp, encodingProp, characterProp, contentRatingProp, hasPartProp, exampleOfWorkProp, editorProp, providerProp, isPartOfProp, recordedAtProp, accessibilityHazardProp, dateModifiedProp, timeRequiredProp, educationalAlignmentProp, learningResourceTypeProp, awardProp, dateCreatedProp, translatorProp, offersProp, copyrightHolderProp, releasedEventProp, positionProp, genreProp, schemaVersionProp, contentLocationProp, educationalUseProp, accessibilityAPIProp, publisherProp, aboutProp, licenseProp, associatedMediaProp, workExampleProp, sourceOrganizationProp, inLanguageProp, isFamilyFriendlyProp, audienceProp, accessibilityControlProp, keywordsProp, mentionsProp, audioProp, isBasedOnUrlProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -11,7 +11,7 @@ class NewsArticleSchema(SchemaObject):
 
     """Schema Mixin for NewsArticle
     Usage: place after django model in class definition, schema will return the schema.org url for the object
-    A news article
+    A news article.
     """
 
     def __init__(self):
@@ -22,7 +22,7 @@ class printEditionProp(SchemaProperty):
 
     """
     SchemaField for printEdition
-    Usage: Include in SchemaObject SchemaFields as your_django_field = printEditionProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = printEditionProp()  
     schema.org description:The edition of the print product in which the NewsArticle appears.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class datelineProp(SchemaProperty):
 
     """
     SchemaField for dateline
-    Usage: Include in SchemaObject SchemaFields as your_django_field = datelineProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = datelineProp()  
     schema.org description:The location where the NewsArticle was produced.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class printColumnProp(SchemaProperty):
 
     """
     SchemaField for printColumn
-    Usage: Include in SchemaObject SchemaFields as your_django_field = printColumnProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = printColumnProp()  
     schema.org description:The number of the column in which the NewsArticle appears in the print edition.
 
     prop_schema returns just the property without url#
@@ -73,7 +73,7 @@ class printPageProp(SchemaProperty):
 
     """
     SchemaField for printPage
-    Usage: Include in SchemaObject SchemaFields as your_django_field = printPageProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = printPageProp()  
     schema.org description:If this NewsArticle appears in print, this field indicates the name of the page on which the article is found. Please note that this field is intended for the exact page name (e.g. A5, B18).
 
     prop_schema returns just the property without url#
@@ -90,7 +90,7 @@ class printSectionProp(SchemaProperty):
 
     """
     SchemaField for printSection
-    Usage: Include in SchemaObject SchemaFields as your_django_field = printSectionProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = printSectionProp()  
     schema.org description:If this NewsArticle appears in print, this field indicates the print section in which the article appeared.
 
     prop_schema returns just the property without url#
@@ -101,3 +101,6 @@ class printSectionProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

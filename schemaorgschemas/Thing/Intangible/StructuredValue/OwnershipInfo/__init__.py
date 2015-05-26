@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -20,7 +20,7 @@ class ownedFromProp(SchemaProperty):
 
     """
     SchemaField for ownedFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ownedFromProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ownedFromProp()  
     schema.org description:The date and time of obtaining the product.
 
     prop_schema returns just the property without url#
@@ -37,7 +37,7 @@ class acquiredFromProp(SchemaProperty):
 
     """
     SchemaField for acquiredFrom
-    Usage: Include in SchemaObject SchemaFields as your_django_field = acquiredFromProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = acquiredFromProp()  
     schema.org description:The organization or person from which the product was acquired.
 
     prop_schema returns just the property without url#
@@ -54,7 +54,7 @@ class typeOfGoodProp(SchemaProperty):
 
     """
     SchemaField for typeOfGood
-    Usage: Include in SchemaObject SchemaFields as your_django_field = typeOfGoodProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = typeOfGoodProp()  
     schema.org description:The product that this structured value is referring to.
 
     prop_schema returns just the property without url#
@@ -71,7 +71,7 @@ class ownedThroughProp(SchemaProperty):
 
     """
     SchemaField for ownedThrough
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ownedThroughProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ownedThroughProp()  
     schema.org description:The date and time of giving up ownership on the product.
 
     prop_schema returns just the property without url#
@@ -82,3 +82,6 @@ class ownedThroughProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "DateTimeField"
+
+
+# schema.org version 2.0

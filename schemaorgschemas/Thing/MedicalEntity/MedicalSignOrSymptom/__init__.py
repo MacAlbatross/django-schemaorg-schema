@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class possibleTreatmentProp(SchemaProperty):
 
     """
     SchemaField for possibleTreatment
-    Usage: Include in SchemaObject SchemaFields as your_django_field = possibleTreatmentProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = possibleTreatmentProp()  
     schema.org description:A possible treatment to address this condition, sign or symptom.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class causeProp(SchemaProperty):
 
     """
     SchemaField for cause
-    Usage: Include in SchemaObject SchemaFields as your_django_field = causeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = causeProp()  
     schema.org description:An underlying cause. More specifically, one of the causative agent(s) that are most directly responsible for the pathophysiologic process that eventually results in the occurrence.
 
     prop_schema returns just the property without url#
@@ -49,3 +49,6 @@ class causeProp(SchemaProperty):
     _expected_schema = 'MedicalCause'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

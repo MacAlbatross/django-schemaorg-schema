@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, endTimeProp, resultProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.Action.TradeAction import priceProp
+from schemaorgschemas.Thing.Action import participantProp, targetProp, objectProp, agentProp, actionStatusProp, instrumentProp, locationProp, startTimeProp, errorProp, endTimeProp, resultProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Action.TradeAction import priceProp, priceSpecificationProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -18,35 +18,21 @@ class BuyActionSchema(SchemaObject):
         self.schema = 'BuyAction'
 
 
-class warrantyPromiseProp(SchemaProperty):
+class sellerProp(SchemaProperty):
 
     """
-    SchemaField for warrantyPromise
-    Usage: Include in SchemaObject SchemaFields as your_django_field = warrantyPromiseProp()
-    schema.org description:The warranty promise(s) included in the offer.
-
-    prop_schema returns just the property without url#
-    format_as is used by app templatetags based upon schema.org datatype
-    used to reference WarrantyPromise"""
-
-    _prop_schema = 'warrantyPromise'
-    _expected_schema = 'WarrantyPromise'
-    _enum = False
-    _format_as = "ForeignKey"
-
-
-class vendorProp(SchemaProperty):
-
-    """
-    SchemaField for vendor
-    Usage: Include in SchemaObject SchemaFields as your_django_field = vendorProp()
-    schema.org description:A sub property of participant. The seller. The participant/person/organization that sold the object.
+    SchemaField for seller
+    Usage: Include in SchemaObject SchemaFields as your_django_field = sellerProp()  
+    schema.org description:An entity which offers (sells / leases / lends / loans) the services / goods. A seller may also be a provider. Supersedes vendor, merchant.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
     used to reference Organization"""
 
-    _prop_schema = 'vendor'
+    _prop_schema = 'seller'
     _expected_schema = 'Organization'
     _enum = False
     _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

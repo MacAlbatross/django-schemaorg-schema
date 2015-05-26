@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class evidenceLevelProp(SchemaProperty):
 
     """
     SchemaField for evidenceLevel
-    Usage: Include in SchemaObject SchemaFields as your_django_field = evidenceLevelProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = evidenceLevelProp()  
     schema.org description:Strength of evidence of the data used to formulate the guideline (enumerated).
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class evidenceOriginProp(SchemaProperty):
 
     """
     SchemaField for evidenceOrigin
-    Usage: Include in SchemaObject SchemaFields as your_django_field = evidenceOriginProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = evidenceOriginProp()  
     schema.org description:Source of the data used to formulate the guidance, e.g. RCT, consensus opinion, etc.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class guidelineSubjectProp(SchemaProperty):
 
     """
     SchemaField for guidelineSubject
-    Usage: Include in SchemaObject SchemaFields as your_django_field = guidelineSubjectProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = guidelineSubjectProp()  
     schema.org description:The medical conditions, treatments, etc. that are the subject of the guideline.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class guidelineDateProp(SchemaProperty):
 
     """
     SchemaField for guidelineDate
-    Usage: Include in SchemaObject SchemaFields as your_django_field = guidelineDateProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = guidelineDateProp()  
     schema.org description:Date on which this guideline&#39;s recommendation was made.
 
     prop_schema returns just the property without url#
@@ -83,3 +83,6 @@ class guidelineDateProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "DateField"
+
+
+# schema.org version 2.0

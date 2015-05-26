@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 from schemaorgschemas.Thing.MedicalEntity.AnatomicalStructure import functionProp, associatedPathophysiologyProp, bodyLocationProp, relatedTherapyProp, connectedToProp, partOfSystemProp, diagramProp, relatedConditionProp, subStructureProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
@@ -22,7 +22,7 @@ class functionalClassProp(SchemaProperty):
 
     """
     SchemaField for functionalClass
-    Usage: Include in SchemaObject SchemaFields as your_django_field = functionalClassProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = functionalClassProp()  
     schema.org description:The degree of mobility the joint allows.
 
     prop_schema returns just the property without url#
@@ -39,7 +39,7 @@ class structuralClassProp(SchemaProperty):
 
     """
     SchemaField for structuralClass
-    Usage: Include in SchemaObject SchemaFields as your_django_field = structuralClassProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = structuralClassProp()  
     schema.org description:The name given to how bone physically connects to each other.
 
     prop_schema returns just the property without url#
@@ -56,7 +56,7 @@ class biomechnicalClassProp(SchemaProperty):
 
     """
     SchemaField for biomechnicalClass
-    Usage: Include in SchemaObject SchemaFields as your_django_field = biomechnicalClassProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = biomechnicalClassProp()  
     schema.org description:The biomechanical properties of the bone.
 
     prop_schema returns just the property without url#
@@ -67,3 +67,6 @@ class biomechnicalClassProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

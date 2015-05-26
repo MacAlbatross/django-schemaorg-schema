@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class stageAsNumberProp(SchemaProperty):
 
     """
     SchemaField for stageAsNumber
-    Usage: Include in SchemaObject SchemaFields as your_django_field = stageAsNumberProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = stageAsNumberProp()  
     schema.org description:The stage represented as a number, e.g. 3.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class subStageSuffixProp(SchemaProperty):
 
     """
     SchemaField for subStageSuffix
-    Usage: Include in SchemaObject SchemaFields as your_django_field = subStageSuffixProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = subStageSuffixProp()  
     schema.org description:The substage, e.g. &#39;a&#39; for Stage IIIa.
 
     prop_schema returns just the property without url#
@@ -49,3 +49,6 @@ class subStageSuffixProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0

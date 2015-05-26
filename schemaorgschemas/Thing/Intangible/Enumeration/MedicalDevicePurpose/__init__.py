@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
+from schemaorgschemas.Thing.Intangible.Enumeration import supersededByProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -17,25 +18,26 @@ class MedicalDevicePurposeSchema(SchemaObject):
         self.schema = 'MedicalDevicePurpose'
 
 
-PURPOSE_CHOICES = (
-    ('THERAPEUTIC',
-     'Therapeutic: A medical device used for therapeutic purposes.'),
-    ('DIAGNOSTIC',
-     'Diagnostic: A medical device used for diagnostic purposes.'),
+/PURPOSE_CHOICES = (
+    ('/THERAPEUTIC', '/Therapeutic'),
+    ('/DIAGNOSTIC', '/Diagnostic'),
 )
 
 
-class purposeProp(SchemaEnumProperty):
+class / purposeProp(SchemaEnumProperty):
 
     """
-    Enumeration for purpose
+    Enumeration for /purpose
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = 'purpose'
-    choices = PURPOSE_CHOICES
+    _prop_schema = '/purpose'
+    choices = /PURPOSE_CHOICES
     _format_as = "enum"
     adapter = {
-        'THERAPEUTIC': 'Therapeutic',
-        'DIAGNOSTIC': 'Diagnostic',
+        '/THERAPEUTIC': '/Therapeutic',
+        '/DIAGNOSTIC': '/Diagnostic',
     }
+
+
+# schema.org version 2.0

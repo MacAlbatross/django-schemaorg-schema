@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing.Intangible.Enumeration import supersededByProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -16,25 +17,28 @@ class BookFormatTypeSchema(SchemaObject):
         self.schema = 'BookFormatType'
 
 
-BOOKFORMAT_CHOICES = (
-    ('HARDCOVER', 'Hardcover: Book format: Hardcover.'),
-    ('PAPERBACK', 'Paperback: Book format: Paperback.'),
-    ('EBOOK', 'EBook: Book format: Ebook.'),
+/BOOKFORMAT_CHOICES = (
+    ('/HARDCOVER', '/Hardcover'),
+    ('/PAPERBACK', '/Paperback'),
+    ('/EBOOK', '/EBook'),
 )
 
 
-class bookFormatProp(SchemaEnumProperty):
+class / bookFormatProp(SchemaEnumProperty):
 
     """
-    Enumeration for bookFormat
+    Enumeration for /bookFormat
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = 'bookFormat'
-    choices = BOOKFORMAT_CHOICES
+    _prop_schema = '/bookFormat'
+    choices = /BOOKFORMAT_CHOICES
     _format_as = "enum"
     adapter = {
-        'HARDCOVER': 'Hardcover',
-        'PAPERBACK': 'Paperback',
-        'EBOOK': 'EBook',
+        '/HARDCOVER': '/Hardcover',
+        '/PAPERBACK': '/Paperback',
+        '/EBOOK': '/EBook',
     }
+
+
+# schema.org version 2.0

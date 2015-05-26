@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from schemaorgschemas.Thing.Intangible.Rating import worstRatingProp, ratingValueProp, bestRatingProp
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
+from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, nameProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,24 +21,24 @@ class reviewCountProp(SchemaProperty):
 
     """
     SchemaField for reviewCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewCountProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = reviewCountProp()  
     schema.org description:The count of total number of reviews.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference Integer"""
 
     _prop_schema = 'reviewCount'
-    _expected_schema = None
+    _expected_schema = 'Integer'
     _enum = False
-    _format_as = "IntegerField"
+    _format_as = "ForeignKey"
 
 
 class itemReviewedProp(SchemaProperty):
 
     """
     SchemaField for itemReviewed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = itemReviewedProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = itemReviewedProp()  
     schema.org description:The item that is being reviewed/rated.
 
     prop_schema returns just the property without url#
@@ -55,14 +55,17 @@ class ratingCountProp(SchemaProperty):
 
     """
     SchemaField for ratingCount
-    Usage: Include in SchemaObject SchemaFields as your_django_field = ratingCountProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = ratingCountProp()  
     schema.org description:The count of total number of ratings.
 
     prop_schema returns just the property without url#
     format_as is used by app templatetags based upon schema.org datatype
-    """
+    used to reference Integer"""
 
     _prop_schema = 'ratingCount'
-    _expected_schema = None
+    _expected_schema = 'Integer'
     _enum = False
-    _format_as = "IntegerField"
+    _format_as = "ForeignKey"
+
+
+# schema.org version 2.0

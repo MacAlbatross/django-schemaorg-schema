@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from schemaorgschemas.Thing import potentialActionProp, descriptionProp, sameAsProp, imageProp, urlProp, additionalTypeProp, alternateNameProp, nameProp
-from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp, alternateNameProp
+from schemaorgschemas.Thing import potentialActionProp, nameProp, sameAsProp, imageProp, urlProp, mainEntityOfPageProp, additionalTypeProp, alternateNameProp, descriptionProp
+from schemaorgschemas.Thing.MedicalEntity import codeProp, relevantSpecialtyProp, studyProp, guidelineProp, recognizingAuthorityProp, medicineSystemProp
 
 from schemaorgschemas.djangoschema import SchemaObject, SchemaProperty, SchemaEnumProperty, SCHEMA_ORG
 from django.conf import settings
@@ -21,7 +21,7 @@ class followupProp(SchemaProperty):
 
     """
     SchemaField for followup
-    Usage: Include in SchemaObject SchemaFields as your_django_field = followupProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = followupProp()  
     schema.org description:Typical or recommended followup care after the procedure is performed.
 
     prop_schema returns just the property without url#
@@ -38,7 +38,7 @@ class preparationProp(SchemaProperty):
 
     """
     SchemaField for preparation
-    Usage: Include in SchemaObject SchemaFields as your_django_field = preparationProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = preparationProp()  
     schema.org description:Typical preparation that a patient must undergo before having the procedure performed.
 
     prop_schema returns just the property without url#
@@ -55,7 +55,7 @@ class procedureTypeProp(SchemaProperty):
 
     """
     SchemaField for procedureType
-    Usage: Include in SchemaObject SchemaFields as your_django_field = procedureTypeProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = procedureTypeProp()  
     schema.org description:The type of procedure, for example Surgical, Noninvasive, or Percutaneous.
 
     prop_schema returns just the property without url#
@@ -72,7 +72,7 @@ class howPerformedProp(SchemaProperty):
 
     """
     SchemaField for howPerformed
-    Usage: Include in SchemaObject SchemaFields as your_django_field = howPerformedProp()
+    Usage: Include in SchemaObject SchemaFields as your_django_field = howPerformedProp()  
     schema.org description:How the procedure is performed.
 
     prop_schema returns just the property without url#
@@ -83,3 +83,6 @@ class howPerformedProp(SchemaProperty):
     _expected_schema = None
     _enum = False
     _format_as = "TextField"
+
+
+# schema.org version 2.0
