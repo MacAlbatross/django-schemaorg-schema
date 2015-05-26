@@ -6,7 +6,8 @@ from django.test import TestCase
 from django.core.urlresolvers import reverse
 from datetime import datetime
 from django.views.generic import DetailView
-from .models import Author, Book, Publisher, Site
+from .models import Author, Book, Publisher
+from django.contrib.sites.models import Site
 
 
 class SchemaTemplateTagTests(TestCase):
@@ -73,6 +74,14 @@ class SchemaTemplateTagTests(TestCase):
                        ).render(Context({'object': Book.objects.get(id=1)}))
         expected_string = """<p itemprop="bookFormat" href="http://schema.org/EBook">Format: EBOOK</p>"""
         self.assertEqual(out, expected_string)
+
+    def test_get_display(self):
+            out = Template("{%load schemadisplay %}"
+                           """<p {% schemaprop object 'book_format' %}>Format: {{object.get_book_format_display}}</p>"""
+                           ).render(Context({'object': Book.objects.get(id=1)}))
+            expected_string = """<p itemprop="bookFormat" href="http://schema.org/EBook">Format: EBook</p>"""
+            self.assertEqual(out, expected_string)
+
 
     def test_ennm_field_with_adapter(self):
         pass

@@ -1,6 +1,5 @@
 from django.db import models
 from django.db.models.fields.related import ForeignKey
-from django.contrib.sites.models import Site
 from schemaorgschemas.Thing.CreativeWork import Book as book
 from schemaorgschemas.Thing import CreativeWork
 from schemaorgschemas.Thing.Intangible.Enumeration import BookFormatType
