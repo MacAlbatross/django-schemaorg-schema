@@ -18,41 +18,43 @@ class MedicalStudyStatusSchema(SchemaObject):
         self.schema = 'MedicalStudyStatus'
 
 
-/STATUS_CHOICES = (
-    ('/COMPLETED', '/Completed'),
-    ('/ENROLLINGBYINVITATION', '/EnrollingByInvitation'),
-    ('/NOTYETRECRUITING', '/NotYetRecruiting'),
-    ('/RECRUITING', '/Recruiting'),
-    ('/RESULTSAVAILABLE', '/ResultsAvailable'),
-    ('/RESULTSNOTAVAILABLE', '/ResultsNotAvailable'),
-    ('/SUSPENDED', '/Suspended'),
-    ('/TERMINATED', '/Terminated'),
-    ('/WITHDRAWN', '/Withdrawn'),
-    ('/ACTIVENOTRECRUITING', '/ActiveNotRecruiting'),
+STATUS_CHOICES = (
+    ('COMPLETED', 'Completed: Completed.'),
+    ('ENROLLINGBYINVITATION',
+     'EnrollingByInvitation: Enrolling participants by invitation only.'),
+    ('NOTYETRECRUITING', 'NotYetRecruiting: Not yet recruiting.'),
+    ('RECRUITING', 'Recruiting: Recruiting participants.'),
+    ('RESULTSAVAILABLE', 'ResultsAvailable: Results are available.'),
+    ('RESULTSNOTAVAILABLE', 'ResultsNotAvailable: Results are not available.'),
+    ('SUSPENDED', 'Suspended: Suspended.'),
+    ('TERMINATED', 'Terminated: Terminated.'),
+    ('WITHDRAWN', 'Withdrawn: Withdrawn.'),
+    ('ACTIVENOTRECRUITING',
+     'ActiveNotRecruiting: Active, but not recruiting new participants.'),
 )
 
 
-class / statusProp(SchemaEnumProperty):
+class statusProp(SchemaEnumProperty):
 
     """
-    Enumeration for /status
+    Enumeration for status
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/status'
-    choices = /STATUS_CHOICES
+    _prop_schema = 'status'
+    choices = STATUS_CHOICES
     _format_as = "enum"
     adapter = {
-        '/COMPLETED': '/Completed',
-        '/ENROLLINGBYINVITATION': '/EnrollingByInvitation',
-        '/NOTYETRECRUITING': '/NotYetRecruiting',
-        '/RECRUITING': '/Recruiting',
-        '/RESULTSAVAILABLE': '/ResultsAvailable',
-        '/RESULTSNOTAVAILABLE': '/ResultsNotAvailable',
-        '/SUSPENDED': '/Suspended',
-        '/TERMINATED': '/Terminated',
-        '/WITHDRAWN': '/Withdrawn',
-        '/ACTIVENOTRECRUITING': '/ActiveNotRecruiting',
+        'COMPLETED': 'Completed',
+        'ENROLLINGBYINVITATION': 'EnrollingByInvitation',
+        'NOTYETRECRUITING': 'NotYetRecruiting',
+        'RECRUITING': 'Recruiting',
+        'RESULTSAVAILABLE': 'ResultsAvailable',
+        'RESULTSNOTAVAILABLE': 'ResultsNotAvailable',
+        'SUSPENDED': 'Suspended',
+        'TERMINATED': 'Terminated',
+        'WITHDRAWN': 'Withdrawn',
+        'ACTIVENOTRECRUITING': 'ActiveNotRecruiting',
     }
 
 

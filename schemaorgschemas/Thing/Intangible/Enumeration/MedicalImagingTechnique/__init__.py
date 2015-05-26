@@ -18,31 +18,31 @@ class MedicalImagingTechniqueSchema(SchemaObject):
         self.schema = 'MedicalImagingTechnique'
 
 
-/IMAGINGTECHNIQUE_CHOICES = (
-    ('/MRI', '/MRI'),
-    ('/PET', '/PET'),
-    ('/ULTRASOUND', '/Ultrasound'),
-    ('/XRAY', '/XRay'),
-    ('/CT', '/CT'),
+IMAGINGTECHNIQUE_CHOICES = (
+    ('MRI', 'MRI: Magnetic resonance imaging.'),
+    ('PET', 'PET: Positron emission tomography imaging.'),
+    ('ULTRASOUND', 'Ultrasound: Ultrasound imaging.'),
+    ('XRAY', 'XRay: X-ray imaging.'),
+    ('CT', 'CT: X-ray computed tomography imaging.'),
 )
 
 
-class / imagingTechniqueProp(SchemaEnumProperty):
+class imagingTechniqueProp(SchemaEnumProperty):
 
     """
-    Enumeration for /imagingTechnique
+    Enumeration for imagingTechnique
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/imagingTechnique'
-    choices = /IMAGINGTECHNIQUE_CHOICES
+    _prop_schema = 'imagingTechnique'
+    choices = IMAGINGTECHNIQUE_CHOICES
     _format_as = "enum"
     adapter = {
-        '/MRI': '/MRI',
-        '/PET': '/PET',
-        '/ULTRASOUND': '/Ultrasound',
-        '/XRAY': '/XRay',
-        '/CT': '/CT',
+        'MRI': 'MRI',
+        'PET': 'PET',
+        'ULTRASOUND': 'Ultrasound',
+        'XRAY': 'XRay',
+        'CT': 'CT',
     }
 
 

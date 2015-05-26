@@ -17,27 +17,30 @@ class GamePlayModeSchema(SchemaObject):
         self.schema = 'GamePlayMode'
 
 
-/PLAYMODE_CHOICES = (
-    ('/MULTIPLAYER', '/MultiPlayer'),
-    ('/SINGLEPLAYER', '/SinglePlayer'),
-    ('/COOP', '/CoOp'),
+PLAYMODE_CHOICES = (
+    ('MULTIPLAYER',
+     'MultiPlayer: Play mode: MultiPlayer. Requiring or allowing multiple human players to play simultaneously.'),
+    ('SINGLEPLAYER',
+     'SinglePlayer: Play mode: SinglePlayer. Which is played by a lone player.'),
+    ('COOP',
+     'CoOp: Play mode: CoOp. Co-operative games, where you play on the same team with friends.'),
 )
 
 
-class / playModeProp(SchemaEnumProperty):
+class playModeProp(SchemaEnumProperty):
 
     """
-    Enumeration for /playMode
+    Enumeration for playMode
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/playMode'
-    choices = /PLAYMODE_CHOICES
+    _prop_schema = 'playMode'
+    choices = PLAYMODE_CHOICES
     _format_as = "enum"
     adapter = {
-        '/MULTIPLAYER': '/MultiPlayer',
-        '/SINGLEPLAYER': '/SinglePlayer',
-        '/COOP': '/CoOp',
+        'MULTIPLAYER': 'MultiPlayer',
+        'SINGLEPLAYER': 'SinglePlayer',
+        'COOP': 'CoOp',
     }
 
 

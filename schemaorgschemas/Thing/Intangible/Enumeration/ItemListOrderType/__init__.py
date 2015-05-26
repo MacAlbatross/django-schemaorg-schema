@@ -17,27 +17,30 @@ class ItemListOrderTypeSchema(SchemaObject):
         self.schema = 'ItemListOrderType'
 
 
-/ITEMLISTORDER_CHOICES = (
-    ('/ITEMLISTORDERDESCENDING', '/ItemListOrderDescending'),
-    ('/ITEMLISTUNORDERED', '/ItemListUnordered'),
-    ('/ITEMLISTORDERASCENDING', '/ItemListOrderAscending'),
+ITEMLISTORDER_CHOICES = (
+    ('ITEMLISTORDERDESCENDING',
+     'ItemListOrderDescending: An ItemList ordered with higher values listed first.'),
+    ('ITEMLISTUNORDERED',
+     'ItemListUnordered: An ItemList ordered with no explicit order.'),
+    ('ITEMLISTORDERASCENDING',
+     'ItemListOrderAscending: An ItemList ordered with lower values listed first.'),
 )
 
 
-class / itemListOrderProp(SchemaEnumProperty):
+class itemListOrderProp(SchemaEnumProperty):
 
     """
-    Enumeration for /itemListOrder
+    Enumeration for itemListOrder
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/itemListOrder'
-    choices = /ITEMLISTORDER_CHOICES
+    _prop_schema = 'itemListOrder'
+    choices = ITEMLISTORDER_CHOICES
     _format_as = "enum"
     adapter = {
-        '/ITEMLISTORDERDESCENDING': '/ItemListOrderDescending',
-        '/ITEMLISTUNORDERED': '/ItemListUnordered',
-        '/ITEMLISTORDERASCENDING': '/ItemListOrderAscending',
+        'ITEMLISTORDERDESCENDING': 'ItemListOrderDescending',
+        'ITEMLISTUNORDERED': 'ItemListUnordered',
+        'ITEMLISTORDERASCENDING': 'ItemListOrderAscending',
     }
 
 

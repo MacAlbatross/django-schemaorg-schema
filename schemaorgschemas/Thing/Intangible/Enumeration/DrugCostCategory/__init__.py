@@ -18,27 +18,30 @@ class DrugCostCategorySchema(SchemaObject):
         self.schema = 'DrugCostCategory'
 
 
-/COSTCATEGORY_CHOICES = (
-    ('/RETAIL', '/Retail'),
-    ('/WHOLESALE', '/Wholesale'),
-    ('/REIMBURSEMENTCAP', '/ReimbursementCap'),
+COSTCATEGORY_CHOICES = (
+    ('RETAIL',
+     'Retail: The drug&#39;s cost represents the retail cost of the drug.'),
+    ('WHOLESALE',
+     'Wholesale: The drug&#39;s cost represents the wholesale acquisition cost of the drug.'),
+    ('REIMBURSEMENTCAP',
+     'ReimbursementCap: The drug&#39;s cost represents the maximum reimbursement paid by an insurer for the drug.'),
 )
 
 
-class / costCategoryProp(SchemaEnumProperty):
+class costCategoryProp(SchemaEnumProperty):
 
     """
-    Enumeration for /costCategory
+    Enumeration for costCategory
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/costCategory'
-    choices = /COSTCATEGORY_CHOICES
+    _prop_schema = 'costCategory'
+    choices = COSTCATEGORY_CHOICES
     _format_as = "enum"
     adapter = {
-        '/RETAIL': '/Retail',
-        '/WHOLESALE': '/Wholesale',
-        '/REIMBURSEMENTCAP': '/ReimbursementCap',
+        'RETAIL': 'Retail',
+        'WHOLESALE': 'Wholesale',
+        'REIMBURSEMENTCAP': 'ReimbursementCap',
     }
 
 

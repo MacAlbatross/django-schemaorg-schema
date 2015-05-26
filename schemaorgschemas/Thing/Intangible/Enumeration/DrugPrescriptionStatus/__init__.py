@@ -18,25 +18,25 @@ class DrugPrescriptionStatusSchema(SchemaObject):
         self.schema = 'DrugPrescriptionStatus'
 
 
-/PRESCRIPTIONSTATUS_CHOICES = (
-    ('/PRESCRIPTIONONLY', '/PrescriptionOnly'),
-    ('/OTC', '/OTC'),
+PRESCRIPTIONSTATUS_CHOICES = (
+    ('PRESCRIPTIONONLY', 'PrescriptionOnly: Available by prescription only.'),
+    ('OTC', 'OTC: Available over the counter.'),
 )
 
 
-class / prescriptionStatusProp(SchemaEnumProperty):
+class prescriptionStatusProp(SchemaEnumProperty):
 
     """
-    Enumeration for /prescriptionStatus
+    Enumeration for prescriptionStatus
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/prescriptionStatus'
-    choices = /PRESCRIPTIONSTATUS_CHOICES
+    _prop_schema = 'prescriptionStatus'
+    choices = PRESCRIPTIONSTATUS_CHOICES
     _format_as = "enum"
     adapter = {
-        '/PRESCRIPTIONONLY': '/PrescriptionOnly',
-        '/OTC': '/OTC',
+        'PRESCRIPTIONONLY': 'PrescriptionOnly',
+        'OTC': 'OTC',
     }
 
 

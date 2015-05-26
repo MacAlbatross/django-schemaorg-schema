@@ -18,25 +18,27 @@ class MedicalDevicePurposeSchema(SchemaObject):
         self.schema = 'MedicalDevicePurpose'
 
 
-/PURPOSE_CHOICES = (
-    ('/THERAPEUTIC', '/Therapeutic'),
-    ('/DIAGNOSTIC', '/Diagnostic'),
+PURPOSE_CHOICES = (
+    ('DIAGNOSTIC',
+     'Diagnostic: A medical device used for diagnostic purposes.'),
+    ('THERAPEUTIC',
+     'Therapeutic: A medical device used for therapeutic purposes.'),
 )
 
 
-class / purposeProp(SchemaEnumProperty):
+class purposeProp(SchemaEnumProperty):
 
     """
-    Enumeration for /purpose
+    Enumeration for purpose
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/purpose'
-    choices = /PURPOSE_CHOICES
+    _prop_schema = 'purpose'
+    choices = PURPOSE_CHOICES
     _format_as = "enum"
     adapter = {
-        '/THERAPEUTIC': '/Therapeutic',
-        '/DIAGNOSTIC': '/Diagnostic',
+        'DIAGNOSTIC': 'Diagnostic',
+        'THERAPEUTIC': 'Therapeutic',
     }
 
 

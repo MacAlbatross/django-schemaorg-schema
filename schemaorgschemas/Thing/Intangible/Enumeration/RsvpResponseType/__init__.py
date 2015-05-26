@@ -17,27 +17,28 @@ class RsvpResponseTypeSchema(SchemaObject):
         self.schema = 'RsvpResponseType'
 
 
-/RSVPRESPONSE_CHOICES = (
-    ('/RSVPRESPONSENO', '/RsvpResponseNo'),
-    ('/RSVPRESPONSEYES', '/RsvpResponseYes'),
-    ('/RSVPRESPONSEMAYBE', '/RsvpResponseMaybe'),
+RSVPRESPONSE_CHOICES = (
+    ('RSVPRESPONSENO', 'RsvpResponseNo: The invitee will not attend.'),
+    ('RSVPRESPONSEYES', 'RsvpResponseYes: The invitee will attend.'),
+    ('RSVPRESPONSEMAYBE',
+     'RsvpResponseMaybe: The invitee may or may not attend.'),
 )
 
 
-class / rsvpResponseProp(SchemaEnumProperty):
+class rsvpResponseProp(SchemaEnumProperty):
 
     """
-    Enumeration for /rsvpResponse
+    Enumeration for rsvpResponse
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/rsvpResponse'
-    choices = /RSVPRESPONSE_CHOICES
+    _prop_schema = 'rsvpResponse'
+    choices = RSVPRESPONSE_CHOICES
     _format_as = "enum"
     adapter = {
-        '/RSVPRESPONSENO': '/RsvpResponseNo',
-        '/RSVPRESPONSEYES': '/RsvpResponseYes',
-        '/RSVPRESPONSEMAYBE': '/RsvpResponseMaybe',
+        'RSVPRESPONSENO': 'RsvpResponseNo',
+        'RSVPRESPONSEYES': 'RsvpResponseYes',
+        'RSVPRESPONSEMAYBE': 'RsvpResponseMaybe',
     }
 
 

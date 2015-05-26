@@ -17,37 +17,42 @@ class ItemAvailabilitySchema(SchemaObject):
         self.schema = 'ItemAvailability'
 
 
-/AVAILABILITY_CHOICES = (
-    ('/INSTOCK', '/InStock'),
-    ('/INSTOREONLY', '/InStoreOnly'),
-    ('/LIMITEDAVAILABILITY', '/LimitedAvailability'),
-    ('/ONLINEONLY', '/OnlineOnly'),
-    ('/OUTOFSTOCK', '/OutOfStock'),
-    ('/PREORDER', '/PreOrder'),
-    ('/SOLDOUT', '/SoldOut'),
-    ('/DISCONTINUED', '/Discontinued'),
+AVAILABILITY_CHOICES = (
+    ('INSTOCK', 'InStock: Indicates that the item is in stock.'),
+    ('INSTOREONLY',
+     'InStoreOnly: Indicates that the item is available only at physical locations.'),
+    ('LIMITEDAVAILABILITY',
+     'LimitedAvailability: Indicates that the item has limited availability.'),
+    ('ONLINEONLY',
+     'OnlineOnly: Indicates that the item is available only online.'),
+    ('OUTOFSTOCK', 'OutOfStock: Indicates that the item is out of stock.'),
+    ('PREORDER',
+     'PreOrder: Indicates that the item is available for pre-order.'),
+    ('SOLDOUT', 'SoldOut: Indicates that the item has sold out.'),
+    ('DISCONTINUED',
+     'Discontinued: Indicates that the item has been discontinued.'),
 )
 
 
-class / availabilityProp(SchemaEnumProperty):
+class availabilityProp(SchemaEnumProperty):
 
     """
-    Enumeration for /availability
+    Enumeration for availability
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/availability'
-    choices = /AVAILABILITY_CHOICES
+    _prop_schema = 'availability'
+    choices = AVAILABILITY_CHOICES
     _format_as = "enum"
     adapter = {
-        '/INSTOCK': '/InStock',
-        '/INSTOREONLY': '/InStoreOnly',
-        '/LIMITEDAVAILABILITY': '/LimitedAvailability',
-        '/ONLINEONLY': '/OnlineOnly',
-        '/OUTOFSTOCK': '/OutOfStock',
-        '/PREORDER': '/PreOrder',
-        '/SOLDOUT': '/SoldOut',
-        '/DISCONTINUED': '/Discontinued',
+        'INSTOCK': 'InStock',
+        'INSTOREONLY': 'InStoreOnly',
+        'LIMITEDAVAILABILITY': 'LimitedAvailability',
+        'ONLINEONLY': 'OnlineOnly',
+        'OUTOFSTOCK': 'OutOfStock',
+        'PREORDER': 'PreOrder',
+        'SOLDOUT': 'SoldOut',
+        'DISCONTINUED': 'Discontinued',
     }
 
 

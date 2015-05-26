@@ -18,27 +18,30 @@ class MedicalEvidenceLevelSchema(SchemaObject):
         self.schema = 'MedicalEvidenceLevel'
 
 
-/EVIDENCELEVEL_CHOICES = (
-    ('/EVIDENCELEVELB', '/EvidenceLevelB'),
-    ('/EVIDENCELEVELC', '/EvidenceLevelC'),
-    ('/EVIDENCELEVELA', '/EvidenceLevelA'),
+EVIDENCELEVEL_CHOICES = (
+    ('EVIDENCELEVELB',
+     'EvidenceLevelB: Data derived from a single randomized trial, or nonrandomized studies.'),
+    ('EVIDENCELEVELC',
+     'EvidenceLevelC: Only consensus opinion of experts, case studies, or standard-of-care.'),
+    ('EVIDENCELEVELA',
+     'EvidenceLevelA: Data derived from multiple randomized clinical trials or meta-analyses.'),
 )
 
 
-class / evidenceLevelProp(SchemaEnumProperty):
+class evidenceLevelProp(SchemaEnumProperty):
 
     """
-    Enumeration for /evidenceLevel
+    Enumeration for evidenceLevel
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/evidenceLevel'
-    choices = /EVIDENCELEVEL_CHOICES
+    _prop_schema = 'evidenceLevel'
+    choices = EVIDENCELEVEL_CHOICES
     _format_as = "enum"
     adapter = {
-        '/EVIDENCELEVELB': '/EvidenceLevelB',
-        '/EVIDENCELEVELC': '/EvidenceLevelC',
-        '/EVIDENCELEVELA': '/EvidenceLevelA',
+        'EVIDENCELEVELB': 'EvidenceLevelB',
+        'EVIDENCELEVELC': 'EvidenceLevelC',
+        'EVIDENCELEVELA': 'EvidenceLevelA',
     }
 
 

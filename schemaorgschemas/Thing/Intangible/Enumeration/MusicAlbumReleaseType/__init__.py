@@ -17,29 +17,29 @@ class MusicAlbumReleaseTypeSchema(SchemaObject):
         self.schema = 'MusicAlbumReleaseType'
 
 
-/ALBUMRELEASETYPE_CHOICES = (
-    ('/BROADCASTRELEASE', '/BroadcastRelease'),
-    ('/EPRELEASE', '/EPRelease'),
-    ('/SINGLERELEASE', '/SingleRelease'),
-    ('/ALBUMRELEASE', '/AlbumRelease'),
+ALBUMRELEASETYPE_CHOICES = (
+    ('BROADCASTRELEASE', 'BroadcastRelease: BroadcastRelease.'),
+    ('EPRELEASE', 'EPRelease: EPRelease.'),
+    ('SINGLERELEASE', 'SingleRelease: SingleRelease.'),
+    ('ALBUMRELEASE', 'AlbumRelease: AlbumRelease.'),
 )
 
 
-class / albumReleaseTypeProp(SchemaEnumProperty):
+class albumReleaseTypeProp(SchemaEnumProperty):
 
     """
-    Enumeration for /albumReleaseType
+    Enumeration for albumReleaseType
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/albumReleaseType'
-    choices = /ALBUMRELEASETYPE_CHOICES
+    _prop_schema = 'albumReleaseType'
+    choices = ALBUMRELEASETYPE_CHOICES
     _format_as = "enum"
     adapter = {
-        '/BROADCASTRELEASE': '/BroadcastRelease',
-        '/EPRELEASE': '/EPRelease',
-        '/SINGLERELEASE': '/SingleRelease',
-        '/ALBUMRELEASE': '/AlbumRelease',
+        'BROADCASTRELEASE': 'BroadcastRelease',
+        'EPRELEASE': 'EPRelease',
+        'SINGLERELEASE': 'SingleRelease',
+        'ALBUMRELEASE': 'AlbumRelease',
     }
 
 

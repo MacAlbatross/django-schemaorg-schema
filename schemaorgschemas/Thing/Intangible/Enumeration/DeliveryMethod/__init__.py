@@ -29,83 +29,87 @@ class DeliveryMethodSchema(SchemaObject):
         self.schema = 'DeliveryMethod'
 
 
-/HASDELIVERYMETHOD_CHOICES = (
-    ('/ONSITEPICKUP', '/OnSitePickup'),
+APPLIESTODELIVERYMETHOD_CHOICES = (
+    ('ONSITEPICKUP',
+     'OnSitePickup: A DeliveryMethod in which an item is collected on site, e.g. in a store or at a box office.'),
 )
 
 
-class / hasDeliveryMethodProp(SchemaEnumProperty):
+class appliesToDeliveryMethodProp(SchemaEnumProperty):
 
     """
-    Enumeration for /hasDeliveryMethod
+    Enumeration for appliesToDeliveryMethod
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/hasDeliveryMethod'
-    choices = /HASDELIVERYMETHOD_CHOICES
+    _prop_schema = 'appliesToDeliveryMethod'
+    choices = APPLIESTODELIVERYMETHOD_CHOICES
     _format_as = "enum"
     adapter = {
-        '/ONSITEPICKUP': '/OnSitePickup',
+        'ONSITEPICKUP': 'OnSitePickup',
     }
 
 
-/DELIVERYMETHOD_CHOICES = (
-    ('/ONSITEPICKUP', '/OnSitePickup'),
+AVAILABLEDELIVERYMETHOD_CHOICES = (
+    ('ONSITEPICKUP',
+     'OnSitePickup: A DeliveryMethod in which an item is collected on site, e.g. in a store or at a box office.'),
 )
 
 
-class / deliveryMethodProp(SchemaEnumProperty):
+class availableDeliveryMethodProp(SchemaEnumProperty):
 
     """
-    Enumeration for /deliveryMethod
+    Enumeration for availableDeliveryMethod
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/deliveryMethod'
-    choices = /DELIVERYMETHOD_CHOICES
+    _prop_schema = 'availableDeliveryMethod'
+    choices = AVAILABLEDELIVERYMETHOD_CHOICES
     _format_as = "enum"
     adapter = {
-        '/ONSITEPICKUP': '/OnSitePickup',
+        'ONSITEPICKUP': 'OnSitePickup',
     }
 
 
-/AVAILABLEDELIVERYMETHOD_CHOICES = (
-    ('/ONSITEPICKUP', '/OnSitePickup'),
+DELIVERYMETHOD_CHOICES = (
+    ('ONSITEPICKUP',
+     'OnSitePickup: A DeliveryMethod in which an item is collected on site, e.g. in a store or at a box office.'),
 )
 
 
-class / availableDeliveryMethodProp(SchemaEnumProperty):
+class deliveryMethodProp(SchemaEnumProperty):
 
     """
-    Enumeration for /availableDeliveryMethod
+    Enumeration for deliveryMethod
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/availableDeliveryMethod'
-    choices = /AVAILABLEDELIVERYMETHOD_CHOICES
+    _prop_schema = 'deliveryMethod'
+    choices = DELIVERYMETHOD_CHOICES
     _format_as = "enum"
     adapter = {
-        '/ONSITEPICKUP': '/OnSitePickup',
+        'ONSITEPICKUP': 'OnSitePickup',
     }
 
 
-/APPLIESTODELIVERYMETHOD_CHOICES = (
-    ('/ONSITEPICKUP', '/OnSitePickup'),
+HASDELIVERYMETHOD_CHOICES = (
+    ('ONSITEPICKUP',
+     'OnSitePickup: A DeliveryMethod in which an item is collected on site, e.g. in a store or at a box office.'),
 )
 
 
-class / appliesToDeliveryMethodProp(SchemaEnumProperty):
+class hasDeliveryMethodProp(SchemaEnumProperty):
 
     """
-    Enumeration for /appliesToDeliveryMethod
+    Enumeration for hasDeliveryMethod
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/appliesToDeliveryMethod'
-    choices = /APPLIESTODELIVERYMETHOD_CHOICES
+    _prop_schema = 'hasDeliveryMethod'
+    choices = HASDELIVERYMETHOD_CHOICES
     _format_as = "enum"
     adapter = {
-        '/ONSITEPICKUP': '/OnSitePickup',
+        'ONSITEPICKUP': 'OnSitePickup',
     }
 
 

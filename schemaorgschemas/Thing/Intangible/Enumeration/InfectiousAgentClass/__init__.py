@@ -18,33 +18,36 @@ class InfectiousAgentClassSchema(SchemaObject):
         self.schema = 'InfectiousAgentClass'
 
 
-/INFECTIOUSAGENTCLASS_CHOICES = (
-    ('/FUNGUS', '/Fungus'),
-    ('/MULTICELLULARPARASITE', '/MulticellularParasite'),
-    ('/PRION', '/Prion'),
-    ('/PROTOZOA', '/Protozoa'),
-    ('/VIRUS', '/Virus'),
-    ('/BACTERIA', '/Bacteria'),
+INFECTIOUSAGENTCLASS_CHOICES = (
+    ('FUNGUS', 'Fungus: Pathogenic fungus.'),
+    ('MULTICELLULARPARASITE',
+     'MulticellularParasite: Multicellular parasite that causes an infection.'),
+    ('PRION',
+     'Prion: A prion is an infectious agent composed of protein in a misfolded form.'),
+    ('PROTOZOA', 'Protozoa: Single-celled organism that causes an infection.'),
+    ('VIRUS', 'Virus: Pathogenic virus that causes viral infection.'),
+    ('BACTERIA',
+     'Bacteria: Pathogenic bacteria that cause bacterial infection.'),
 )
 
 
-class / infectiousAgentClassProp(SchemaEnumProperty):
+class infectiousAgentClassProp(SchemaEnumProperty):
 
     """
-    Enumeration for /infectiousAgentClass
+    Enumeration for infectiousAgentClass
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/infectiousAgentClass'
-    choices = /INFECTIOUSAGENTCLASS_CHOICES
+    _prop_schema = 'infectiousAgentClass'
+    choices = INFECTIOUSAGENTCLASS_CHOICES
     _format_as = "enum"
     adapter = {
-        '/FUNGUS': '/Fungus',
-        '/MULTICELLULARPARASITE': '/MulticellularParasite',
-        '/PRION': '/Prion',
-        '/PROTOZOA': '/Protozoa',
-        '/VIRUS': '/Virus',
-        '/BACTERIA': '/Bacteria',
+        'FUNGUS': 'Fungus',
+        'MULTICELLULARPARASITE': 'MulticellularParasite',
+        'PRION': 'Prion',
+        'PROTOZOA': 'Protozoa',
+        'VIRUS': 'Virus',
+        'BACTERIA': 'Bacteria',
     }
 
 

@@ -17,39 +17,39 @@ class MusicAlbumProductionTypeSchema(SchemaObject):
         self.schema = 'MusicAlbumProductionType'
 
 
-/ALBUMPRODUCTIONTYPE_CHOICES = (
-    ('/DJMIXALBUM', '/DJMixAlbum'),
-    ('/DEMOALBUM', '/DemoAlbum'),
-    ('/LIVEALBUM', '/LiveAlbum'),
-    ('/MIXTAPEALBUM', '/MixtapeAlbum'),
-    ('/REMIXALBUM', '/RemixAlbum'),
-    ('/SOUNDTRACKALBUM', '/SoundtrackAlbum'),
-    ('/SPOKENWORDALBUM', '/SpokenWordAlbum'),
-    ('/STUDIOALBUM', '/StudioAlbum'),
-    ('/COMPILATIONALBUM', '/CompilationAlbum'),
+ALBUMPRODUCTIONTYPE_CHOICES = (
+    ('DJMIXALBUM', 'DJMixAlbum: DJMixAlbum.'),
+    ('DEMOALBUM', 'DemoAlbum: DemoAlbum.'),
+    ('LIVEALBUM', 'LiveAlbum: LiveAlbum.'),
+    ('MIXTAPEALBUM', 'MixtapeAlbum: MixtapeAlbum.'),
+    ('REMIXALBUM', 'RemixAlbum: RemixAlbum.'),
+    ('SOUNDTRACKALBUM', 'SoundtrackAlbum: SoundtrackAlbum.'),
+    ('SPOKENWORDALBUM', 'SpokenWordAlbum: SpokenWordAlbum.'),
+    ('STUDIOALBUM', 'StudioAlbum: StudioAlbum.'),
+    ('COMPILATIONALBUM', 'CompilationAlbum: CompilationAlbum.'),
 )
 
 
-class / albumProductionTypeProp(SchemaEnumProperty):
+class albumProductionTypeProp(SchemaEnumProperty):
 
     """
-    Enumeration for /albumProductionType
+    Enumeration for albumProductionType
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/albumProductionType'
-    choices = /ALBUMPRODUCTIONTYPE_CHOICES
+    _prop_schema = 'albumProductionType'
+    choices = ALBUMPRODUCTIONTYPE_CHOICES
     _format_as = "enum"
     adapter = {
-        '/DJMIXALBUM': '/DJMixAlbum',
-        '/DEMOALBUM': '/DemoAlbum',
-        '/LIVEALBUM': '/LiveAlbum',
-        '/MIXTAPEALBUM': '/MixtapeAlbum',
-        '/REMIXALBUM': '/RemixAlbum',
-        '/SOUNDTRACKALBUM': '/SoundtrackAlbum',
-        '/SPOKENWORDALBUM': '/SpokenWordAlbum',
-        '/STUDIOALBUM': '/StudioAlbum',
-        '/COMPILATIONALBUM': '/CompilationAlbum',
+        'DJMIXALBUM': 'DJMixAlbum',
+        'DEMOALBUM': 'DemoAlbum',
+        'LIVEALBUM': 'LiveAlbum',
+        'MIXTAPEALBUM': 'MixtapeAlbum',
+        'REMIXALBUM': 'RemixAlbum',
+        'SOUNDTRACKALBUM': 'SoundtrackAlbum',
+        'SPOKENWORDALBUM': 'SpokenWordAlbum',
+        'STUDIOALBUM': 'StudioAlbum',
+        'COMPILATIONALBUM': 'CompilationAlbum',
     }
 
 

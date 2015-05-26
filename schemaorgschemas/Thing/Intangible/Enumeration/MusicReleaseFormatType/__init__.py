@@ -17,35 +17,36 @@ class MusicReleaseFormatTypeSchema(SchemaObject):
         self.schema = 'MusicReleaseFormatType'
 
 
-/MUSICRELEASEFORMAT_CHOICES = (
-    ('/CASSETTEFORMAT', '/CassetteFormat'),
-    ('/DVDFORMAT', '/DVDFormat'),
-    ('/DIGITALAUDIOTAPEFORMAT', '/DigitalAudioTapeFormat'),
-    ('/DIGITALFORMAT', '/DigitalFormat'),
-    ('/LASERDISCFORMAT', '/LaserDiscFormat'),
-    ('/VINYLFORMAT', '/VinylFormat'),
-    ('/CDFORMAT', '/CDFormat'),
+MUSICRELEASEFORMAT_CHOICES = (
+    ('CASSETTEFORMAT', 'CassetteFormat: CassetteFormat.'),
+    ('DVDFORMAT', 'DVDFormat: DVDFormat.'),
+    ('DIGITALAUDIOTAPEFORMAT',
+     'DigitalAudioTapeFormat: DigitalAudioTapeFormat.'),
+    ('DIGITALFORMAT', 'DigitalFormat: DigitalFormat.'),
+    ('LASERDISCFORMAT', 'LaserDiscFormat: LaserDiscFormat.'),
+    ('VINYLFORMAT', 'VinylFormat: VinylFormat.'),
+    ('CDFORMAT', 'CDFormat: CDFormat.'),
 )
 
 
-class / musicReleaseFormatProp(SchemaEnumProperty):
+class musicReleaseFormatProp(SchemaEnumProperty):
 
     """
-    Enumeration for /musicReleaseFormat
+    Enumeration for musicReleaseFormat
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/musicReleaseFormat'
-    choices = /MUSICRELEASEFORMAT_CHOICES
+    _prop_schema = 'musicReleaseFormat'
+    choices = MUSICRELEASEFORMAT_CHOICES
     _format_as = "enum"
     adapter = {
-        '/CASSETTEFORMAT': '/CassetteFormat',
-        '/DVDFORMAT': '/DVDFormat',
-        '/DIGITALAUDIOTAPEFORMAT': '/DigitalAudioTapeFormat',
-        '/DIGITALFORMAT': '/DigitalFormat',
-        '/LASERDISCFORMAT': '/LaserDiscFormat',
-        '/VINYLFORMAT': '/VinylFormat',
-        '/CDFORMAT': '/CDFormat',
+        'CASSETTEFORMAT': 'CassetteFormat',
+        'DVDFORMAT': 'DVDFormat',
+        'DIGITALAUDIOTAPEFORMAT': 'DigitalAudioTapeFormat',
+        'DIGITALFORMAT': 'DigitalFormat',
+        'LASERDISCFORMAT': 'LaserDiscFormat',
+        'VINYLFORMAT': 'VinylFormat',
+        'CDFORMAT': 'CDFormat',
     }
 
 

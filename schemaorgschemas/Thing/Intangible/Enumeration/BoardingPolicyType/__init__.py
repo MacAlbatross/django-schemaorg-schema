@@ -17,25 +17,27 @@ class BoardingPolicyTypeSchema(SchemaObject):
         self.schema = 'BoardingPolicyType'
 
 
-/BOARDINGPOLICY_CHOICES = (
-    ('/ZONEBOARDINGPOLICY', '/ZoneBoardingPolicy'),
-    ('/GROUPBOARDINGPOLICY', '/GroupBoardingPolicy'),
+BOARDINGPOLICY_CHOICES = (
+    ('ZONEBOARDINGPOLICY',
+     'ZoneBoardingPolicy: The airline boards by zones of the plane.'),
+    ('GROUPBOARDINGPOLICY',
+     'GroupBoardingPolicy: The airline boards by groups based on check-in time, priority, etc.'),
 )
 
 
-class / boardingPolicyProp(SchemaEnumProperty):
+class boardingPolicyProp(SchemaEnumProperty):
 
     """
-    Enumeration for /boardingPolicy
+    Enumeration for boardingPolicy
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/boardingPolicy'
-    choices = /BOARDINGPOLICY_CHOICES
+    _prop_schema = 'boardingPolicy'
+    choices = BOARDINGPOLICY_CHOICES
     _format_as = "enum"
     adapter = {
-        '/ZONEBOARDINGPOLICY': '/ZoneBoardingPolicy',
-        '/GROUPBOARDINGPOLICY': '/GroupBoardingPolicy',
+        'ZONEBOARDINGPOLICY': 'ZoneBoardingPolicy',
+        'GROUPBOARDINGPOLICY': 'GroupBoardingPolicy',
     }
 
 

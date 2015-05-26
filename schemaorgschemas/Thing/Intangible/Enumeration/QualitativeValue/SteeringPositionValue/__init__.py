@@ -18,25 +18,27 @@ class SteeringPositionValueSchema(SchemaObject):
         self.schema = 'SteeringPositionValue'
 
 
-/STEERINGPOSITION_CHOICES = (
-    ('/RIGHTHANDDRIVING', '/RightHandDriving'),
-    ('/LEFTHANDDRIVING', '/LeftHandDriving'),
+STEERINGPOSITION_CHOICES = (
+    ('RIGHTHANDDRIVING',
+     'RightHandDriving: The steering position is on the right side of the vehicle (viewed from the main direction of driving).'),
+    ('LEFTHANDDRIVING',
+     'LeftHandDriving: The steering position is on the left side of the vehicle (viewed from the main direction of driving).'),
 )
 
 
-class / steeringPositionProp(SchemaEnumProperty):
+class steeringPositionProp(SchemaEnumProperty):
 
     """
-    Enumeration for /steeringPosition
+    Enumeration for steeringPosition
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/steeringPosition'
-    choices = /STEERINGPOSITION_CHOICES
+    _prop_schema = 'steeringPosition'
+    choices = STEERINGPOSITION_CHOICES
     _format_as = "enum"
     adapter = {
-        '/RIGHTHANDDRIVING': '/RightHandDriving',
-        '/LEFTHANDDRIVING': '/LeftHandDriving',
+        'RIGHTHANDDRIVING': 'RightHandDriving',
+        'LEFTHANDDRIVING': 'LeftHandDriving',
     }
 
 

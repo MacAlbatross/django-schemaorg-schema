@@ -17,29 +17,30 @@ class MapCategoryTypeSchema(SchemaObject):
         self.schema = 'MapCategoryType'
 
 
-/MAPTYPE_CHOICES = (
-    ('/SEATINGMAP', '/SeatingMap'),
-    ('/TRANSITMAP', '/TransitMap'),
-    ('/VENUEMAP', '/VenueMap'),
-    ('/PARKINGMAP', '/ParkingMap'),
+MAPTYPE_CHOICES = (
+    ('SEATINGMAP', 'SeatingMap: A seating map.'),
+    ('TRANSITMAP', 'TransitMap: A transit map.'),
+    ('VENUEMAP',
+     'VenueMap: A venue map (e.g. for malls, auditoriums, museums, etc.).'),
+    ('PARKINGMAP', 'ParkingMap: A parking map.'),
 )
 
 
-class / mapTypeProp(SchemaEnumProperty):
+class mapTypeProp(SchemaEnumProperty):
 
     """
-    Enumeration for /mapType
+    Enumeration for mapType
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/mapType'
-    choices = /MAPTYPE_CHOICES
+    _prop_schema = 'mapType'
+    choices = MAPTYPE_CHOICES
     _format_as = "enum"
     adapter = {
-        '/SEATINGMAP': '/SeatingMap',
-        '/TRANSITMAP': '/TransitMap',
-        '/VENUEMAP': '/VenueMap',
-        '/PARKINGMAP': '/ParkingMap',
+        'SEATINGMAP': 'SeatingMap',
+        'TRANSITMAP': 'TransitMap',
+        'VENUEMAP': 'VenueMap',
+        'PARKINGMAP': 'ParkingMap',
     }
 
 

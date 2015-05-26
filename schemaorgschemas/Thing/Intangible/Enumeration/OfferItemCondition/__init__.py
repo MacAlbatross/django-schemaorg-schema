@@ -17,29 +17,31 @@ class OfferItemConditionSchema(SchemaObject):
         self.schema = 'OfferItemCondition'
 
 
-/ITEMCONDITION_CHOICES = (
-    ('/NEWCONDITION', '/NewCondition'),
-    ('/REFURBISHEDCONDITION', '/RefurbishedCondition'),
-    ('/USEDCONDITION', '/UsedCondition'),
-    ('/DAMAGEDCONDITION', '/DamagedCondition'),
+ITEMCONDITION_CHOICES = (
+    ('NEWCONDITION', 'NewCondition: Indicates that the item is new.'),
+    ('REFURBISHEDCONDITION',
+     'RefurbishedCondition: Indicates that the item is refurbished.'),
+    ('USEDCONDITION', 'UsedCondition: Indicates that the item is used.'),
+    ('DAMAGEDCONDITION',
+     'DamagedCondition: Indicates that the item is damaged.'),
 )
 
 
-class / itemConditionProp(SchemaEnumProperty):
+class itemConditionProp(SchemaEnumProperty):
 
     """
-    Enumeration for /itemCondition
+    Enumeration for itemCondition
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/itemCondition'
-    choices = /ITEMCONDITION_CHOICES
+    _prop_schema = 'itemCondition'
+    choices = ITEMCONDITION_CHOICES
     _format_as = "enum"
     adapter = {
-        '/NEWCONDITION': '/NewCondition',
-        '/REFURBISHEDCONDITION': '/RefurbishedCondition',
-        '/USEDCONDITION': '/UsedCondition',
-        '/DAMAGEDCONDITION': '/DamagedCondition',
+        'NEWCONDITION': 'NewCondition',
+        'REFURBISHEDCONDITION': 'RefurbishedCondition',
+        'USEDCONDITION': 'UsedCondition',
+        'DAMAGEDCONDITION': 'DamagedCondition',
     }
 
 

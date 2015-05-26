@@ -17,25 +17,26 @@ class ContactPointOptionSchema(SchemaObject):
         self.schema = 'ContactPointOption'
 
 
-/CONTACTOPTION_CHOICES = (
-    ('/TOLLFREE', '/TollFree'),
-    ('/HEARINGIMPAIREDSUPPORTED', '/HearingImpairedSupported'),
+CONTACTOPTION_CHOICES = (
+    ('TOLLFREE', 'TollFree: The associated telephone number is toll free.'),
+    ('HEARINGIMPAIREDSUPPORTED',
+     'HearingImpairedSupported: Uses devices to support users with hearing impairments.'),
 )
 
 
-class / contactOptionProp(SchemaEnumProperty):
+class contactOptionProp(SchemaEnumProperty):
 
     """
-    Enumeration for /contactOption
+    Enumeration for contactOption
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/contactOption'
-    choices = /CONTACTOPTION_CHOICES
+    _prop_schema = 'contactOption'
+    choices = CONTACTOPTION_CHOICES
     _format_as = "enum"
     adapter = {
-        '/TOLLFREE': '/TollFree',
-        '/HEARINGIMPAIREDSUPPORTED': '/HearingImpairedSupported',
+        'TOLLFREE': 'TollFree',
+        'HEARINGIMPAIREDSUPPORTED': 'HearingImpairedSupported',
     }
 
 

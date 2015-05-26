@@ -17,29 +17,32 @@ class GameServerStatusSchema(SchemaObject):
         self.schema = 'GameServerStatus'
 
 
-/SERVERSTATUS_CHOICES = (
-    ('/OFFLINETEMPORARILY', '/OfflineTemporarily'),
-    ('/ONLINE', '/Online'),
-    ('/ONLINEFULL', '/OnlineFull'),
-    ('/OFFLINEPERMANENTLY', '/OfflinePermanently'),
+SERVERSTATUS_CHOICES = (
+    ('OFFLINETEMPORARILY',
+     'OfflineTemporarily: Game server status: OfflineTemporarily. Server is offline now but it can be online soon.'),
+    ('ONLINE', 'Online: Game server status: Online. Server is available.'),
+    ('ONLINEFULL',
+     'OnlineFull: Game server status: OnlineFull. Server is online but unavailable. The maximum number of players has reached.'),
+    ('OFFLINEPERMANENTLY',
+     'OfflinePermanently: Game server status: OfflinePermanently. Server is offline and not available.'),
 )
 
 
-class / serverStatusProp(SchemaEnumProperty):
+class serverStatusProp(SchemaEnumProperty):
 
     """
-    Enumeration for /serverStatus
+    Enumeration for serverStatus
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/serverStatus'
-    choices = /SERVERSTATUS_CHOICES
+    _prop_schema = 'serverStatus'
+    choices = SERVERSTATUS_CHOICES
     _format_as = "enum"
     adapter = {
-        '/OFFLINETEMPORARILY': '/OfflineTemporarily',
-        '/ONLINE': '/Online',
-        '/ONLINEFULL': '/OnlineFull',
-        '/OFFLINEPERMANENTLY': '/OfflinePermanently',
+        'OFFLINETEMPORARILY': 'OfflineTemporarily',
+        'ONLINE': 'Online',
+        'ONLINEFULL': 'OnlineFull',
+        'OFFLINEPERMANENTLY': 'OfflinePermanently',
     }
 
 

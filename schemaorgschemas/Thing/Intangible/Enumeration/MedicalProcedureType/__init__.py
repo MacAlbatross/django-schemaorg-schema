@@ -18,27 +18,30 @@ class MedicalProcedureTypeSchema(SchemaObject):
         self.schema = 'MedicalProcedureType'
 
 
-/PROCEDURETYPE_CHOICES = (
-    ('/PERCUTANEOUSPROCEDURE', '/PercutaneousProcedure'),
-    ('/SURGICALPROCEDURE', '/SurgicalProcedure'),
-    ('/NONINVASIVEPROCEDURE', '/NoninvasiveProcedure'),
+PROCEDURETYPE_CHOICES = (
+    ('PERCUTANEOUSPROCEDURE',
+     'PercutaneousProcedure: A type of medical procedure that involves percutaneous techniques, where access to organs or tissue is achieved via needle-puncture of the skin. For example, catheter-based procedures like stent delivery.'),
+    ('SURGICALPROCEDURE',
+     'SurgicalProcedure: A type of medical procedure that involves invasive surgical techniques.'),
+    ('NONINVASIVEPROCEDURE',
+     'NoninvasiveProcedure: A type of medical procedure that involves noninvasive techniques.'),
 )
 
 
-class / procedureTypeProp(SchemaEnumProperty):
+class procedureTypeProp(SchemaEnumProperty):
 
     """
-    Enumeration for /procedureType
+    Enumeration for procedureType
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/procedureType'
-    choices = /PROCEDURETYPE_CHOICES
+    _prop_schema = 'procedureType'
+    choices = PROCEDURETYPE_CHOICES
     _format_as = "enum"
     adapter = {
-        '/PERCUTANEOUSPROCEDURE': '/PercutaneousProcedure',
-        '/SURGICALPROCEDURE': '/SurgicalProcedure',
-        '/NONINVASIVEPROCEDURE': '/NoninvasiveProcedure',
+        'PERCUTANEOUSPROCEDURE': 'PercutaneousProcedure',
+        'SURGICALPROCEDURE': 'SurgicalProcedure',
+        'NONINVASIVEPROCEDURE': 'NoninvasiveProcedure',
     }
 
 

@@ -18,29 +18,33 @@ class DriveWheelConfigurationValueSchema(SchemaObject):
         self.schema = 'DriveWheelConfigurationValue'
 
 
-/DRIVEWHEELCONFIGURATION_CHOICES = (
-    ('/FOURWHEELDRIVECONFIGURATION', '/FourWheelDriveConfiguration'),
-    ('/FRONTWHEELDRIVECONFIGURATION', '/FrontWheelDriveConfiguration'),
-    ('/REARWHEELDRIVECONFIGURATION', '/RearWheelDriveConfiguration'),
-    ('/ALLWHEELDRIVECONFIGURATION', '/AllWheelDriveConfiguration'),
+DRIVEWHEELCONFIGURATION_CHOICES = (
+    ('FOURWHEELDRIVECONFIGURATION',
+     'FourWheelDriveConfiguration: Four-wheel drive is a transmission layout where the engine primarily drives two wheels with a part-time four-wheel drive capability.'),
+    ('FRONTWHEELDRIVECONFIGURATION',
+     'FrontWheelDriveConfiguration: Front-wheel drive is a transmission layout where the engine drives the front wheels.'),
+    ('REARWHEELDRIVECONFIGURATION',
+     'RearWheelDriveConfiguration: Real-wheel drive is a transmission layout where the engine drives the rear wheels.'),
+    ('ALLWHEELDRIVECONFIGURATION',
+     'AllWheelDriveConfiguration: All-wheel Drive is a transmission layout where the engine drives all four wheels.'),
 )
 
 
-class / driveWheelConfigurationProp(SchemaEnumProperty):
+class driveWheelConfigurationProp(SchemaEnumProperty):
 
     """
-    Enumeration for /driveWheelConfiguration
+    Enumeration for driveWheelConfiguration
     Prepoulated with the Schema.org choices
     """
     _enum = True
-    _prop_schema = '/driveWheelConfiguration'
-    choices = /DRIVEWHEELCONFIGURATION_CHOICES
+    _prop_schema = 'driveWheelConfiguration'
+    choices = DRIVEWHEELCONFIGURATION_CHOICES
     _format_as = "enum"
     adapter = {
-        '/FOURWHEELDRIVECONFIGURATION': '/FourWheelDriveConfiguration',
-        '/FRONTWHEELDRIVECONFIGURATION': '/FrontWheelDriveConfiguration',
-        '/REARWHEELDRIVECONFIGURATION': '/RearWheelDriveConfiguration',
-        '/ALLWHEELDRIVECONFIGURATION': '/AllWheelDriveConfiguration',
+        'FOURWHEELDRIVECONFIGURATION': 'FourWheelDriveConfiguration',
+        'FRONTWHEELDRIVECONFIGURATION': 'FrontWheelDriveConfiguration',
+        'REARWHEELDRIVECONFIGURATION': 'RearWheelDriveConfiguration',
+        'ALLWHEELDRIVECONFIGURATION': 'AllWheelDriveConfiguration',
     }
 
 
