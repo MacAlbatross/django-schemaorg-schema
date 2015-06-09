@@ -73,15 +73,17 @@ def schemascope(item):
     Takes instance of model object and includes the schema.org url
     If there's an internal url that is also included.
     """
+    ret = ''
+    url = ''
     try:
         ret = '"' + item.schema_url + '"'
     except:
         # not a schemascope item
-        return None
+        return ''
     try:
         url = item.get_absolute_url()
     except:
-        return None
+        return ret
     if url:
         ret = ret + ' link="'+ SCHEME + item.site.domain + url + '"'
     return ret
