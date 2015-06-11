@@ -10,7 +10,7 @@ SCHEME = getattr(settings, "SCHEME", "http://")
 
 register = Library()
 
-VOID_ELEMENTS = ["<area ", "<base ", "<br>", "<col ", "<command ", "<embed ", "<hr>", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
+VOID_ELEMENTS = ["<a ", "<area ", "<base ", "<br>", "<col ", "<command ", "<embed ", "<hr>", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
 FILE_FIELD_SPECIALS = ['.url', '.path']
 
 
