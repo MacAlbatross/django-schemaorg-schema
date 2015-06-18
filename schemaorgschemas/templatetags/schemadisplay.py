@@ -196,13 +196,7 @@ class SchemaNode(template.Node):
             return node
         new_nodes = NodeList()
         # due to getting the actual object the parent schema property wasn't being captured
-        for item in node.nodelist_loop:
-            if item.__class__.__name__ == "TextNode":
-                split = self.split_text_node(item.s)
-                for sub in split:
-                    new_nodes.append(sub)
-            else:
-                new_nodes.append(item)
+        new_nodes = self.process_node_list(node.nodelist_loop, context)
         section_text = ""
         while "/" not in section_text:
             end = new_nodes.pop()
