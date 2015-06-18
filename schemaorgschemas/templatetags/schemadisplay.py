@@ -2,9 +2,11 @@ from django.conf import settings
 from django import template
 from django.template import Context
 from django.template import Library, NodeList, VariableNode
-from django.template.base import TemplateSyntaxError, TextNode
+from django.template.smartif import IfParser
+from django.template.base import TemplateSyntaxError, TextNode, Node
 from formatters import SchemaPropFormatter, EnumPropFormatter
 from django.db.models.loading import get_model
+from django.template.defaulttags import IfNode
 
 SCHEME = getattr(settings, "SCHEME", "http://")
 
@@ -12,6 +14,8 @@ register = Library()
 
 VOID_ELEMENTS = ["<a ", "<area ", "<base ", "<br>", "<col ", "<command ", "<embed ", "<hr>", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
 FILE_FIELD_SPECIALS = ['.url', '.path']
+
+
 
 
 @register.simple_tag(takes_context=False)
@@ -170,9 +174,9 @@ class SchemaNode(template.Node):
         text_to_strip = text_to_strip.strip("\r\n")
         return text_to_strip
 
-    def render_for_node(self, node, context):
+    def assemble_for_node(self, node, context):
         if self.object_name not in str(node.sequence):
-            return node.render(context)
+            return node
         sub_obj = str(node.sequence).replace(self.object_name + '.', '')
         sfind = sub_obj.find("_")
         if sfind != -1:
@@ -186,10 +190,10 @@ class SchemaNode(template.Node):
         if not my_model:
             obj_manager = getattr(self.obj, sub_obj)
             my_model = obj_manager.model
-            #see if the object is actually a manager rather than a field
+        # see if the object is actually a manager rather than a field
         schema_model = my_model.objects.all()[0]
         if not hasattr(my_model, 'SchemaFields'):
-            return node.render(context)
+            return node
         new_nodes = NodeList()
         # due to getting the actual object the parent schema property wasn't being captured
         for item in node.nodelist_loop:
@@ -223,62 +227,100 @@ class SchemaNode(template.Node):
             for schema_model in schema_models:
                 context.update({node.loopvars[0]: schema_model})
                 output = SchemaNode(new_nodes, node.loopvars[0], section_text, top_text)
-                outlist.append(output.render(context))
-        return ''.join(outlist)
+                outlist.append(output)
+        node.nodelist = outlist
+        return node
 
-    def render_if_node(self, node, context):
+    def assemble_if_node(self, node, context):
+        new_conditions = []
+        #iterate through list
+        for condition in node.conditions_nodelists:
+            #condition is tuple index 0 points to a template literal object
+            #index 1 points to a NodeList
+            t_lit = condition[0]
+            new_nodes = self.process_node_list(condition[1], context)
+            new_conditions.append((t_lit, new_nodes))
+        node.conditions = new_conditions
+        return node
+
+    def process_node_list(self, nodelist, context):
         new_nodes = NodeList()
-        index = 0
-        l = node.nodelist.__len__()
-        while index != l:
-            new_node = node.nodelist[index]
-            node_class = new_node.__class__.__name__
-            if "VariableNode" in node_class:
-                if hasattr(new_node, 'filter_expression'):
-                    filter_exp = str(new_node.filter_expression)
+        variable_nodes = []
+        i = nodelist.__len__() - 1
+        l = 0
+        while l <= i:
+            while l <= i:
+                this_node = nodelist[l]
+                node_class = this_node.__class__.__name__
+                if node_class == "ForNode":
+                    this_node = self.assemble_for_node(this_node, context)
+                if node_class == "IfNode":
+                    this_node = self.assemble_if_node(this_node, context)
+                if node_class == 'TextNode':
+                    splitted = self.split_text_node(this_node.s)
+                    for item in splitted:
+                        new_nodes.append(item)
+                else:
+                    new_nodes.append(this_node)
+                if "VariableNode" in node_class:
+                    variable_nodes.append(new_nodes.__len__() - 1)
+                l = l + 1
+            for item in variable_nodes:
+                node_in_question = new_nodes[item]
+                schema_prop = ''
+                if hasattr(node_in_question, 'filter_expression'):
+                    filter_exp = str(node_in_question.filter_expression)
                     filter_exp = filter_exp.replace(self.object_name + '.', '')
-                # ensure ones with added template tags work properly
+                    # ensure ones with added template tags work properly
                     if '|' in filter_exp:
                         filter_exp = filter_exp[:filter_exp.find('|')]
                     try:
                         schema_prop = schemaprop(self.obj, filter_exp)
                     except:
-                        schema_prop = ""
-                    index_offset = 1
-                    prior_node_text = ''
-                    while ("<" not in prior_node_text) and (index_offset <= index):
-                        prior_node = node.nodelist[index - index_offset]
-                        try:
+                        # someone's snuck in a non-schema field, so lets just ignore it
+                        pass
+                if schema_prop:
+                    prior_node_counter = 1
+                    prior_node = new_nodes[item - prior_node_counter]
+                    prior_node_text = prior_node.s
+                    while "<" not in prior_node_text:
+                        prior_node_counter = prior_node_counter + 1
+                        prior_node = new_nodes[item - prior_node_counter]
+                        if hasattr(prior_node, "s"):
                             prior_node_text = prior_node.s
-                        except:
-                            prior_node_text = ''
-                    if prior_node_text:
-                        cutter = prior_node_text.find('>')
-                        prior_node.s = prior_node_text[:cutter] + ' ' + schema_prop + prior_node_text[cutter:]
-            new_nodes.append(new_node)
-            index = index + 1
-        out = new_nodes.render(context)
-        return out
+                    if any(void in prior_node_text for void in VOID_ELEMENTS):
+                        cutter = prior_node_text.find(" ")
+                    else:
+                        cutter = prior_node_text.find(">")
+                    prior_node.s = prior_node_text[:cutter] + ' ' + schema_prop + prior_node_text[cutter:]
+            scope = schemascope(self.obj)
+            top_text = "<" + self.html_class + ' '
+            if self.html_attribute:
+                top_text = top_text + self.html_attribute
+            if self.id_attr:
+                top_text = top_text + ' id="#' + self.id_attr + str(self.obj.pk) + '"'
+            top_text = top_text + ' itemscope itemtype=' + scope + '>'
+            bottom_text = "</" + self.html_class + ">"
+            topnode = TextNode(top_text)
+            bottomnode = TextNode(bottom_text)
+            new_nodes.insert(0, topnode)
+            new_nodes.append(bottomnode)
+        return new_nodes
 
     def render(self, context):
         self.obj = self.get_context_object(context)
         new_nodes = NodeList()
         variable_nodes = []
+        new_nodes = self.process_node_list(self.nodelist, context)
         i = self.nodelist.__len__() - 1
         l = 0
         while l <= i:
             this_node = self.nodelist[l]
             node_class = this_node.__class__.__name__
-            #This process is incorrect, the rendering clearly should be delayed
-            #and a list of nodes returned allowing the final template node compilation to be pickled and cached
-            #and context_dictionaries to be applied to a cached version
             if node_class == "ForNode":
-                #these should all return nodelist rather than rendered nodes, so they get
-                #appended to the big node list and rendered at the end
-                #school boy error
-                this_node = TextNode(self.render_for_node(this_node, context))
+                this_node = self.assemble_for_node(this_node, context)
             if node_class == "IfNode":
-                this_node = TextNode(self.render_if_node(this_node, context))
+                this_node = self.assemble_if_node(this_node, context)
             if node_class == 'TextNode':
                 splitted = self.split_text_node(this_node.s)
                 for item in splitted:

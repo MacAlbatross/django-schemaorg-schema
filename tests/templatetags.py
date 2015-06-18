@@ -94,3 +94,10 @@ class SchemaTemplateTagTests(TestCase):
                        ).render(Context({'object': Author.objects.get(id=1)}))
         expected_string = """<section class='author' id="#author-id-1" itemscope itemtype="http://schema.org/Person" link="http://example.com/test/author/1"><span itemprop="givenName">Albert</span>&nbsp;<span itemprop="familyName">Abba</span><table><tr  itemscope itemtype="http://schema.org/Book" link="http://example.com/test/book/1"><td itemprop="headline">A for Apple</td><td itemprop="datePublished" datetime="1999-12-31">Dec. 31, 1999</td></tr><tr  itemscope itemtype="http://schema.org/Book" link="http://example.com/test/book/2"><td itemprop="headline">B for Banana</td><td itemprop="datePublished" datetime="2013-12-31">Dec. 31, 2013</td></tr></table></section>"""
         self.assertEqual(out, expected_string)
+
+    def test_nested_html(self):
+        out = Template("{%load schemadisplay %}"
+                       """{% schemaobject object section "class='author'" "author-id-" %}<span>{{object.first_name}}</span>&nbsp;<span>{{object.last_name}}</span>"""
+                       """<table>{% for book in object.book.set_all %}<tr><td><a href="{{book.get_absolute_url}}">{{book.title}}</a></td><td>{{book.publication_date}}</td></tr>{% endfor %}</table>"""
+                       """{% endschemaobject %}"""
+                       ).render(Context({'object': Author.objects.get(id=1)}))
