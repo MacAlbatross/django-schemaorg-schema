@@ -1,21 +1,17 @@
 from django.conf import settings
 from django import template
-from django.template import Context
-from django.template import Library, NodeList, VariableNode
-from django.template.smartif import IfParser
+from django.template import Library, NodeList
 from django.template.base import TemplateSyntaxError, TextNode, Node
 from formatters import SchemaPropFormatter, EnumPropFormatter
 from django.db.models.loading import get_model
-from django.template.defaulttags import IfNode
+
 
 SCHEME = getattr(settings, "SCHEME", "http://")
 
 register = Library()
 
-VOID_ELEMENTS = ["<a ", "<area ", "<base ", "<br>", "<col ", "<command ", "<embed ", "<hr>", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
+VOID_ELEMENTS = ["<area ", "<base ", "<br>", "<col ", "<command ", "<embed ", "<hr>", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
 FILE_FIELD_SPECIALS = ['.url', '.path']
-
-
 
 
 @register.simple_tag(takes_context=False)
@@ -89,7 +85,7 @@ def schemascope(item):
     except:
         return ret
     if url:
-        ret = ret + ' link="'+ SCHEME + item.site.domain + url + '"'
+        ret = ret + ' link="' + SCHEME + item.site.domain + url + '"'
     return ret
 
 
@@ -194,8 +190,6 @@ class SchemaNode(template.Node):
         schema_model = my_model.objects.all()[0]
         if not hasattr(my_model, 'SchemaFields'):
             return node
-        new_nodes = NodeList()
-        # due to getting the actual object the parent schema property wasn't being captured
         new_nodes = self.process_node_list(node.nodelist_loop, context)
         section_text = ""
         while "/" not in section_text:
@@ -214,7 +208,7 @@ class SchemaNode(template.Node):
             filter_dict = getattr(self.obj, sub_obj + '_set').core_filters
         if not (fliter_dict):
             if hasattr(self.obj, sub_obj):
-                #manager
+                # manager
                 filter_dict = getattr(self.obj, sub_obj).core_filters
         if filter_dict:
             schema_models = my_model.objects.filter(**filter_dict)
@@ -227,10 +221,10 @@ class SchemaNode(template.Node):
 
     def assemble_if_node(self, node, context):
         new_conditions = []
-        #iterate through list
+        # iterate through list
         for condition in node.conditions_nodelists:
-            #condition is tuple index 0 points to a template literal object
-            #index 1 points to a NodeList
+            # condition is tuple index 0 points to a template literal object
+            # index 1 points to a NodeList
             t_lit = condition[0]
             new_nodes = self.process_node_list(condition[1], context)
             new_conditions.append((t_lit, new_nodes))
@@ -303,8 +297,6 @@ class SchemaNode(template.Node):
 
     def render(self, context):
         self.obj = self.get_context_object(context)
-        new_nodes = NodeList()
-        variable_nodes = []
         new_nodes = self.process_node_list(self.nodelist, context)
         output = new_nodes.render(context)
         return output
