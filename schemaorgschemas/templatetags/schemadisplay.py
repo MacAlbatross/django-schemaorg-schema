@@ -203,10 +203,11 @@ class SchemaNode(template.Node):
         if schema_prop:
             top_text = top_text + ' itemprop="' + schema_prop.schema_prop + '"'
         outlist = []
-        fliter_dict = {}
+        filter_dict = {}
         if hasattr(self.obj, sub_obj + '_set'):
-            filter_dict = getattr(self.obj, sub_obj + '_set').core_filters
-        if not (fliter_dict):
+            attrholder = getattr(self.obj, sub_obj + '_set')
+            filter_dict = attrholder.core_filters
+        if not filter_dict.__len__():
             if hasattr(self.obj, sub_obj):
                 # manager
                 filter_dict = getattr(self.obj, sub_obj).core_filters
@@ -271,6 +272,7 @@ class SchemaNode(template.Node):
                     prior_node_counter = 1
                     prior_node = new_nodes[item - prior_node_counter]
                     prior_node_text = prior_node.s
+                    # this could do with a rewrite to better deal with <a href="{{object.get_absolute_url">{{object.text}}</a> which currently requires <span>{{object.text}}</span>
                     while "<" not in prior_node_text:
                         prior_node_counter = prior_node_counter + 1
                         prior_node = new_nodes[item - prior_node_counter]
