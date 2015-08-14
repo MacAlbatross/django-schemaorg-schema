@@ -4,7 +4,8 @@ from django.template import Library, NodeList
 from django.template.base import TemplateSyntaxError, TextNode, Node
 from formatters import SchemaPropFormatter, EnumPropFormatter
 from django.db.models.loading import get_model
-
+import sys
+from fileinput import lineno
 
 SCHEME = getattr(settings, "SCHEME", "http://")
 
@@ -12,6 +13,30 @@ register = Library()
 
 VOID_ELEMENTS = ["<area ", "<base ", "<br>", "<col ", "<command ", "<embed ", "<hr>", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
 FILE_FIELD_SPECIALS = ['.url', '.path']
+
+
+class ReturnedRender(object):
+
+    def __init__(self, rendered):
+        self._rendered = rendered
+        self._normal = True
+
+    def __str__(self):
+        return self._rendered
+
+    def __unicode__(self):
+        return str(self._rendered)
+
+    @property
+    def normal(self):
+        return self._normal
+
+    @normal.setter
+    def noraml(self, value):
+        self._normal = value
+    
+    
+    
 
 
 @register.simple_tag(takes_context=False)
@@ -45,6 +70,10 @@ def schemaprop(item, field_name=None):
         store_value = getattr(item, field_name)
     except:
         raise TemplateSyntaxError("SchemaError, " + field_name + " not in SchemaFields")
+    if callable(store_value):
+        ret = ReturnedRender(store_value())
+        ret.noraml = False
+        return ret
     schema = getattr(item.SchemaFields, field_name)
     format_as = schema._format_as
     if (schema._format_as == 'ForeignKey'):
@@ -63,7 +92,7 @@ def schemaprop(item, field_name=None):
         magix = SchemaPropFormatter(schema=schema)
     magix.format_as = format_as
     magix.value = store_value
-    ret = magix.render()
+    ret = ReturnedRender(magix.render())
     return ret
 
 
@@ -266,9 +295,9 @@ class SchemaNode(template.Node):
                     try:
                         schema_prop = schemaprop(self.obj, filter_exp)
                     except:
-                        # someone's snuck in a non-schema field, so lets just ignore it
-                        pass
-                if schema_prop:
+                        e = sys.exc_info()[0]
+                        raise TemplateSyntaxError(e)
+                if schema_prop.normal:
                     prior_node_counter = 1
                     prior_node = new_nodes[item - prior_node_counter]
                     prior_node_text = prior_node.s
@@ -282,7 +311,9 @@ class SchemaNode(template.Node):
                         cutter = prior_node_text.find(" ")
                     else:
                         cutter = prior_node_text.find(">")
-                    prior_node.s = prior_node_text[:cutter] + ' ' + schema_prop + prior_node_text[cutter:]
+                    prior_node.s = prior_node_text[:cutter] + ' ' + str(schema_prop) + prior_node_text[cutter:]
+                else:
+                    pass
             scope = schemascope(self.obj)
             top_text = "<" + self.html_class + ' '
             if self.html_attribute:
