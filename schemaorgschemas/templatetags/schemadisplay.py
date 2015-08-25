@@ -4,8 +4,12 @@ from django.template import Library, NodeList
 from django.template.base import TemplateSyntaxError, TextNode, Node
 from formatters import SchemaPropFormatter, EnumPropFormatter
 from django.db.models.loading import get_model
+from django.utils.encoding import (
+    force_str, force_text, python_2_unicode_compatible,
+)
+
 import sys
-from fileinput import lineno
+
 
 SCHEME = getattr(settings, "SCHEME", "http://")
 
@@ -17,9 +21,10 @@ FILE_FIELD_SPECIALS = ['.url', '.path']
 
 class ReturnedRender(object):
 
-    def __init__(self, rendered):
+    def __init__(self, rendered, variable_node=None):
         self._rendered = rendered
         self._normal = True
+        self._variable_node = variable_node 
 
     def __str__(self):
         return self._rendered
@@ -32,15 +37,38 @@ class ReturnedRender(object):
         return self._normal
 
     @normal.setter
-    def noraml(self, value):
+    def normal(self, value):
         self._normal = value
-    
-    
-    
+
+    @property
+    def variable_node(self):
+        return self._variable_node
+
+    @variable_node.setter
+    def variable_node(self, value):
+        self._variable_node = value
+
+
+class OpenTagNode(TextNode):
+
+    def __init__(self):
+        return super(OpenTagNode, self).__init__('<')
+
+    def __repr__(self):
+        return force_str("<Open Tag Node: <'%s'>" % self.s[:25], 'ascii', errors='replace')
+
+
+class CloseTagNode(TextNode):
+
+    def __init__(self):
+        return super(CloseTagNode, self).__init__('>')
+
+    def __repr__(self):
+        return force_str("<Close Tag Node: '%s'>>" % self.s[:25], 'ascii', errors='replace')
 
 
 @register.simple_tag(takes_context=False)
-def schemaprop(item, field_name=None):
+def schemaprop(item, field_name=None, variable_node=None):
     """takes an instance of an model object and field name
     and returns the schema.org property and value formatted
     version where appropriate.
@@ -60,21 +88,39 @@ def schemaprop(item, field_name=None):
         try:
             new_item = getattr(item, field_name[:find_point])
             new_field_name = field_name[find_point + 1:]
-            return schemaprop(new_item, new_field_name)
+            return schemaprop(new_item, new_field_name, variable_node)
         except:
             for last_check in FILE_FIELD_SPECIALS:
                 if field_name[-len(last_check):] == last_check:
                     new_field_name = field_name[:-len(last_check)]
-                    return schemaprop(item, new_field_name)
+                    return schemaprop(item, new_field_name, variable_node)
     try:
         store_value = getattr(item, field_name)
     except:
-        raise TemplateSyntaxError("SchemaError, " + field_name + " not in SchemaFields")
+        try:
+            store_value = getattr(settings, field_name, None) # is it a SETTINGS variable like MEDIA_URL
+            ret = ReturnedRender(store_value, variable_node)
+            ret.normal = False
+            return ret
+        except:
+            for last_check in FILE_FIELD_SPECIALS:
+                if field_name[-len(last_check):] == last_check:
+                    new_field_name = field_name[:-len(last_check)]
+                    return schemaprop(item, new_field_name, variable_node)
+            raise TemplateSyntaxError("SchemaError, " + field_name + " not in SchemaFields")
     if callable(store_value):
-        ret = ReturnedRender(store_value())
-        ret.noraml = False
+        ret = ReturnedRender(store_value(), variable_node)
+        ret.normal = False
         return ret
-    schema = getattr(item.SchemaFields, field_name)
+    try:
+        schema = getattr(item.SchemaFields, field_name)
+    except AttributeError:
+        if store_value:
+            ret = ReturnedRender(store_value, variable_node)
+            ret.normal = False
+            return ret
+        else:
+            raise TemplateSyntaxError("SchemaError, " + field_name + " not in SchemaFields")
     format_as = schema._format_as
     if (schema._format_as == 'ForeignKey'):
         if (schema.traceback is True):
@@ -92,7 +138,7 @@ def schemaprop(item, field_name=None):
         magix = SchemaPropFormatter(schema=schema)
     magix.format_as = format_as
     magix.value = store_value
-    ret = ReturnedRender(magix.render())
+    ret = ReturnedRender(magix.render(), variable_node)
     return ret
 
 
@@ -161,21 +207,22 @@ class SchemaNode(template.Node):
 
     @staticmethod
     def split_text_node(text_node_string):
-        f = text_node_string.find('>')
-        o_f = 0
-        item = text_node_string[0:f + 1]
-        output = [TextNode(item)]
-        while True:
-            o_f = f
-            f = text_node_string.find('>', o_f + 1)
-            if f == -1:
-                item = TextNode(text_node_string[o_f + 1:])
+        output = []
+        holdstring = ''
+        for l in text_node_string:
+            if l == '<':
+                output.append(TextNode(holdstring))
+                holdstring = ''
+                output.append(OpenTagNode())
+            elif l == '>':
+                output.append(TextNode(holdstring))
+                holdstring = ''
+                output.append(CloseTagNode())
             else:
-                item = TextNode(text_node_string[o_f + 1: f + 1])
-            if item.s:
-                output.append(item)
-            if f == -1:
-                return output
+                holdstring = holdstring + l
+        if holdstring:
+            output.append(TextNode(holdstring))
+        return output
 
     def get_context_object(self, context):
         i = context.dicts.__len__() - 1
@@ -193,8 +240,6 @@ class SchemaNode(template.Node):
 
     @staticmethod
     def strip_annoying_text(text_to_strip, text_replace=''):
-        text_to_strip = text_to_strip.replace("<", "")
-        text_to_strip = text_to_strip.replace(">", "")
         text_to_strip = text_to_strip.replace(text_replace, "")
         text_to_strip = text_to_strip.strip("\r\n")
         return text_to_strip
@@ -220,17 +265,7 @@ class SchemaNode(template.Node):
         if not hasattr(my_model, 'SchemaFields'):
             return node
         new_nodes = self.process_node_list(node.nodelist_loop, context)
-        section_text = ""
-        while "/" not in section_text:
-            end = new_nodes.pop()
-            section_text = end.s
-        section_text = self.strip_annoying_text(section_text, "/")
-        top = new_nodes.pop(0)
-        top_text = top.s
-        top_text = self.strip_annoying_text(top_text, section_text)
-        schema_prop = getattr(self.obj.SchemaFields, sub_obj, "")
-        if schema_prop:
-            top_text = top_text + ' itemprop="' + schema_prop.schema_prop + '"'
+        new_nodes = self.process_node_list(new_nodes, context)
         outlist = []
         filter_dict = {}
         if hasattr(self.obj, sub_obj + '_set'):
@@ -244,7 +279,7 @@ class SchemaNode(template.Node):
             schema_models = my_model.objects.filter(**filter_dict)
             for schema_model in schema_models:
                 context.update({node.loopvars[0]: schema_model})
-                output = SchemaNode(new_nodes, node.loopvars[0], section_text, top_text)
+                output = SchemaNode(new_nodes, node.loopvars[0], self.html_class, self.html_attribute)
                 outlist.append(output)
         node.nodelist = outlist
         return node
@@ -283,6 +318,7 @@ class SchemaNode(template.Node):
                 if "VariableNode" in node_class:
                     variable_nodes.append(new_nodes.__len__() - 1)
                 l = l + 1
+            schema_props = []
             for item in variable_nodes:
                 node_in_question = new_nodes[item]
                 schema_prop = ''
@@ -293,27 +329,28 @@ class SchemaNode(template.Node):
                     if '|' in filter_exp:
                         filter_exp = filter_exp[:filter_exp.find('|')]
                     try:
-                        schema_prop = schemaprop(self.obj, filter_exp)
+                        schema_prop = schemaprop(self.obj, filter_exp, item)
                     except:
                         e = sys.exc_info()[0]
                         raise TemplateSyntaxError(e)
-                if schema_prop.normal:
-                    prior_node_counter = 1
-                    prior_node = new_nodes[item - prior_node_counter]
-                    prior_node_text = prior_node.s
-                    # this could do with a rewrite to better deal with <a href="{{object.get_absolute_url">{{object.text}}</a> which currently requires <span>{{object.text}}</span>
-                    while "<" not in prior_node_text:
-                        prior_node_counter = prior_node_counter + 1
-                        prior_node = new_nodes[item - prior_node_counter]
-                        if hasattr(prior_node, "s"):
-                            prior_node_text = prior_node.s
-                    if any(void in prior_node_text for void in VOID_ELEMENTS):
-                        cutter = prior_node_text.find(" ")
+                    schema_props.append(schema_prop)
+            prop_count = schema_props.__len__() - 1
+            prop_index = 0
+            while prop_index <= prop_count:
+                prior_node_counter = 1
+                this_prop = schema_props[prop_index]
+                prior_node = new_nodes[this_prop.variable_node - prior_node_counter]
+                found_prior = False
+                while not (found_prior or (prior_node_counter==this_prop.variable_node)):
+                    if prior_node.__class__.__name__ == 'CloseTagNode':
+                        prior_node.s = ' ' + str(this_prop) + '>'
+                        found_prior = True
+                    elif prior_node.__class__.__name__ == 'OpenTagNode':
+                        found_prior = True
                     else:
-                        cutter = prior_node_text.find(">")
-                    prior_node.s = prior_node_text[:cutter] + ' ' + str(schema_prop) + prior_node_text[cutter:]
-                else:
-                    pass
+                        prior_node_counter = prior_node_counter + 1
+                        prior_node = new_nodes[this_prop.variable_node - prior_node_counter]
+                prop_index = prop_index + 1
             scope = schemascope(self.obj)
             top_text = "<" + self.html_class + ' '
             if self.html_attribute:
