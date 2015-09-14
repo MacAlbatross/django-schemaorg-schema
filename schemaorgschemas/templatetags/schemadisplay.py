@@ -5,7 +5,7 @@ from django.template.base import TemplateSyntaxError, TextNode, Node
 from formatters import SchemaPropFormatter, EnumPropFormatter
 from django.db.models.loading import get_model
 from django.utils.encoding import (
-    force_str, force_text, python_2_unicode_compatible,
+    force_str
 )
 
 import sys
@@ -15,7 +15,7 @@ SCHEME = getattr(settings, "SCHEME", "http://")
 
 register = Library()
 
-VOID_ELEMENTS = ["<area ", "<base ", "<br>", "<col ", "<command ", "<embed ", "<hr>", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
+VOID_ELEMENTS = ["<area ", "<base ", "<br", "<col ", "<command ", "<embed ", "<hr", "<img ", "<input ", "<keygen ", "<link ", "<meta ", "<param ", "<source ", "<track ", "<wbr"]
 FILE_FIELD_SPECIALS = ['.url', '.path']
 
 
@@ -24,10 +24,10 @@ class ReturnedRender(object):
     def __init__(self, rendered, variable_node=None):
         self._rendered = rendered
         self._normal = True
-        self._variable_node = variable_node 
+        self._variable_node = variable_node
 
     def __str__(self):
-        return self._rendered
+        return str(self._rendered)
 
     def __unicode__(self):
         return str(self._rendered)
@@ -67,6 +67,15 @@ class CloseTagNode(TextNode):
         return force_str("<Close Tag Node: '%s'>>" % self.s[:25], 'ascii', errors='replace')
 
 
+class OpenVoidNode(TextNode):
+
+    def __init__(self):
+        return super(OpenVoidNode, self).__init__('<')
+
+    def __repr__(self):
+        return force_str("<Open Void Node: <'%s'>" % self.s[:25], 'ascii', errors='replace')
+
+
 @register.simple_tag(takes_context=False)
 def schemaprop(item, field_name=None, variable_node=None):
     """takes an instance of an model object and field name
@@ -94,33 +103,31 @@ def schemaprop(item, field_name=None, variable_node=None):
                 if field_name[-len(last_check):] == last_check:
                     new_field_name = field_name[:-len(last_check)]
                     return schemaprop(item, new_field_name, variable_node)
-    try:
-        store_value = getattr(item, field_name)
-    except:
-        try:
-            store_value = getattr(settings, field_name, None) # is it a SETTINGS variable like MEDIA_URL
-            ret = ReturnedRender(store_value, variable_node)
-            ret.normal = False
-            return ret
-        except:
-            for last_check in FILE_FIELD_SPECIALS:
-                if field_name[-len(last_check):] == last_check:
-                    new_field_name = field_name[:-len(last_check)]
-                    return schemaprop(item, new_field_name, variable_node)
-            raise TemplateSyntaxError("SchemaError, " + field_name + " not in SchemaFields")
-    if callable(store_value):
-        ret = ReturnedRender(store_value(), variable_node)
-        ret.normal = False
-        return ret
+            raise TemplateSyntaxError("SchemaError, " + field_name + "not in SchemaFields")
     try:
         schema = getattr(item.SchemaFields, field_name)
     except AttributeError:
-        if store_value:
-            ret = ReturnedRender(store_value, variable_node)
-            ret.normal = False
-            return ret
-        else:
+        schema = None
+    try:
+        store_value = getattr(item, field_name)
+    except AttributeError:
+        store_value = None
+    if (not store_value):
+        try:
+            store_value = getattr(settings, field_name, None)
+        except AttributeError:
             raise TemplateSyntaxError("SchemaError, " + field_name + " not in SchemaFields")
+    if schema:
+        magix = SchemaPropFormatter(schema=schema)
+        if callable(store_value):
+            magix.format_as = 'default'
+            magix.value = str(store_value())
+            return ReturnedRender(magix.render(), variable_node)
+    else:
+        ret = ReturnedRender(store_value, variable_node)
+        ret.normal = False
+        return ret
+
     format_as = schema._format_as
     if (schema._format_as == 'ForeignKey'):
         if (schema.traceback is True):
@@ -207,21 +214,60 @@ class SchemaNode(template.Node):
 
     @staticmethod
     def split_text_node(text_node_string):
-        output = []
-        holdstring = ''
-        for l in text_node_string:
-            if l == '<':
-                output.append(TextNode(holdstring))
-                holdstring = ''
-                output.append(OpenTagNode())
-            elif l == '>':
-                output.append(TextNode(holdstring))
-                holdstring = ''
-                output.append(CloseTagNode())
+
+        def close_tag_nodes(node_text):
+            if '/>' in node_text:
+                close_string = '/>'
             else:
-                holdstring = holdstring + l
-        if holdstring:
-            output.append(TextNode(holdstring))
+                close_string = '>'
+            cut_off = node_text.find(close_string)
+            if cut_off == -1:
+                return [TextNode(node_text)]
+            else:
+                output = [TextNode(node_text[:cut_off])]
+                nod = CloseTagNode()
+                nod.s = close_string
+                cut_text = node_text[cut_off + 1:]
+                if cut_text:
+                    nod.s = nod.s + cut_text
+                output.append(nod)
+                return output
+
+        text_node_string = text_node_string.replace('\r', '')
+        text_node_string = text_node_string.replace('\n', '')
+        if '<' not in text_node_string:
+            closes = close_tag_nodes(text_node_string)
+            return closes
+        text_node_string = text_node_string.lstrip()
+        split_start = text_node_string.find('<')
+        tags = text_node_string.split('<')
+        output = []
+        for tag in tags:
+            tag = tag.lstrip()
+            if not tag:
+                tag_node = None
+            else:
+                if not split_start:
+                    tag_node = OpenTagNode()
+                else:
+                    tag_node = None
+                    split_start = 0
+                void_test = "<" + tag
+                void_ele = ''
+                for vi in VOID_ELEMENTS:
+                    if vi in void_test:
+                        void_ele = vi[1:]
+                        break
+                if void_ele:
+                    tag = tag.replace(void_ele, '', 1)
+                    tag_node = OpenVoidNode()
+                    tag_node.s = '<' + void_ele + ' '
+                if tag_node:
+                    output.append(tag_node)
+                if tag:
+                    closes = close_tag_nodes(tag)
+                    for item in closes:
+                        output.append(item)
         return output
 
     def get_context_object(self, context):
@@ -341,10 +387,13 @@ class SchemaNode(template.Node):
                 this_prop = schema_props[prop_index]
                 prior_node = new_nodes[this_prop.variable_node - prior_node_counter]
                 found_prior = False
-                while not (found_prior or (prior_node_counter==this_prop.variable_node)):
+                while not (found_prior or (prior_node_counter == this_prop.variable_node)):
                     if prior_node.__class__.__name__ == 'CloseTagNode':
-                        prior_node.s = ' ' + str(this_prop) + '>'
+                        prior_node.s = ' ' + str(this_prop) + prior_node.s
                         found_prior = True
+                    elif prior_node.__class__.__name__ == 'OpenVoidNode':
+                        found_prior = True
+                        prior_node.s = prior_node.s + str(this_prop) + ' '
                     elif prior_node.__class__.__name__ == 'OpenTagNode':
                         found_prior = True
                     else:

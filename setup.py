@@ -7,7 +7,7 @@ with open(os.path.join(os.path.dirname(__file__), 'READ.md')) as readme:
 
 setup(
     name='django-schemaorg-schema',
-    version='1.0.5',
+    version='1.0.6',
     packages=['schemaorgschemas'],
     include_package_data=True,
     license='MIT License',  # example license
